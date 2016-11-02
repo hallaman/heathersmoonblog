@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  get 'moon_vibe_guide/index'
+
+  #devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, :path => '', :path_names => { :sign_in => 'login', sign_up: 'join' }, 
+  controllers: { sessions: 'users/sessions', registrations: "registrations" }
+
+  devise_scope :user do
+    get 'logout', to: 'devise/sessions#destroy'
+  end
+
+  match "/moon_vibe_guide", to: "moon_vibe_guide#index", :via => 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

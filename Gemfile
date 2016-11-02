@@ -25,6 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
+
+# Opens email in browser during dev
+gem "letter_opener", group: :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
