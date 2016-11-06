@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
 
-  get 'moon_vibe_guide/index'
+  # get "lists" => 'lists#index'
+  # get "lists/index"
+  # get "lists/:id" => 'lists#view'
 
-  #devise_for :users, controllers: { sessions: 'users/sessions' }
-  devise_for :users, :path => '', :path_names => { :sign_in => 'login', sign_up: 'join' }, 
-  controllers: { sessions: 'users/sessions', registrations: "registrations" }
+  get 'moon_vibe_guide/index'
+  get 'moon_vibe_guide/issues'
+  get 'moon_vibe_guide/resubscribe'
+
+  match "/moon_vibe_guide", to: "moon_vibe_guide#index", :via => 'get'
+  match "/moon_vibe_guide/issues", to: "moon_vibe_guide#issues", :via => 'get'
+
+  devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_up => 'join' }, 
+  controllers: { sessions: 'sessions', registrations: "registrations" }
 
   devise_scope :user do
     get 'logout', to: 'devise/sessions#destroy'
   end
 
-  match "/moon_vibe_guide", to: "moon_vibe_guide#index", :via => 'get'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

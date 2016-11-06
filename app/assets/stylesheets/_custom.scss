@@ -1,0 +1,38 @@
+$notification-confirm: hsla(101, 72%, 37%, 1);  // Green
+$notification-warning: #ffc53a;                 // Yellow
+$notification-alert: rgb(172, 34, 34);          // Red
+
+%notification {
+  border-radius: 10px;
+  display: block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin: 1em ;
+  width: 100%;
+  text-align: center;
+}
+
+.alert {
+  @extend %notification;
+}
+
+.alert li {
+  list-style-type: none;
+}
+
+/*flash*/
+.alert-error {
+    background-color: $notification-warning;
+ }
+
+.alert-alert {
+    background-color: $notification-alert;
+ }
+
+.alert-success {
+    background-color: $notification-confirm;
+ }
+
+.alert-notice {
+    background-color: $notification-warning;
+ }

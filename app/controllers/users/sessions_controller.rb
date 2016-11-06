@@ -1,13 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
 
-  # def create
-  #   # TRIGGER MAILCHIMP EMAIL LIST UPDATE TO DB
-  #   # super do |resource|
-  #   #   BackgroundWorker.trigger(resource)
-  #   # end
-  # end
-
   # GET /resource/sign_in
   # def new
   #   super

@@ -23,12 +23,20 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'sprockets', '~> 3.7.0'
+
 gem 'devise'
 
-gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Opens email in browser during dev
 gem "letter_opener", group: :development
+
+# Get member info from MailChimp
+gem 'mailchimp-api', require: 'mailchimp'
+
+# Gibbon is the MailChimp API wrapper
+gem 'gibbon', '~> 2.2.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
