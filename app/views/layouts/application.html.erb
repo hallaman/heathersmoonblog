@@ -9,6 +9,14 @@
   <!-- necessary for transactions through Send Owl-->
   <script type="text/javascript" src="https://transactions.sendowl.com/assets/sendowl.js" ></script>
 
+  <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="og:url"           content="http://www.aquariusnation.com/moonvibeguide" />
+  <meta property="og:type"          content="Moon Vibe Guide" />
+  <meta property="og:title"         content="Aquarius Nation" />
+  <meta property="og:description"   content="Guidance and wisdom for the bringers of the New Earth ways." />
+  <meta property="og:image"         content="http://www.aquariusnation.com/path/logo.jpg" />
+
 </head>
 <body>
 
@@ -19,6 +27,15 @@
     <%= render 'layouts/footer' %>
   </div>
 
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 </body>
 </html>

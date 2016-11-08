@@ -6,10 +6,9 @@ Rails.application.routes.draw do
 
   get 'moon_vibe_guide/index'
   get 'moon_vibe_guide/issues'
-  get 'moon_vibe_guide/resubscribe'
 
-  match "/moon_vibe_guide", to: "moon_vibe_guide#index", :via => 'get'
-  match "/moon_vibe_guide/issues", to: "moon_vibe_guide#issues", :via => 'get'
+  match "/moonvibeguide", to: "moon_vibe_guide#index", :via => 'get'
+  match "/moonvibeguide/issues", to: "moon_vibe_guide#issues", :via => 'get'
 
   devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_up => 'join' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }
