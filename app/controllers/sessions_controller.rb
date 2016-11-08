@@ -13,10 +13,9 @@ class SessionsController < Devise::SessionsController
       # API key in initializers/gibbon.rb
       gibbon = Gibbon::Request.new 
 
-      list_id = '37c0671091'
+      list_id = '8555f6deac'
       current_loggedin_email = current_user.email
       hashed_email = Digest::MD5.hexdigest(current_loggedin_email)
-
 
       begin
         member = gibbon.lists(list_id).members(hashed_email.downcase).retrieve

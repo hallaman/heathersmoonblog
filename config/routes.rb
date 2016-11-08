@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  # get "lists" => 'lists#index'
-  # get "lists/index"
-  # get "lists/:id" => 'lists#view'
+  root :to => 'welcome#index'
+
+  get 'welcome/index'
 
   get 'moon_vibe_guide/index'
   get 'moon_vibe_guide/issues'
