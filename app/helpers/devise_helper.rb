@@ -6,7 +6,7 @@ module DeviseHelper
 
     if value.is_a? String
       html = <<-HTML
-        <div class="alert alert-<%= flash_class(level) %> fade in">
+        <div class="alert alert-<%= flash_class(level) %>">
           <button type="button" class="close" data-dismiss="alert">X</button>
           #{messages}
         </div>

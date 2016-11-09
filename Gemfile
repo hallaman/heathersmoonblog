@@ -29,6 +29,8 @@ gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem "autoprefixer-rails"
+
 # Opens email in browser during dev
 gem "letter_opener", group: :development
 

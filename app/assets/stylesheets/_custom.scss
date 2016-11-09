@@ -10,6 +10,8 @@ $notification-alert: rgb(172, 34, 34);          // Red
   margin: 1em ;
   width: 100%;
   text-align: center;
+
+  animation: fadein 2s;
 }
 
 .alert {
