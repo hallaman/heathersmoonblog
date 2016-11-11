@@ -8,13 +8,13 @@ class SessionsController < Devise::SessionsController
   end
 
   def mailchimp_authentication
-    if user_signed_in?
+    if member_signed_in?
 
       # API key in initializers/gibbon.rb
       gibbon = Gibbon::Request.new 
 
       list_id = '8555f6deac'
-      current_loggedin_email = current_user.email
+      current_loggedin_email = current_member.email
       hashed_email = Digest::MD5.hexdigest(current_loggedin_email)
 
       begin

@@ -4,7 +4,7 @@ module DeviseHelper
 
     messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
 
-    if value.is_a? String
+    if messages.is_a? String
       html = <<-HTML
         <div class="alert alert-<%= flash_class(level) %>">
           <button type="button" class="close" data-dismiss="alert">X</button>

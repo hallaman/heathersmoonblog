@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
   #   @mc = Mailchimp::API.new('8bec904c50f70d1de0487cddd5a790e2-us11')
   # end
 
-  def after_sign_in_path_for(user)
+  def after_sign_in_path_for(member)
 	  moon_vibe_guide_issues_path
 	end
 
-	def after_sign_out_path_for(user)
+	def after_sign_out_path_for(member)
 	  moon_vibe_guide_index_path
 	end
 

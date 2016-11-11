@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   match "/moonvibeguide", to: "moon_vibe_guide#index", :via => 'get'
   match "/moonvibeguide/issues", to: "moon_vibe_guide#issues", :via => 'get'
 
-  devise_for :users, :path => '', :path_names => { :sign_in => 'login', :sign_up => 'join' }, 
+  devise_for :members, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }
 
-  devise_scope :user do
+  devise_scope :member do
     get 'logout', to: 'devise/sessions#destroy'
   end
 
