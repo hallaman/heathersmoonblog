@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'welcome#index'
+  root :to => 'moon_vibe_guide#index'
 
   get 'welcome/index'
 
