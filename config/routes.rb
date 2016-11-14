@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'issues/show'
+
+  get 'issues/edit'
+
   root :to => 'moon_vibe_guide#index'
 
   get 'welcome/index'
 
   get 'moon_vibe_guide/index'
   get 'moon_vibe_guide/issues'
+
+
 
   match "/moonvibeguide", to: "moon_vibe_guide#index", :via => 'get'
   match "/moonvibeguide/issues", to: "moon_vibe_guide#issues", :via => 'get'
@@ -15,6 +21,20 @@ Rails.application.routes.draw do
 
   devise_scope :member do
     get 'logout', to: 'devise/sessions#destroy'
+  end
+
+  get 'issues/index'
+  get 'issues/new'
+  get 'issues/create'
+  get 'issues/show'
+  get 'issues/edit'
+
+  devise_for :admins, :path => '', :path_names => {  sign_in: 'admin', sign_out: 'logout_admin', sign_up: 'create_admin', password: 'password_admin', registration: 'register_admin' }, controllers: {
+    sessions: 'admins/sessions'
+  }
+
+  devise_scope :admins do
+    get 'admin_logout', to: 'devise/sessions#destroy'
   end
 
   
