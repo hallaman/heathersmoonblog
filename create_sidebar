@@ -1,0 +1,1 @@
+ bin/rails generate scaffold Sidebar issue_id:integer link:string title:string image:binary

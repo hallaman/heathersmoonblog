@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issue_number: MyString
+  week: MyString
+  main_image: 
+  moon_phase: MyString
+  welcome: MyText
+  sidebar_id: 1
+  monday_id: 1
+  tuesday_id: 1
+  wednesday_id: 1
+  thursday_id: 1
+  friday_id: 1
+  saturday_id: 1
+  sunday_id: 1
+
+two:
+  issue_number: MyString
+  week: MyString
+  main_image: 
+  moon_phase: MyString
+  welcome: MyText
+  sidebar_id: 1
+  monday_id: 1
+  tuesday_id: 1
+  wednesday_id: 1
+  thursday_id: 1
+  friday_id: 1
+  saturday_id: 1
+  sunday_id: 1

@@ -1,14 +1,69 @@
-<h1>Issues#show</h1>
-<p>Find me in app/views/issues/show.html.erb</p>
+<p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Issue number:</strong>
+  <%= @issue.issue_number %>
+</p>
 
-<div class="container">
+<p>
+  <strong>Week:</strong>
+  <%= @issue.week %>
+</p>
 
-  <p id="notice"><%= notice %></p>
+<p>
+  <strong>Main image:</strong>
+  <%= @issue.main_image %>
+</p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @issue.name %>
-  </p>
+<p>
+  <strong>Moon phase:</strong>
+  <%= @issue.moon_phase %>
+</p>
 
-</div>
+<p>
+  <strong>Welcome:</strong>
+  <%= @issue.welcome %>
+</p>
+
+<p>
+  <strong>Sidebar:</strong>
+  <%= @issue.sidebar_id %>
+</p>
+
+<p>
+  <strong>Monday:</strong>
+  <%= @issue.monday_id %>
+</p>
+
+<p>
+  <strong>Tuesday:</strong>
+  <%= @issue.tuesday_id %>
+</p>
+
+<p>
+  <strong>Wednesday:</strong>
+  <%= @issue.wednesday_id %>
+</p>
+
+<p>
+  <strong>Thursday:</strong>
+  <%= @issue.thursday_id %>
+</p>
+
+<p>
+  <strong>Friday:</strong>
+  <%= @issue.friday_id %>
+</p>
+
+<p>
+  <strong>Saturday:</strong>
+  <%= @issue.saturday_id %>
+</p>
+
+<p>
+  <strong>Sunday:</strong>
+  <%= @issue.sunday_id %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

@@ -1,0 +1,1 @@
+json.array! @sidebars, partial: 'sidebars/sidebar', as: :sidebar

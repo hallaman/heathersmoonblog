@@ -5,21 +5,27 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def after_sign_in_path_for(member)
-	  moon_vibe_guide_issues_path
+  def after_sign_in_path_for(resource)
+    case resource
+    when :member, Member
+      moon_vibe_guide_issues_path
+    when :admin, Admin
+      issues_index_path
+    else
+      super
+    end
 	end
 
-	def after_sign_out_path_for(member)
-	  moon_vibe_guide_index_path
+	def after_sign_out_path_for(resource)
+    case resource
+    when :member, Member
+      moon_vibe_guide_index_path
+    when :admin, Admin
+      issues_index_path
+    else
+      super
+    end
 	end
-
-  def after_sign_in_path_for(admin)
-    issues_index_path
-  end
-
-  def after_sign_out_path_for(admin)
-    moon_vibe_guide_index_path
-  end
 
 	def set_locale
     I18n.locale = params[:locale]

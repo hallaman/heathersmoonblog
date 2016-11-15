@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sidebars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Title</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sidebars.each do |sidebar| %>
+      <tr>
+        <td><%= sidebar.link %></td>
+        <td><%= sidebar.title %></td>
+        <td><%= sidebar.image %></td>
+        <td><%= link_to 'Show', sidebar %></td>
+        <td><%= link_to 'Edit', edit_sidebar_path(sidebar) %></td>
+        <td><%= link_to 'Destroy', sidebar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sidebar', new_sidebar_path %>

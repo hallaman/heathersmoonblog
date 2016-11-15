@@ -1,0 +1,1 @@
+json.partial! "sidebars/sidebar", sidebar: @sidebar

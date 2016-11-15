@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'issues/show'
-
-  get 'issues/edit'
-
+  resources :sidebars
+  resources :issues
   root :to => 'moon_vibe_guide#index'
 
   get 'welcome/index'
@@ -11,12 +9,10 @@ Rails.application.routes.draw do
   get 'moon_vibe_guide/index'
   get 'moon_vibe_guide/issues'
 
-
-
   match "/moonvibeguide", to: "moon_vibe_guide#index", :via => 'get'
   match "/moonvibeguide/issues", to: "moon_vibe_guide#issues", :via => 'get'
 
-  devise_for :members, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join' }, 
+  devise_for :members, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }
 
   devise_scope :member do
@@ -34,7 +30,7 @@ Rails.application.routes.draw do
   }
 
   devise_scope :admins do
-    get 'admin_logout', to: 'devise/sessions#destroy'
+    get 'logout', to: 'devise/sessions#destroy'
   end
 
   
