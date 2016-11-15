@@ -1,0 +1,1 @@
+ bin/rails generate scaffold Monday issue_id:integer date:string entry:text affirmation:text moon_sign:string theme:string 

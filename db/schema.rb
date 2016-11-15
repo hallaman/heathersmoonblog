@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115162350) do
+ActiveRecord::Schema.define(version: 20161115170103) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20161115162350) do
     t.binary   "main_image"
     t.string   "moon_phase"
     t.text     "welcome"
-    t.integer  "sidebar_id"
     t.integer  "monday_id"
     t.integer  "tuesday_id"
     t.integer  "wednesday_id"

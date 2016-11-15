@@ -30,7 +30,10 @@
         <td><%= issue.main_image %></td>
         <td><%= issue.moon_phase %></td>
         <td><%= issue.welcome %></td>
-        <td><%= issue.sidebar_id %></td>
+        <td><% issue.sidebars.each do |sidebar_item| %>
+              <%= sidebar_item.title %>
+            <% end %>
+        </td>
         <td><%= issue.monday_id %></td>
         <td><%= issue.tuesday_id %></td>
         <td><%= issue.wednesday_id %></td>

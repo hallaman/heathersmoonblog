@@ -20,6 +20,7 @@ class IssuesController < ApplicationController
 
   # GET /issues/1/edit
   def edit
+    @issue = Issue.find(params[:id])
   end
 
   # POST /issues
@@ -41,6 +42,8 @@ class IssuesController < ApplicationController
   # PATCH/PUT /issues/1
   # PATCH/PUT /issues/1.json
   def update
+    params[:issue][:existing_sidebar_attributes] ||= {}
+
     respond_to do |format|
       if @issue.update(issue_params)
         format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
@@ -70,6 +73,6 @@ class IssuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:issue_number, :week, :main_image, :moon_phase, :welcome, :sidebar_id, :monday_id, :tuesday_id, :wednesday_id, :thursday_id, :friday_id, :saturday_id, :sunday_id, sidebar_attributes: [:id, :title, :link, :_destroy])
+      params.require(:issue).permit(:issue_number, :week, :main_image, :moon_phase, :welcome, :monday_id, :tuesday_id, :wednesday_id, :thursday_id, :friday_id, :saturday_id, :sunday_id, sidebars_attributes: [:id, :title, :link, :_destroy])
     end
 end

@@ -27,8 +27,12 @@
 
 <p>
   <strong>Sidebar:</strong>
-  <%= @issue.sidebar_id %>
+  <% @issue.sidebars.each do |sidebar_item| %>
+    <%= sidebar_item.title %>
+  <% end %>
 </p>
+
+<!-- 
 
 <p>
   <strong>Monday:</strong>
@@ -63,7 +67,7 @@
 <p>
   <strong>Sunday:</strong>
   <%= @issue.sunday_id %>
-</p>
+</p> -->
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
