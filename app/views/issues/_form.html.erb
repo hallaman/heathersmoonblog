@@ -12,73 +12,68 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :issue_number %><br>
+    <%= f.label "Issue #{}" %><br>
     <%= f.text_field :issue_number %>
   </div>
   <div class="field">
-    <%= f.label :week %><br>
+    <%= f.label "Week" %><small> eg. November 14 - 20</small><br>
     <%= f.text_field :week %>
   </div>
   <div class="field">
-    <%= f.label :main_image %><br>
+    <%= f.label "Top Image" %><br>
     <%= f.text_field :main_image %>
   </div>
   <div class="field">
-    <%= f.label :moon_phase %><br>
-    <%= f.text_field :moon_phase %>
+    <%= f.label "Theme for Moon phase" %><br>
+    <%= f.select :moon_phase, 
+        options_for_select($themes, {:selected => @issue.moon_phase})
+    %>
   </div>
   <div class="field">
-    <%= f.label :welcome %><br>
-    <%= f.text_area :welcome %>
+    <%= f.label "Welcome Text" %><br>
+    <%= f.text_area :welcome, cols: 80, rows: 8 %>
   </div>
   <div class="field">
-    <%# f.label :sidebar_id %><br>
-    <%# f.number_field :sidebar_id %>
     <%= f.label "Sidebar" %><br>
-    <ul>
+    <table class="table">
     <%= f.fields_for :sidebars do |sidebars_form| %>
-      <li>
-        <%= sidebars_form.check_box :_destroy%>
-        <%= sidebars_form.label :title %>
-        <%= sidebars_form.text_field :title %>
+      <tr>
+        <td>
+          <%= sidebars_form.label "Label" %>
+          <%= sidebars_form.text_field :title %>
+        </td>
  
-        <%= sidebars_form.label :link %>
-        <%= sidebars_form.text_field :link %>
-        ...
-      </li>
+        <td>
+          <%= sidebars_form.label "Link" %>
+          <%= sidebars_form.text_field :link %>
+        </td>
+        <td>
+          <%= sidebars_form.label "DELETE" %>
+          <%= sidebars_form.check_box :_destroy%>
+        </td>
+      </tr>
     <% end %>
-  </ul>
+    </table>
   </div>
-  <div class="field">
-    <%= f.label :monday_id %><br>
-    <%= f.number_field :monday_id %>
-  </div>
-  <div class="field">
-    <%= f.label :tuesday_id %><br>
-    <%= f.number_field :tuesday_id %>
-  </div>
-  <div class="field">
-    <%= f.label :wednesday_id %><br>
-    <%= f.number_field :wednesday_id %>
-  </div>
-  <div class="field">
-    <%= f.label :thursday_id %><br>
-    <%= f.number_field :thursday_id %>
-  </div>
-  <div class="field">
-    <%= f.label :friday_id %><br>
-    <%= f.number_field :friday_id %>
-  </div>
-  <div class="field">
-    <%= f.label :saturday_id %><br>
-    <%= f.number_field :saturday_id %>
-  </div>
-  <div class="field">
-    <%= f.label :sunday_id %><br>
-    <%= f.number_field :sunday_id %>
-  </div>
+  <hr />
+  
+  <%= render partial: 'monday', locals: { f: f } %>
+  <hr />
+  <%= render partial: 'tuesday', locals: { f: f } %>
+  <hr />
+  <%= render partial: 'wednesday', locals: { f: f } %>
+  <hr />
+  <%= render partial: 'thursday', locals: { f: f } %>
+  <hr />
+  <%= render partial: 'friday', locals: { f: f } %>
+  <hr />
+  <%= render partial: 'saturday', locals: { f: f } %>
+  <hr />
+  <%= render partial: 'sunday', locals: { f: f } %>
+
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-default'%>
   </div>
-  <br /><br />
+
 <% end %>

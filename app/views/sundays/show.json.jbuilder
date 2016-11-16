@@ -1,0 +1,1 @@
+json.partial! "sundays/sunday", sunday: @sunday

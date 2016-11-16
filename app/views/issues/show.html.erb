@@ -32,42 +32,11 @@
   <% end %>
 </p>
 
-<!-- 
-
 <p>
   <strong>Monday:</strong>
-  <%= @issue.monday_id %>
+  <% @issue.monday %>
 </p>
 
-<p>
-  <strong>Tuesday:</strong>
-  <%= @issue.tuesday_id %>
-</p>
-
-<p>
-  <strong>Wednesday:</strong>
-  <%= @issue.wednesday_id %>
-</p>
-
-<p>
-  <strong>Thursday:</strong>
-  <%= @issue.thursday_id %>
-</p>
-
-<p>
-  <strong>Friday:</strong>
-  <%= @issue.friday_id %>
-</p>
-
-<p>
-  <strong>Saturday:</strong>
-  <%= @issue.saturday_id %>
-</p>
-
-<p>
-  <strong>Sunday:</strong>
-  <%= @issue.sunday_id %>
-</p> -->
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>

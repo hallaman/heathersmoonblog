@@ -1,5 +1,6 @@
 class SidebarsController < ApplicationController
   before_action :set_sidebar, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
   # GET /sidebars
   # GET /sidebars.json

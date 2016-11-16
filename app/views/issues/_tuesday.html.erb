@@ -1,0 +1,46 @@
+  
+  <h2><%= f.label "Tuesday" %></h2>
+    <%= f.fields_for :tuesday do |tuesday_form| %>
+    <div class="field">
+      <%= tuesday_form.label "Date" %><small> eg. November 14</small><br />
+      <%= tuesday_form.text_field :date %>
+    </div>
+    <div class="field">
+      <%= tuesday_form.label "Text" %><br />
+      <%= tuesday_form.text_area :entry, cols: 80, rows: 8 %>
+    </div>
+    <div class="field">
+      <%= tuesday_form.label "Affirmation" %><br />
+      <%= tuesday_form.text_area :affirmation, cols: 80, rows: 8 %>
+    </div>
+    <div class="field">
+      <%= tuesday_form.label "Moon in" %><br />
+      <%= tuesday_form.select :moon_sign, 
+          options_for_select($signs, {:selected => @issue.tuesday.moon_sign})
+      %>
+    </div>
+    <div class="field">
+      <%= tuesday_form.label "Theme for Moon phase" %><br />
+      <%= tuesday_form.select :theme, 
+          options_for_select($themes, {:selected => @issue.tuesday.theme})
+      %>
+    </div>
+    <div class="field">
+      <%= tuesday_form.label "Numerology Vibration #1" %>
+      <%= tuesday_form.select :number_1, 
+          options_for_select(Number.all.collect {|n| [ n.number.to_s + ": " + n.meaning, n.id ] }, {:selected => @issue.tuesday.number_1})
+      %>
+    </div>
+    <div class="field">
+      <%= tuesday_form.label "Numerology Vibration #2" %>
+      <%= tuesday_form.select :number_2, 
+          options_for_select(Number.all.collect {|n| [ n.number.to_s + ": " + n.meaning, n.id ] }, {:selected => @issue.tuesday.number_2}), {include_blank: true}
+      %>
+    </div>
+    <div class="field">  
+      <%= tuesday_form.label "Numerology Vibration #3" %>
+      <%= tuesday_form.select :number_3, 
+          options_for_select(Number.all.collect {|n| [ n.number.to_s + ": " + n.meaning, n.id ] }, {:selected => @issue.tuesday.number_3}), {include_blank: true}
+      %>
+    </div>
+  <% end %>

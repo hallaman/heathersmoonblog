@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :sundays
+  resources :saturdays
+  resources :fridays
+  resources :thursdays
+  resources :wednesdays
+  resources :tuesdays
+  resources :numbers
+  resources :mondays
   resources :sidebars
   resources :issues
+  
   root :to => 'moon_vibe_guide#index'
 
   get 'welcome/index'
