@@ -1,15 +1,16 @@
-$notification-confirm: hsla(101, 72%, 37%, 1);  // Green
-$notification-warning: #ffc53a;                 // Yellow
-$notification-alert: rgb(172, 34, 34);          // Red
+$notification-confirm: #d0e9c6;  
+$notification-warning: #fcf8e3;                 
+$notification-alert: #f2dede;          
 
 %notification {
   border-radius: 10px;
   display: block;
   font-size: 1em;
-  padding: 1em 2em;
+  padding: 2em;
   margin: 1em ;
   width: 100%;
   text-align: center;
+  color: #333;
 
   animation: fadein 2s;
 }
