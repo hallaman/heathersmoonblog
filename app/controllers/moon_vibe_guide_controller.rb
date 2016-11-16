@@ -5,7 +5,8 @@ class MoonVibeGuideController < ApplicationController
   end
 
   def issues
-  	@issues = Issue.order("issue_number DESC").all
+  	@current = Issue.order("issue_number DESC").first
+  	@past = Issue.where.not(id: @current).order("issue_number DESC")
   end
 
   def issue

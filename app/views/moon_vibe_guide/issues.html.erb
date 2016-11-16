@@ -1,4 +1,7 @@
-<% @issues.each do |issue| %>
+<%= @current.issue_number %>
+<%= link_to "Read Now", moonvibeguide_issue_path(@current) %>
+
+<% @past.each do |issue| %>
 	<div class="col-xs-12">
 		<%# link_to image_tag(issue.main_image.url(:display), :alt => issue.issue_number, :class => "issue-img"), whitefish_designers_name_path(@designer, :name => designer.name.gsub(' ', '_' )), :class => 'designer-main' %>
 		<%= link_to issue.issue_number, moonvibeguide_issue_path(issue) %>

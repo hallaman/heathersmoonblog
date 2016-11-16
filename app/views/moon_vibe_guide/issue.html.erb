@@ -1,6 +1,6 @@
 <p><%= @issue.issue_number %></p>
 <p><%= @issue.week %></p>
-<p><%= @issue.main_image %></p>
+<p><%= image_tag @issue.main_image.url(:display) %></p>
 <p><%= @issue.moon_phase %></p>
 <p><%= @issue.welcome %></p>
 <p>Monday</p>
@@ -9,4 +9,8 @@
 	<p><%= @issue.monday.entry %></p>
 	<p><%= @issue.monday.affirmation %></p>
 	<p><%= @issue.monday.moon_sign %></p>
+<% end %>
+
+<% @issue.sidebars.each do |item| %>
+	<%= link_to item.title, item.link %>
 <% end %>
