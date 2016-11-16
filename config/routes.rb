@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   }
 
   devise_scope :admins do
-    get 'logout', to: 'devise/sessions#destroy'
+    get 'logout_admin', to: 'devise/sessions#destroy'
   end
 
   

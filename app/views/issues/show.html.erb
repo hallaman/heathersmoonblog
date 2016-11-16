@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Main image:</strong>
-  <%= @issue.main_image %>
+  <strong>Top image:</strong>
+  <%= image_tag @issue.main_image.url(:thumb) %>
 </p>
 
 <p>
@@ -32,10 +32,6 @@
   <% end %>
 </p>
 
-<p>
-  <strong>Monday:</strong>
-  <% @issue.monday %>
-</p>
 
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |

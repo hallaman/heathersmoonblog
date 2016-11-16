@@ -5,7 +5,7 @@ class MoonVibeGuideController < ApplicationController
   end
 
   def issues
-  	@issues = Issue.order("updated_at DESC").all
+  	@issues = Issue.order("issue_number DESC").all
   end
 
   def issue

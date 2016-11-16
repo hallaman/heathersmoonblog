@@ -44,6 +44,7 @@ class IssuesController < ApplicationController
         format.json { render :show, status: :created, location: @issue }
       else
         5.times { @issue.sidebars.build }
+        build_form
 
         format.html { render :new }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
@@ -62,7 +63,9 @@ class IssuesController < ApplicationController
         format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue }
       else
-
+        5.times { @issue.sidebars.build }
+        build_form
+        
         format.html { render :edit }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
       end

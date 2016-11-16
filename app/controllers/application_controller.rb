@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     when :member, Member
       moon_vibe_guide_issues_path
     when :admin, Admin
-      issues_index_path
+      issues_path
     else
       super
     end
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     when :member, Member
       moon_vibe_guide_index_path
     when :admin, Admin
-      issues_index_path
+      issues_path
     else
       super
     end

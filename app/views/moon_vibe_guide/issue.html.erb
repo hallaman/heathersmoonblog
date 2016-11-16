@@ -4,7 +4,9 @@
 <p><%= @issue.moon_phase %></p>
 <p><%= @issue.welcome %></p>
 <p>Monday</p>
-<p><%= @issue.monday.date %></p>
-<p><%= @issue.monday.entry %></p>
-<p><%= @issue.monday.affirmation %></p>
-<p><%= @issue.monday.moon_sign %></p>
+<% if !@issue.monday.nil? %>
+	<p><%= @issue.monday.date %></p>
+	<p><%= @issue.monday.entry %></p>
+	<p><%= @issue.monday.affirmation %></p>
+	<p><%= @issue.monday.moon_sign %></p>
+<% end %>

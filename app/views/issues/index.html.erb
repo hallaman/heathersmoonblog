@@ -4,15 +4,11 @@
 
 <%= link_to 'New Issue', new_issue_path, class: "btn btn-default" %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Issue #</th>
       <th>Week</th>
-      <th>Image</th>
-      <th>Moon phase</th>
-      <th>Welcome</th>
-      <th>Sidebar</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,13 +18,7 @@
       <tr>
         <td><%= issue.issue_number %></td>
         <td><%= issue.week %></td>
-        <td><%= issue.main_image %></td>
-        <td><%= issue.moon_phase %></td>
-        <td><%= issue.welcome %></td>
-        <td><% issue.sidebars.each do |sidebar_item| %>
-              <%= sidebar_item.title %>
-            <% end %>
-        </td>
+        
         <td><%= link_to 'Show', issue %></td>
         <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
         <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
