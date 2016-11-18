@@ -7,6 +7,7 @@ class MoonVibeGuideController < ApplicationController
   def issues
   	@current = Issue.order("issue_number DESC").first
   	@past = Issue.where.not(id: @current).order("issue_number DESC")
+    @podcasts = Podcast.order("id DESC")
   end
 
   def issue
