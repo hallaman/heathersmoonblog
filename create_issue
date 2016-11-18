@@ -1,1 +1,1 @@
- bin/rails generate scaffold Issue issue_number:string week:string main_image:binary moon_phase:string welcome:text sidebar_id:integer monday_id:integer tuesday_id:integer wednesday_id:integer thursday_id:integer friday_id:integer saturday_id:integer sunday_id:integer
+ bin/rails generate scaffold Issue issue_number:string week:string main_image:binary moon_phase:string welcome:text 

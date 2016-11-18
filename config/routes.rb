@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :podcast_details
+  resources :podcasts
   resources :sundays
   resources :saturdays
   resources :fridays

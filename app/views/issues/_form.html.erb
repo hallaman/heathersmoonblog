@@ -20,7 +20,7 @@
     <%= f.text_field :week %>
   </div>
   <div class="field">
-    <%= f.label "Top Image" %><br>
+    <%= f.label "Image" %><br>
     <%= f.file_field :main_image %>
     <%= image_tag @issue.main_image.url(:thumb) %>
   </div>

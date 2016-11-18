@@ -1,0 +1,60 @@
+<%= form_for @podcast, html: { multipart: true } do |f| %>
+  <% if @podcast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@podcast.errors.count, "error") %> prohibited this podcast from being saved:</h2>
+
+      <ul>
+      <% @podcast.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :main_image %><br>
+    <%= f.file_field :main_image %>
+    <%= image_tag @podcast.main_image.url(:thumb) %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, cols: 80, rows: 8 %>
+  </div>
+  <table class="table">
+    <%= f.label "Podcast Links" %><br>
+    <%= f.fields_for :podcast_details do |podcasts_form| %>
+      <tr>
+        <td>
+          <%= podcasts_form.label "Title" %>
+          <%= podcasts_form.text_field :title %>
+        </td>
+ 
+        <td>
+          <%= podcasts_form.label "Link" %>
+          <%= podcasts_form.text_field :link %>
+        </td>
+
+        <td>
+          <%= podcasts_form.label "Link" %>
+          <%= podcasts_form.file_field :image %>
+        </td>
+        <% if @podcast.podcast_details.exists? %>
+        <td>
+           <%= image_tag @podcast.podcast_detail.image.url(:thumb) %>
+        </td>
+        <% end %>
+        <td>
+          <%= podcasts_form.label "DELETE" %>
+          <%= podcasts_form.check_box :_destroy%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-default'%>
+  </div>
+<% end %>

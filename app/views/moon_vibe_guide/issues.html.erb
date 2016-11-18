@@ -1,9 +1,16 @@
-<%= @current.issue_number %>
+<p>Current Issue</p>
+<p>Issue <%= @current.issue_number %></p>
+<h3><%= @current.week %></h3>
 <%= link_to "Read Now", moonvibeguide_issue_path(@current) %>
 
 <% @past.each do |issue| %>
 	<div class="col-xs-12">
-		<%# link_to image_tag(issue.main_image.url(:display), :alt => issue.issue_number, :class => "issue-img"), whitefish_designers_name_path(@designer, :name => designer.name.gsub(' ', '_' )), :class => 'designer-main' %>
-		<%= link_to issue.issue_number, moonvibeguide_issue_path(issue) %>
+		<%= link_to image_tag(issue.main_image.url(:thumb), :alt => issue.issue_number, :class => "issue-img"), moonvibeguide_issue_path(issue) %>
+		<p>Issue <%= issue.issue_number %></p>
+		<p><%= issue.week %></p>
+		<% issue.sidebars.each do |item| %>
+			<p><%= item.title %></p>
+		<% end %>
+		<%= link_to "Read Now", moonvibeguide_issue_path(issue), class: 'btn btn-default' %>
 	</div>
 <% end %>

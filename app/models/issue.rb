@@ -43,7 +43,7 @@ class Issue < ActiveRecord::Base
   validates :main_image, presence: true
   validates :moon_phase, presence: true
 
-  has_attached_file :main_image, styles: { display: ["2000x600>", :png], thumb: ["300x200>", :png] }, :convert_options => { :display => "-quality 70 -interlace Plane", :thumb => "-quality 70 -interlace Plane" }
+  has_attached_file :main_image, styles: {  thumb: ["400x300>", :png] }, :convert_options => { :thumb => "-quality 70 -interlace Plane" }
   validates_attachment :main_image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   def reject_day(attributes)

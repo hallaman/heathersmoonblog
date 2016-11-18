@@ -1,0 +1,2 @@
+module PodcastDetailsHelper
+end

@@ -1,0 +1,1 @@
+ bin/rails generate scaffold PodcastDetail title:string image:binary link:string reading:boolean podcast_id:integer

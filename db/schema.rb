@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116221754) do
+ActiveRecord::Schema.define(version: 20161118000045) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -96,6 +96,32 @@ ActiveRecord::Schema.define(version: 20161116221754) do
     t.text     "meaning"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "podcast_details", force: :cascade do |t|
+    t.string   "title"
+    t.binary   "image"
+    t.string   "link"
+    t.boolean  "reading"
+    t.integer  "podcast_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "podcasts", force: :cascade do |t|
+    t.string   "title"
+    t.binary   "main_image"
+    t.text     "description"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "main_image_file_name"
+    t.string   "main_image_content_type"
+    t.integer  "main_image_file_size"
+    t.datetime "main_image_updated_at"
   end
 
   create_table "saturdays", force: :cascade do |t|

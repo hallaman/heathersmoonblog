@@ -1,0 +1,1 @@
+json.partial! "podcast_details/podcast_detail", podcast_detail: @podcast_detail
