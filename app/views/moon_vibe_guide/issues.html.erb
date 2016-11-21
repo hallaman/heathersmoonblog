@@ -1,33 +1,34 @@
-<div class="col-xs-12">
+<div class="col-xs-12 current_issue">
 	<p>Current Issue</p>
 	<p>Issue <%= @current.issue_number %></p>
 	<h3><%= @current.week %></h3>
-	<%= link_to "Read Now", moonvibeguide_issue_path(@current) %>
+	<%= link_to "Read Now", moonvibeguide_issue_path(@current), class: 'btn btn-gold' %>
 </div>
 
-
 <div class="col-xs-12 col-sm-6">
+	<p>PAST ISSUES</p>
 	<% @past.each do |issue| %>
-		<div class="col-xs-12">
+		<div class="list_item">
 			<%= link_to image_tag(issue.main_image.url(:thumb), :alt => issue.issue_number, :class => "issue-img"), moonvibeguide_issue_path(issue) %>
 			<p>Issue <%= issue.issue_number %></p>
 			<p><%= issue.week %></p>
 			<% issue.sidebars.each do |item| %>
 				<p><%= item.title %></p>
 			<% end %>
-			<%= link_to "Read Now", moonvibeguide_issue_path(issue), class: 'btn btn-default' %>
+			<%= link_to "Read Now", moonvibeguide_issue_path(issue), class: 'btn btn-gold' %>
 		</div>
 	<% end %>
 </div>
 
 <div class="col-xs-12 col-sm-6">
+	<p>PODCASTS &amp; READINGS</p>
 	<% @podcasts.each do |podcast| %>
-		<div class="col-xs-12">
+		<div class="list_item">
 			<%= link_to image_tag(podcast.main_image.url(:thumb), :alt => podcast.title, :class => "issue-img"), moonvibeguide_issue_path(podcast) %>
 			<p>Podcast</p>
 			<h3><%= podcast.title %></h3>
 			<p><%= podcast.description %></p>
-			<%= link_to "Read Now", moonvibeguide_issue_path(podcast), class: 'btn btn-default' %>
+			<%= link_to "Read Now", moonvibeguide_issue_path(podcast), class: 'btn btn-gold' %>
 		</div>
 	<% end %>
 </div>

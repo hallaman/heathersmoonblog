@@ -1,30 +1,43 @@
+$gold: #a4772d;
+$blackish: #333;
+$eggshell: #f7f3ed;
+$white: #fff;
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  background-color: $white;
+  color: $blackish;
   font-size: 13px;
   line-height: 18px;
-  padding-bottom: 120px;
-  margin: 0px auto;
+  margin-bottom: 0 auto;
+
+  font-family: 'Work Sans', sans-serif;
+
+  > .container {
+    margin-bottom: 205px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'Quattrocento', serif;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
 a {
-  color: #000;
+  color: $gold;
+  text-transform: uppercase;
 
   &:hover {
-    color: #b99252;
+    color: $gold;
+    text-decoration: underline;
   }
 }
 
@@ -39,10 +52,70 @@ div {
   position: relative;
 }
 
-.field_with_errors {
-  border: 2px solid #f2dede;
-  display: table;
+.btn-gold {
+  color: $eggshell;
+  background-color: $gold;
+  border-color: $gold;
+  padding: 10px 60px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 100;
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
 }
+
+.current_issue {
+  margin-bottom: 60px;
+}
+
+.list_item {
+  padding: 30px 0 0 0;
+}
+
+.share {
+  background-color: $eggshell;
+  border-top: 1px solid $gold;
+  color: $gold;
+  padding: 60px 10px;
+  margin: 0px auto;
+  text-align: center;
+
+  p {
+    font-size: 1.65em;
+    font-weight: 100;
+    font-family: 'Quattrocento', serif;
+    line-height: 1.65em;
+  }
+
+  a {
+    font-family: 'Work Sans', sans-serif;
+    font-size: .75em;
+    font-weight: 800;
+    padding: 0 0 0 20px;
+  }
+}
+
+.copyright {
+  background-color: $gold;
+  margin: 0px auto;
+  text-align: center;
+
+  p {
+    font-family: 'Work Sans', sans-serif;
+    color: $eggshell;
+    font-size: .75em; 
+    padding: 10px 0 0;
+  }
+}
+
+// .field_with_errors {
+//   border: 2px solid #f2dede;
+//   display: table;
+//   padding: 15px 0;
+//   margin: 0px auto;
+//   font-weight: 100;
+// }
 
 #error_explanation {
   width: 450px;
@@ -59,7 +132,7 @@ div {
     font-size: 12px;
     margin-bottom: 0px;
     background-color: #f2dede;
-    color: #333;
+    color: $blackish;
   }
 
   ul li {

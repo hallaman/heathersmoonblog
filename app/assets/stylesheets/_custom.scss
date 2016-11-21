@@ -3,13 +3,13 @@ $notification-warning: #fcf8e3;
 $notification-alert: #f2dede;          
 
 %notification {
-  border-radius: 10px;
+  border-radius: 5px;
   display: block;
   font-size: 1em;
   padding: 2em;
-  margin: 1em ;
+  margin: 1em;
   width: 100%;
-  text-align: center;
+  text-align: left;
   color: #333;
 
   animation: fadein 2s;
@@ -38,4 +38,26 @@ $notification-alert: #f2dede;
 
 .alert-notice {
     background-color: $notification-warning;
+}
+
+.navbar-default {
+  background-color: #fff;
+  border: none;
+
+  .moon_guide_title {
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.navbar-bottom {
+  height: 205px;
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0px;
+  .container-fluid {
+    padding: 0;
+  }
 }

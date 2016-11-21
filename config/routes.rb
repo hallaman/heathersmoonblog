@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   controllers: { sessions: 'sessions', registrations: "registrations" }
 
   devise_scope :member do
+    get 'login', to: 'devise/sessions#new'
     get 'logout', to: 'devise/sessions#destroy'
+    get 'join', to: 'devise/registrations#new'
   end
 
   get 'issues/index'
@@ -42,7 +44,9 @@ Rails.application.routes.draw do
   }
 
   devise_scope :admins do
+    get 'admin', to: 'devise/sessions#new'
     get 'logout_admin', to: 'devise/sessions#destroy'
+    get 'create_admin', to: 'devise/registrations#new'
   end
 
   
