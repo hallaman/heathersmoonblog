@@ -14,4 +14,12 @@ class MoonVibeGuideController < ApplicationController
   	@issue = Issue.find_by_id(params[:id])
   end
 
+  def reading
+    @podcast = Podcast.find_by_id(params[:id])
+  end
+
+  def view_reading
+    @reading = PodcastDetail.find_by_id(params[:id])
+  end
+
 end

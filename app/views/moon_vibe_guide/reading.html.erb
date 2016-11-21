@@ -1,0 +1,19 @@
+<h1><%= @podcast.title %></h1>
+
+<%= image_tag @podcast.main_image.url(:display) %>
+
+<%= @podcast.title %>
+
+<% @podcast.podcast_details.each do |reading| %>
+	<% if @podcast.podcast_details.count == 1 %>
+		<p> <%= link_to "Click here to listen", reading.link, target: "_blank" %></p>
+	<% else %> 
+		<% if reading.entry.blank? %>
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				<%= link_to reading.title, reading.link %></div>
+		<% else %>
+			<div class="col-xs-4 col-sm-3 col-md-2">
+				<%= link_to reading.title, moonvibeguide_view_reading_path(reading) %></div>
+		<% end %>
+	<% end %>
+<% end %>

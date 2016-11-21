@@ -17,20 +17,22 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  get 'moon_vibe_guide/index'
-  get 'moon_vibe_guide/issues'
+  # get 'moon_vibe_guide/index'
+  # get 'moon_vibe_guide/issues'
 
   match "/moonvibeguide", to: "moon_vibe_guide#index", :via => 'get'
   match "/moonvibeguide/issues", to: "moon_vibe_guide#issues", :via => 'get'
   match "/moonvibeguide/issue/:id", to: "moon_vibe_guide#issue", :via => 'get', :as => 'moonvibeguide_issue'
+  match "/moonvibeguide/reading/:id", to: "moon_vibe_guide#reading", :via => 'get', :as => 'moonvibeguide_reading'
+  match "/moonvibeguide/view_reading/:id", to: "moon_vibe_guide#view_reading", :via => 'get', :as => 'moonvibeguide_view_reading'
 
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }
 
   devise_scope :member do
-    get 'login', to: 'devise/sessions#new'
-    get 'logout', to: 'devise/sessions#destroy'
-    get 'join', to: 'devise/registrations#new'
+    get 'login', to: 'members/sessions#new'
+    get 'logout', to: 'members/sessions#destroy'
+    get 'join', to: 'members/registrations#new'
   end
 
   get 'issues/index'
@@ -45,7 +47,6 @@ Rails.application.routes.draw do
   devise_scope :admin do
     get 'admin', to: 'admins/sessions#new'
     get 'logout_admin', to: 'admins/sessions#destroy'
-    get 'create_admin', to: 'admins/registrations#new'
   end
 
   

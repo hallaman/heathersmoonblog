@@ -24,11 +24,10 @@
 	<p>PODCASTS &amp; READINGS</p>
 	<% @podcasts.each do |podcast| %>
 		<div class="list_item">
-			<%= link_to image_tag(podcast.main_image.url(:thumb), :alt => podcast.title, :class => "issue-img"), moonvibeguide_issue_path(podcast) %>
-			<p>Podcast</p>
+			<%= link_to image_tag(podcast.main_image.url(:thumb), :alt => podcast.title, :class => "issue-img"), moonvibeguide_reading_path(podcast) %>
 			<h3><%= podcast.title %></h3>
 			<p><%= podcast.description %></p>
-			<%= link_to "Read Now", moonvibeguide_issue_path(podcast), class: 'btn btn-gold' %>
+			<%= link_to "Read Now", moonvibeguide_reading_path(podcast), class: 'btn btn-gold' %>
 		</div>
 	<% end %>
 </div>

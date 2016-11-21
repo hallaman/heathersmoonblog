@@ -3,14 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-	nav = $('#guide_navigation')
 	window.onscroll = ->
 		scrollTop = $(window).scrollTop()
 		console.log scrollTop
 		if scrollTop > 360
-			nav.addClass 'fix-nav'
+			$('#guide_navigation').addClass 'fix-nav'
 		else
-			nav.removeClass 'fix-nav'
+			$('#guide_navigation').removeClass 'fix-nav'
 		return
 	return
 

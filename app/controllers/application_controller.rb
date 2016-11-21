@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when :member, Member
-      moon_vibe_guide_issues_path
+      moonvibeguide_issues_path
     when :admin, Admin
       issues_path
     else
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 	def after_sign_out_path_for(resource)
     case resource
     when :member, Member
-      moon_vibe_guide_index_path
+      moonvibeguide_path
     when :admin, Admin
       new_admin_session_path
     else
