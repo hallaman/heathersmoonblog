@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118004528) do
+ActiveRecord::Schema.define(version: 20161121171723) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20161118004528) do
     t.string   "title"
     t.binary   "image"
     t.string   "link"
-    t.boolean  "reading"
     t.integer  "podcast_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -110,6 +109,7 @@ ActiveRecord::Schema.define(version: 20161118004528) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "entry"
   end
 
   create_table "podcasts", force: :cascade do |t|

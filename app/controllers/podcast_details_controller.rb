@@ -1,5 +1,6 @@
 class PodcastDetailsController < ApplicationController
   before_action :set_podcast_detail, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
   # GET /podcast_details
   # GET /podcast_details.json
@@ -69,6 +70,6 @@ class PodcastDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def podcast_detail_params
-      params.require(:podcast_detail).permit(:title, :image, :link, :reading, :podcast_id)
+      params.require(:podcast_detail).permit(:title, :image, :link, :podcast_id)
     end
 end

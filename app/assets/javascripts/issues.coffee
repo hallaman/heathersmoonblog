@@ -6,7 +6,8 @@ $(document).ready ->
 	nav = $('#guide_navigation')
 	window.onscroll = ->
 		scrollTop = $(window).scrollTop()
-		if scrollTop > 350
+		console.log scrollTop
+		if scrollTop > 360
 			nav.addClass 'fix-nav'
 		else
 			nav.removeClass 'fix-nav'

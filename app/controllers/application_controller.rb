@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     when :member, Member
       moon_vibe_guide_index_path
     when :admin, Admin
-      issues_path
+      new_admin_session_path
     else
       super
     end

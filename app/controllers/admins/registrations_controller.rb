@@ -1,6 +1,11 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
+  before_action :authorize_admin
+
+  def authorize_admin
+    redirect_to root_path, alert: 'Access Denied' unless admin_signed_in?
+  end
 
   # GET /resource/sign_up
   # def new

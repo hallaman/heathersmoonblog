@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Readings</h1>
 
 <%= link_to 'New Reading', new_podcast_path, class: 'btn btn-default' %>
@@ -18,7 +16,7 @@
         <td><%= podcast.title %></td>
         <td><%= link_to 'Show', podcast %></td>
         <td><%= link_to 'Edit', edit_podcast_path(podcast) %></td>
-        <td><%= link_to 'Destroy', podcast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', podcast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

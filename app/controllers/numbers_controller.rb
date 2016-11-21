@@ -29,7 +29,7 @@ class NumbersController < ApplicationController
 
     respond_to do |format|
       if @number.save
-        format.html { redirect_to @number, notice: 'Number was successfully created.' }
+        format.html { redirect_to numbers_path, notice: 'Number was successfully created.' }
         format.json { render :show, status: :created, location: @number }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class NumbersController < ApplicationController
   def update
     respond_to do |format|
       if @number.update(number_params)
-        format.html { redirect_to @number, notice: 'Number was successfully updated.' }
+        format.html { redirect_to numbers_path, notice: 'Number was successfully updated.' }
         format.json { render :show, status: :ok, location: @number }
       else
         format.html { render :edit }

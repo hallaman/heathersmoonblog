@@ -21,11 +21,12 @@
     <%= image_tag @podcast.main_image.url(:thumb) %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, cols: 80, rows: 8 %>
+    <%# f.label :description %><br>
+    <%# f.text_area :description, cols: 80, rows: 8 %>
   </div>
   <table class="table">
-    <%= f.label "Podcast Links" %><br>
+    <%= f.label "Readings" %><br>
+    <small>Enter all 12 for Astrology readings, or just one for a general reading.</small>
     <%= f.fields_for :podcast_details do |podcasts_form| %>
       <tr>
         <td>
@@ -35,27 +36,34 @@
 
  
         <td>
-          <%= podcasts_form.label "Link" %>
+          <%= podcasts_form.label "Podcast Link" %>
           <%= podcasts_form.text_field :link %>
         </td>
 
         <td>
-          <%= podcasts_form.label "Link" %>
+          <%= podcasts_form.label "Image" %>
           <%= podcasts_form.file_field :image %>
         </td>
-        <% if @podcast.podcast_details.exists? %>
+        <%# if podcasts_form.image.exists? %>
         <td>
-           <%= image_tag @podcast.podcast_detail.image.url(:thumb) %>
+          <%= image_tag podcasts_form.object.image.url(:thumb) if podcasts_form.object.image?  %>
+
         </td>
-        <% end %>
+        <%# end %>
         <td>
           <%= podcasts_form.label "DELETE" %>
           <%= podcasts_form.check_box :_destroy%>
         </td>
       </tr>
+      <tr>
+        <td colspan="4">
+          <%= podcasts_form.label "Text Entry" %><br />
+          <%= podcasts_form.text_area :entry, cols: 88, rows: 8 %>
+        </td>
+      </tr>
     <% end %>
   </table>
   <div class="actions">
-    <%= f.submit :class => 'btn btn-default'%>
+    <%= f.submit "Save", :class => 'btn btn-default'%>
   </div>
 <% end %>

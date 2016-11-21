@@ -40,7 +40,7 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
+        format.html { redirect_to issues_path, notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }
       else
         5.times { @issue.sidebars.build }
@@ -60,7 +60,7 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.update(issue_params)
-        format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
+        format.html { redirect_to issues_path, notice: 'Issue was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue }
       else
         5.times { @issue.sidebars.build }

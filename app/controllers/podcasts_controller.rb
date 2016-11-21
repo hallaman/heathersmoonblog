@@ -31,7 +31,7 @@ class PodcastsController < ApplicationController
 
     respond_to do |format|
       if @podcast.save
-        format.html { redirect_to @podcast, notice: 'Podcast was successfully created.' }
+        format.html { redirect_to podcasts_path, notice: 'Reading was successfully created.' }
         format.json { render :show, status: :created, location: @podcast }
       else
         15.times { @podcast.podcast_details.build }
@@ -47,7 +47,7 @@ class PodcastsController < ApplicationController
   def update
     respond_to do |format|
       if @podcast.update(podcast_params)
-        format.html { redirect_to @podcast, notice: 'Podcast was successfully updated.' }
+        format.html { redirect_to podcasts_path, notice: 'Reading was successfully updated.' }
         format.json { render :show, status: :ok, location: @podcast }
       else
         15.times { @podcast.podcast_details.build }
@@ -63,7 +63,7 @@ class PodcastsController < ApplicationController
   def destroy
     @podcast.destroy
     respond_to do |format|
-      format.html { redirect_to podcasts_url, notice: 'Podcast was successfully destroyed.' }
+      format.html { redirect_to podcasts_url, notice: 'Reading was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,7 +77,7 @@ class PodcastsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def podcast_params
       params.require(:podcast).permit(:title, :main_image, :description,
-                podcast_details_attributes: [:id, :title, :link, :image, :_destroy] 
+                podcast_details_attributes: [:id, :title, :link, :image, :entry, :_destroy] 
       )
     end
 end
