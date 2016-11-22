@@ -1,6 +1,8 @@
 class MoonVibeGuideController < ApplicationController
 	before_action :authenticate_member!, except: [:index]
 
+  layout 'moon_vibe_guide'
+
   def index
   end
 

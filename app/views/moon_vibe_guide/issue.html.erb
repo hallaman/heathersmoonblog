@@ -5,6 +5,10 @@
   Welcome Monday Tuesday Wednesday Thursday Friday Saturday Sunday
 </div>
 
+<% @issue.sidebars.each do |item| %>
+	<%= link_to item.title, item.link %>
+<% end %>
+
 
 <main>
   <p><%= @issue.issue_number %></p>
@@ -20,9 +24,7 @@
 		<p><%= @issue.monday.moon_sign %></p>
 	<% end %>
 
-	<% @issue.sidebars.each do |item| %>
-		<%= link_to item.title, item.link %>
-	<% end %>
+
 
 	<p><%= @issue.issue_number %></p>
 	<p><%= @issue.week %></p>
@@ -37,9 +39,6 @@
 		<p><%= @issue.monday.moon_sign %></p>
 	<% end %>
 
-	<% @issue.sidebars.each do |item| %>
-		<%= link_to item.title, item.link %>
-	<% end %>
 
 	<p><%= @issue.issue_number %></p>
 	<p><%= @issue.week %></p>
@@ -54,9 +53,6 @@
 		<p><%= @issue.monday.moon_sign %></p>
 	<% end %>
 
-	<% @issue.sidebars.each do |item| %>
-		<%= link_to item.title, item.link %>
-	<% end %>
 
 	<p><%= @issue.issue_number %></p>
 	<p><%= @issue.week %></p>

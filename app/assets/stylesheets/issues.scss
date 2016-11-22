@@ -2,10 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.current_issue {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 0 60px 0;
+  padding: 30px 15px;
+
+  .line {
+    border-bottom: 1px solid $white;
+    width: 88px;
+    display: block;
+    margin: 10px 0;
+  }
+}
 
 #guide_navigation {
   position: relative;
-  
 }
 
 .fix-nav {
@@ -13,23 +25,12 @@
   top: 10px;
 }
 
-.top {
-  height: 250px;
-  padding-top: 40px;
-}
-.hero {
-  width: 200px;
-  height: 100px;
-  background: #ccc;
-  margin: 0 auto;
+.column {
+  margin: 0px auto;
+  max-width: 360px;
 }
 
-main {
-  padding: 0 20px;
-  div {
-    width: 125px;
-    height: 80px;
-    background: #ccc;
-    margin: 0 0 20px 0;
-  }
+.issue-img {
+  width: 100%;
+  margin: auto;
 }

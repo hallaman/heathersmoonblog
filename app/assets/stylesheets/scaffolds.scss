@@ -11,14 +11,18 @@ html {
 body {
   background-color: $white;
   color: $blackish;
-  font-size: 13px;
-  line-height: 18px;
-  margin-bottom: 0 auto;
+  font-size: 1em;
+  letter-spacing: .1em;
+  line-height: 1.2em;
+  margin: 0 auto 260px auto;
 
   font-family: 'Work Sans', sans-serif;
 
   > .container {
-    margin-bottom: 250px;
+  }
+
+  > .container-fluid {
+    padding: 0;
   }
 }
 
@@ -65,8 +69,9 @@ div {
 
 }
 
-.current_issue {
-  margin-bottom: 60px;
+.bold-gold {
+  text-transform: uppercase;
+  color: $gold;
 }
 
 .list_item {

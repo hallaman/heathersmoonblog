@@ -1,3 +1,5 @@
+/* modifications to bootstrap */
+
 $notification-confirm: #d0e9c6;  
 $notification-warning: #fcf8e3;                 
 $notification-alert: #f2dede;          
@@ -40,6 +42,10 @@ $notification-alert: #f2dede;
     background-color: $notification-warning;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
 .navbar-default {
   background-color: #fff;
   border: none;
@@ -52,7 +58,6 @@ $notification-alert: #f2dede;
 }
 
 .navbar-bottom {
-  height: 205px;
   position: absolute;
   bottom: 0;
   padding: 0;
