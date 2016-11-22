@@ -38,7 +38,8 @@ class Issue < ActiveRecord::Base
 
   validates_associated :sidebars, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday
 
-  validates :issue_number, presence: true
+  validates :issue_number, presence: true, uniqueness: { 
+    message: "already being used" }
   validates :week, presence: true
   validates :main_image, presence: true
   validates :moon_phase, presence: true
