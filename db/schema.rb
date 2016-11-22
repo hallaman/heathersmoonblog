@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121171723) do
+ActiveRecord::Schema.define(version: 20161122195912) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -143,9 +143,10 @@ ActiveRecord::Schema.define(version: 20161121171723) do
     t.string   "link"
     t.string   "title"
     t.binary   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "issue_id"
+    t.integer  "podcast_link_id"
   end
 
   create_table "sundays", force: :cascade do |t|

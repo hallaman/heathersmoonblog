@@ -91,7 +91,7 @@ class IssuesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
       params.require(:issue).permit(:issue_number, :week, :main_image, :moon_phase, :welcome, 
-        sidebars_attributes: [:id, :title, :link, :_destroy], 
+        sidebars_attributes: [:id, :title, :link, :podcast_link_id, :_destroy], 
         monday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
         tuesday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
         wednesday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],

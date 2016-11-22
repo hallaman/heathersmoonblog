@@ -45,8 +45,15 @@
         </td>
  
         <td>
-          <%= sidebars_form.label "Link" %>
+          <%= sidebars_form.label "Link outside" %>
           <%= sidebars_form.text_field :link %>
+          <span - OR - </span>
+        </td>
+        <td>
+          <%= sidebars_form.label "Link in site" %>
+          <%= sidebars_form.select :podcast_link_id, 
+              options_for_select(Podcast.all.collect {|p| [ p.title, p.id ]}, {:selected => sidebars_form.object.podcast_link_id}), :include_blank => true
+          %>
         </td>
         <td>
           <%= sidebars_form.label "DELETE" %>
