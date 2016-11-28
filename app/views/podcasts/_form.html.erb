@@ -41,12 +41,12 @@
         </td>
 
         <td>
-          <%= podcasts_form.label "Image" %>
-          <%= podcasts_form.file_field :image %>
+          <%# podcasts_form.label "Image" %>
+          <%# podcasts_form.file_field :image %>
         </td>
         <%# if podcasts_form.image.exists? %>
         <td>
-          <%= image_tag podcasts_form.object.image.url(:thumb) if podcasts_form.object.image?  %>
+          <%# image_tag podcasts_form.object.image.url(:thumb) if podcasts_form.object.image?  %>
 
         </td>
         <%# end %>
@@ -56,7 +56,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="4">
+        <td colspan="5">
           <%= podcasts_form.label "Text Entry" %><br />
           <%= podcasts_form.text_area :entry, cols: 88, rows: 8 %>
         </td>

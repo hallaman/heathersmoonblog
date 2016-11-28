@@ -9,7 +9,7 @@
 	<% if item.link.blank? %>
 		<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
 	<% else %>
-		<%= link_to item.title, item.link %>
+		<%= link_to item.title, item.link, target: '_blank' %>
 	<% end %>
 <% end %>
 

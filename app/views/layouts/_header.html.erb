@@ -7,7 +7,11 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="moon_guide_title">Moon Vibe Guide</li>
+        <% if member_signed_in? %>
+          <li><%= link_to "Moon Vibe Guide", moonvibeguide_issues_path, class: 'bold' %></li>
+        <% else %>
+          <li><%= link_to "Moon Vibe Guide", moonvibeguide_path, class: 'bold' %></li>
+        <% end %>
 
         <% if admin_signed_in? %>
         <li class="dropdown">
