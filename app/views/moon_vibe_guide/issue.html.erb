@@ -1,20 +1,41 @@
-<%= image_tag @issue.main_image.url(:display) %>
-
+<div class="col-xs-12 current_issue" style="background-image: url('<%= @issue.main_image.url %>');">
+	<div class="container">
+		<div class="col-xs-12">
+			<div class="pull-right">
+				<p>MOON VIBE GUIDE</p>
+				<p>Issue <%= @issue.issue_number %></p>
+				<h1><%= @issue.week %></h1>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div id="guide_navigation">
   Welcome Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+  <div class="col-xs-12 visible-xs">
+		<% @issue.sidebars.each do |item| %>
+			<% if item.link.blank? %>
+				<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
+			<% else %>
+				<%= link_to item.title, item.link, target: '_blank' %>
+			<% end %>
+		<% end %>
+	</div>
 </div>
 
-<% @issue.sidebars.each do |item| %>
-	<% if item.link.blank? %>
-		<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
-	<% else %>
-		<%= link_to item.title, item.link, target: '_blank' %>
+
+<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-3">
+	<% @issue.sidebars.each do |item| %>
+		<% if item.link.blank? %>
+			<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
+		<% else %>
+			<%= link_to item.title, item.link, target: '_blank' %>
+		<% end %>
+		<br />
 	<% end %>
-<% end %>
+</div>
 
-
-<main>
+<div class="col-xs-12 col-sm-9 pull-right">
   <p><%= @issue.issue_number %></p>
 	<p><%= @issue.week %></p>
 	<p></p>
@@ -108,7 +129,8 @@
 	<% @issue.sidebars.each do |item| %>
 		<%= link_to item.title, item.link %>
 	<% end %>
-</main>
+
+</div>
   
 
 

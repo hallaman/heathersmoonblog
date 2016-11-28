@@ -8,8 +8,10 @@ $(document).ready ->
 		console.log scrollTop
 		if scrollTop > 360
 			$('#guide_navigation').addClass 'fix-nav'
+			$('#sidebar').addClass 'fix-left'
 		else
 			$('#guide_navigation').removeClass 'fix-nav'
+			$('#sidebar').removeClass 'fix-left'
 		return
 	return
 
