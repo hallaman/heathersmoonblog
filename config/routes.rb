@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :media
   resources :podcast_details
   resources :podcasts
   resources :sundays
@@ -16,9 +17,6 @@ Rails.application.routes.draw do
   root :to => 'moon_vibe_guide#index'
 
   get 'welcome/index'
-
-  # get 'moon_vibe_guide/index'
-  # get 'moon_vibe_guide/issues'
 
   match "/moonvibeguide", to: "moon_vibe_guide#index", :via => 'get'
   match "/moonvibeguide/issues", to: "moon_vibe_guide#issues", :via => 'get'
