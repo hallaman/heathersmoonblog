@@ -46,7 +46,12 @@
 				</div>
 				<div class="col-xs-6 col-sm-4 col-md-6 info">
 					<h3><%= podcast.title %></h3>
-					<%= link_to "Read Now", moonvibeguide_reading_path(podcast), class: 'btn btn-gold' %>
+					<% if podcast.podcast_details.count == 1 %>
+						<%= link_to "Read Now", podcast.podcast_details.find(1).link, class: 'btn btn-gold', target: '_blank' %>
+					<% else %>
+						<%= link_to "Read Now", moonvibeguide_reading_path(podcast), class: 'btn btn-gold' %>
+					<% end %>
+					
 				</div>
 			</div>
 		<% end %>
