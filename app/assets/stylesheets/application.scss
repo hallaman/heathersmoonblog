@@ -10,10 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require rails_bootstrap_forms
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+@import "rails_bootstrap_forms";
 
 @import "_animations.scss";
 @import "_custom.scss";
@@ -24,3 +30,5 @@
 
 @import url('https://fonts.googleapis.com/css?family=Quattrocento:100,400,500,800');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:100,400,500,800');
+
+@import "summernote";

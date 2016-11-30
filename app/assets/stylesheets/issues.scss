@@ -1,6 +1,7 @@
 // Place all the styles related to the Issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$white: "#ffffff";
 
 .current_issue {
   background-repeat: no-repeat;
@@ -62,7 +63,7 @@
 
 .list_item {
   padding: 30px 0;
-  height: 300px;
+  height: 100%;
   overflow: hidden;
 
   h3 {
@@ -79,7 +80,7 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
-    height: 100%;
+    height: 200px;
 
     a {
       display: inline-block;
@@ -100,6 +101,12 @@
       }
     }
   }
+}
+
+@media (max-width: 414px) {
+  .list_item .img-holder {
+    padding-bottom: 15px;
+  } 
 }
 
 

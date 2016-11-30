@@ -1,4 +1,4 @@
-<%= form_for @issue, html: { multipart: true } do |f| %>
+<%= simple_form_for @issue, html: { multipart: true } do |f| %>
   <% if @issue.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
@@ -31,8 +31,7 @@
     %>
   </div>
   <div class="field">
-    <%= f.label "Welcome Text" %><br>
-    <%= f.text_area :welcome, cols: 80, rows: 8 %>
+    <%= f.input :welcome, as: :summernote %>  
   </div>
   <div class="field">
     <%= f.label "Sidebar" %><br>

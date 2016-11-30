@@ -36,11 +36,8 @@
 </div>
 
 <div class="col-xs-12 col-sm-9 pull-right">
-  <p><%= @issue.issue_number %></p>
-	<p><%= @issue.week %></p>
-	<p></p>
-	<p><%= @issue.moon_phase %></p>
-	<p><%= @issue.welcome %></p>
+  <h1>Hello my loves!</h1>
+	<p><%= @issue.welcome.html_safe %></p>
 	<p>Monday</p>
 	<% if !@issue.monday.nil? %>
 		<p><%= @issue.monday.date %></p>
@@ -51,84 +48,6 @@
 
 
 
-	<p><%= @issue.issue_number %></p>
-	<p><%= @issue.week %></p>
-	<p></p>
-	<p><%= @issue.moon_phase %></p>
-	<p><%= @issue.welcome %></p>
-	<p>Monday</p>
-	<% if !@issue.monday.nil? %>
-		<p><%= @issue.monday.date %></p>
-		<p><%= @issue.monday.entry %></p>
-		<p><%= @issue.monday.affirmation %></p>
-		<p><%= @issue.monday.moon_sign %></p>
-	<% end %>
-
-
-	<p><%= @issue.issue_number %></p>
-	<p><%= @issue.week %></p>
-	<p></p>
-	<p><%= @issue.moon_phase %></p>
-	<p><%= @issue.welcome %></p>
-	<p>Monday</p>
-	<% if !@issue.monday.nil? %>
-		<p><%= @issue.monday.date %></p>
-		<p><%= @issue.monday.entry %></p>
-		<p><%= @issue.monday.affirmation %></p>
-		<p><%= @issue.monday.moon_sign %></p>
-	<% end %>
-
-
-	<p><%= @issue.issue_number %></p>
-	<p><%= @issue.week %></p>
-	<p></p>
-	<p><%= @issue.moon_phase %></p>
-	<p><%= @issue.welcome %></p>
-	<p>Monday</p>
-	<% if !@issue.monday.nil? %>
-		<p><%= @issue.monday.date %></p>
-		<p><%= @issue.monday.entry %></p>
-		<p><%= @issue.monday.affirmation %></p>
-		<p><%= @issue.monday.moon_sign %></p>
-	<% end %>
-
-	<% @issue.sidebars.each do |item| %>
-		<%= link_to item.title, item.link %>
-	<% end %>
-
-	<p><%= @issue.issue_number %></p>
-	<p><%= @issue.week %></p>
-	<p></p>
-	<p><%= @issue.moon_phase %></p>
-	<p><%= @issue.welcome %></p>
-	<p>Monday</p>
-	<% if !@issue.monday.nil? %>
-		<p><%= @issue.monday.date %></p>
-		<p><%= @issue.monday.entry %></p>
-		<p><%= @issue.monday.affirmation %></p>
-		<p><%= @issue.monday.moon_sign %></p>
-	<% end %>
-
-	<% @issue.sidebars.each do |item| %>
-		<%= link_to item.title, item.link %>
-	<% end %>
-
-	<p><%= @issue.issue_number %></p>
-	<p><%= @issue.week %></p>
-	<p></p>
-	<p><%= @issue.moon_phase %></p>
-	<p><%= @issue.welcome %></p>
-	<p>Monday</p>
-	<% if !@issue.monday.nil? %>
-		<p><%= @issue.monday.date %></p>
-		<p><%= @issue.monday.entry %></p>
-		<p><%= @issue.monday.affirmation %></p>
-		<p><%= @issue.monday.moon_sign %></p>
-	<% end %>
-
-	<% @issue.sidebars.each do |item| %>
-		<%= link_to item.title, item.link %>
-	<% end %>
 
 </div>
   

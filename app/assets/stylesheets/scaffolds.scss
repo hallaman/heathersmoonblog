@@ -45,6 +45,14 @@ a {
   }
 }
 
+ul {
+  padding: 0;
+
+  li {
+    padding-left: 20px;
+  }
+}
+
 .bold, b {
   font-weight: 500;
 }
@@ -60,16 +68,25 @@ div {
   position: relative;
 }
 
+.logo img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+}
+
 .btn-gold {
   color: $eggshell;
   background-color: $gold;
   border-color: $gold;
-  padding: 10px 60px;
+  padding: 10px 0;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   letter-spacing: .1em;
   border-radius: 3px;
   text-transform: uppercase;
+  max-width: 200px;
+  width: 100%;
 }
 .btn-gold:hover {
   color: $blackish;

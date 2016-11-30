@@ -2,7 +2,7 @@
 
 <p>
   <strong>Link:</strong>
-  <%= @medium.link %>
+  <%= "http://www.moonvibeguide.com" + image_path(@medium.file.url) %>
 </p>
 
 <p>
@@ -12,7 +12,7 @@
 
 <p>
   <strong>File:</strong>
-  <%= @medium.file %>
+  <%= image_tag(@medium.file.url(:thumb)) %>
 </p>
 
 <%= link_to 'Edit', edit_medium_path(@medium) %> |
