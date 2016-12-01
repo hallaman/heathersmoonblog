@@ -11,32 +11,59 @@
 </div>
 
 <div class="container">
-	<div id="guide_navigation">
-	  Welcome Monday Tuesday Wednesday Thursday Friday Saturday Sunday
-	  <div class="col-xs-12 visible-xs">
-			<% @issue.sidebars.each do |item| %>
-				<% if item.link.blank? %>
-					<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
-				<% else %>
-					<%= link_to item.title, item.link, target: '_blank' %>
-				<% end %>
-			<% end %>
-		</div>
-	</div>
+	<nav id="guide_navigation" class="navbar navbar-default navbar-static-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	        </div>
 
-	<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-4 col-md-3 col-lg-2 pull-left">
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div class="col-xs-12 collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	            <ul class="nav navbar-nav">
+	                <li><a href="#monday">Monday</a></li>
+	                <li><a href="#tuesday">Tuesday</a></li>
+	                <li><a href="#wednesday">Wednesday</a></li>
+	                <li><a href="#thursday">Thursday</a></li>
+	                <li><a href="#friday">Friday</a></li>
+	                <li><a href="#saturday">Saturday</a></li>
+	                <li><a href="#sunday">Sunday</a></li>
+	                <li role="separator" class="divider"></li>
+	                <span class="visible-xs">
+		                <% @issue.sidebars.each do |item| %>
+											<% if item.link.blank? %>
+												<li><%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %></li>
+											<% else %>
+												<li><%= link_to item.title, item.link, target: '_blank' %></li>
+											<% end %>
+										<% end %>
+									</span>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+
+	<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-3 col-md-3 col-lg-2 col-xl-1 pull-left">
 		<% @issue.sidebars.each do |item| %>
 			
 			<% if item.link.blank? %>
-					<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id), class: 'moon-btn pull-left' %>
+					<%= link_to moonvibeguide_reading_path(item.podcast_link_id), class: 'moon-btn pull-left' do %>
+						<span><%= item.title %></span>
+					<% end %>
 			<% else %>
-				<%= link_to item.title, item.link, target: '_blank', class: 'moon-btn pull-left' %>
+				<%= link_to item.link, target: '_blank', class: 'moon-btn pull-left' do %>
+					<span><%= item.title %></span>
+				<% end %>
 			<% end %>
 
 		<% end %>
 	</div>
 
-	<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 pull-right days">
+	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 col-xl-11 pull-right days">
 	  <h1>Hello my loves!</h1>
 		<p><%= @issue.welcome.html_safe %></p>
 		<p>Monday</p>

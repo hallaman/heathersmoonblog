@@ -29,7 +29,8 @@ class IssuesController < ApplicationController
   # GET /issues/1/edit
   def edit
     @issue = Issue.find(params[:id])
-    3.times { @issue.sidebars.build }
+    open = 3 - @issue.sidebars.count
+    open.times { @issue.sidebars.build }
     build_form
   end
 
@@ -63,7 +64,8 @@ class IssuesController < ApplicationController
         format.html { redirect_to issues_path, notice: 'Issue was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue }
       else
-        3.times { @issue.sidebars.build }
+        open = 3 - @issue.sidebars.count
+        open.times { @issue.sidebars.build }
         build_form
         
         format.html { render :edit }

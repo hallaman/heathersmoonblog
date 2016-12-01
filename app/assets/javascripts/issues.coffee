@@ -3,15 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-	top = 260
+	top = 340
 	$('#sidebar').css marginBottom: $('#sidebar').height()
 	window.onscroll = ->
 		if $(window).scrollTop() > top
 			$('#guide_navigation').addClass 'fix-nav'
-			$('#sidebar').css top: 35
+			$('#sidebar').css top: 25
 		else
 			$('#guide_navigation').removeClass 'fix-nav'
-			$('#sidebar').css top: 335
+			$('#sidebar').css top: 325
 		return
 	return
 

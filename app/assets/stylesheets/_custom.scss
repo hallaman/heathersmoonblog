@@ -58,6 +58,8 @@ $notification-alert: #f2dede;
 }
 
 .navbar-bottom {
+  z-index: 1;
+
   position: absolute;
   bottom: 0;
   padding: 0;

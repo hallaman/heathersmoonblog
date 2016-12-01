@@ -63,13 +63,12 @@ $blackish: #333;
 
 #guide_navigation {
   position: relative;
-  background-color: $white;
-  height: 90px;
+  width: 100%;
 }
 
 .fix-nav {
   position: fixed !important;
-  top: 10px;
+  top: 0px;
   transition: all .5s;
 }
 
@@ -77,6 +76,7 @@ $blackish: #333;
   position: fixed !important;
   padding: 15px 0 0 0;
   transition: all .25s;
+  z-index: 999;
 }
 
 .moon-btn {
@@ -90,16 +90,28 @@ $blackish: #333;
   margin-bottom: 10px;
   text-decoration: none;
   cursor: pointer;
-  padding: 10px 66px;
+  padding: 10px;
   text-align: center;
   color: $blackish;
   font-weight: 600;
-  text-decoration: none;
   font-family: 'Quattrocento', serif;
   line-height: 1.4em;
+  font-size: 1.6em;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: capitalize;
+
+  span {
+    max-width: 80px;
+  }
+}
+
+.moon-btn:hover {
+  text-decoration: none;
+  color: $blackish;
+  opacity: .8;
+  transition: all .5s;
 }
 
 .column {
@@ -151,9 +163,15 @@ $blackish: #333;
 
 
 
-.days {
+.days p {
   font-family: 'Work Sans', sans-serif;
-  line-height: 1.3em;
+  line-height: 1.6em;
+}
+
+@media (min-width: 414px) {
+  .days {
+    padding-left: 50px;
+  }
 }
 
 @media (max-width: 414px) {
@@ -164,6 +182,7 @@ $blackish: #333;
   .current_issue h1 {
     font-size: 3em;
   }
+
 }
 
 
