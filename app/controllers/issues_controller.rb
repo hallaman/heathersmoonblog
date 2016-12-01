@@ -22,14 +22,14 @@ class IssuesController < ApplicationController
   # GET /issues/new
   def new
     @issue = Issue.new
-    5.times { @issue.sidebars.build }
+    3.times { @issue.sidebars.build }
     build_form
   end
 
   # GET /issues/1/edit
   def edit
     @issue = Issue.find(params[:id])
-    5.times { @issue.sidebars.build }
+    3.times { @issue.sidebars.build }
     build_form
   end
 
@@ -43,7 +43,7 @@ class IssuesController < ApplicationController
         format.html { redirect_to issues_path, notice: 'Issue was successfully created.' }
         format.json { render :show, status: :created, location: @issue }
       else
-        5.times { @issue.sidebars.build }
+        3.times { @issue.sidebars.build }
         build_form
 
         format.html { render :new }
@@ -63,7 +63,7 @@ class IssuesController < ApplicationController
         format.html { redirect_to issues_path, notice: 'Issue was successfully updated.' }
         format.json { render :show, status: :ok, location: @issue }
       else
-        5.times { @issue.sidebars.build }
+        3.times { @issue.sidebars.build }
         build_form
         
         format.html { render :edit }
