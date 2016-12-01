@@ -1,54 +1,129 @@
-<div class="col-xs-12 current_issue" style="background-image: url('<%= @issue.main_image.url %>');">
-	<div class="container">
+<div class="col-xs-12 current_issue right-align" style="background-image: url('<%= @issue.main_image.url %>');">
+	<div class="vert-center container">
 		<div class="col-xs-12">
 			<div class="pull-right">
-				<p>MOON VIBE GUIDE</p>
-				<p>Issue <%= @issue.issue_number %></p>
+				<h4>MOON VIBE GUIDE</h4>
+				<p class="bold-gold">Issue <%= @issue.issue_number %></p>
 				<h1><%= @issue.week %></h1>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div id="guide_navigation">
-  Welcome Monday Tuesday Wednesday Thursday Friday Saturday Sunday
-  <div class="col-xs-12 visible-xs">
-		<% @issue.sidebars.each do |item| %>
-			<% if item.link.blank? %>
-				<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
-			<% else %>
-				<%= link_to item.title, item.link, target: '_blank' %>
+<div class="container">
+	<div id="guide_navigation">
+	  Welcome Monday Tuesday Wednesday Thursday Friday Saturday Sunday
+	  <div class="col-xs-12 visible-xs">
+			<% @issue.sidebars.each do |item| %>
+				<% if item.link.blank? %>
+					<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
+				<% else %>
+					<%= link_to item.title, item.link, target: '_blank' %>
+				<% end %>
 			<% end %>
+		</div>
+	</div>
+
+	<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-4 col-md-3 col-lg-2 pull-left">
+		<% @issue.sidebars.each do |item| %>
+			
+			<% if item.link.blank? %>
+					<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id), class: 'moon-btn pull-left' %>
+			<% else %>
+				<%= link_to item.title, item.link, target: '_blank', class: 'moon-btn pull-left' %>
+			<% end %>
+
 		<% end %>
 	</div>
-</div>
 
-
-<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-3">
-	<% @issue.sidebars.each do |item| %>
-		<% if item.link.blank? %>
-			<%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %>
-		<% else %>
-			<%= link_to item.title, item.link, target: '_blank' %>
+	<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 pull-right days">
+	  <h1>Hello my loves!</h1>
+		<p><%= @issue.welcome.html_safe %></p>
+		<p>Monday</p>
+		<% if !@issue.monday.nil? %>
+			<p><%= @issue.monday.date %></p>
+			<p><%= @issue.monday.entry.html_safe %></p>
+			<p><%= @issue.monday.affirmation.html_safe %></p>
+			<p><%= @issue.monday.moon_sign %></p>
+			<p><%= @issue.monday.theme %></p>
+			<p><%= @issue.monday.number_1 %></p>
+			<p><%= @issue.monday.number_2 %></p>
+			<p><%= @issue.monday.number_3 %></p>
 		<% end %>
-		<br />
-	<% end %>
-</div>
 
-<div class="col-xs-12 col-sm-9 pull-right">
-  <h1>Hello my loves!</h1>
-	<p><%= @issue.welcome.html_safe %></p>
-	<p>Monday</p>
-	<% if !@issue.monday.nil? %>
-		<p><%= @issue.monday.date %></p>
-		<p><%= @issue.monday.entry %></p>
-		<p><%= @issue.monday.affirmation %></p>
-		<p><%= @issue.monday.moon_sign %></p>
-	<% end %>
+		<p>Tuesday</p>
+		<% if !@issue.tuesday.nil? %>
+			<p><%= @issue.tuesday.date %></p>
+			<p><%= @issue.tuesday.entry.html_safe %></p>
+			<p><%= @issue.tuesday.affirmation.html_safe %></p>
+			<p><%= @issue.tuesday.moon_sign %></p>
+			<p><%= @issue.monday.theme %></p>
+			<p><%= @issue.monday.number_1 %></p>
+			<p><%= @issue.monday.number_2 %></p>
+			<p><%= @issue.monday.number_3 %></p>
+		<% end %>
 
+		<p>Wednesday</p>
+		<% if !@issue.wednesday.nil? %>
+			<p><%= @issue.wednesday.date %></p>
+			<p><%= @issue.wednesday.entry.html_safe %></p>
+			<p><%= @issue.wednesday.affirmation.html_safe %></p>
+			<p><%= @issue.wednesday.moon_sign %></p>
+			<p><%= @issue.wednesday.theme %></p>
+			<p><%= @issue.wednesday.number_1 %></p>
+			<p><%= @issue.wednesday.number_2 %></p>
+			<p><%= @issue.wednesday.number_3 %></p>
+		<% end %>
 
+		<p>Thursday</p>
+		<% if !@issue.thursday.nil? %>
+			<p><%= @issue.thursday.date %></p>
+			<p><%= @issue.thursday.entry.html_safe %></p>
+			<p><%= @issue.thursday.affirmation.html_safe %></p>
+			<p><%= @issue.thursday.moon_sign %></p>
+			<p><%= @issue.thursday.theme %></p>
+			<p><%= @issue.thursday.number_1 %></p>
+			<p><%= @issue.thursday.number_2 %></p>
+			<p><%= @issue.thursday.number_3 %></p>
+		<% end %>
 
+		<p>Friday</p>
+		<% if !@issue.friday.nil? %>
+			<p><%= @issue.friday.date %></p>
+			<p><%= @issue.friday.entry.html_safe %></p>
+			<p><%= @issue.friday.affirmation.html_safe %></p>
+			<p><%= @issue.friday.moon_sign %></p>
+			<p><%= @issue.friday.theme %></p>
+			<p><%= @issue.friday.number_1 %></p>
+			<p><%= @issue.friday.number_2 %></p>
+			<p><%= @issue.friday.number_3 %></p>
+		<% end %>
 
+		<p>Saturday</p>
+		<% if !@issue.saturday.nil? %>
+			<p><%= @issue.saturday.date %></p>
+			<p><%= @issue.saturday.entry.html_safe %></p>
+			<p><%= @issue.saturday.affirmation.html_safe %></p>
+			<p><%= @issue.saturday.moon_sign %></p>
+			<p><%= @issue.saturday.theme %></p>
+			<p><%= @issue.saturday.number_1 %></p>
+			<p><%= @issue.saturday.number_2 %></p>
+			<p><%= @issue.saturday.number_3 %></p>
+		<% end %>
+
+		<p>Sunday</p>
+		<% if !@issue.sunday.nil? %>
+			<p><%= @issue.sunday.date %></p>
+			<p><%= @issue.sunday.entry.html_safe %></p>
+			<p><%= @issue.sunday.affirmation.html_safe %></p>
+			<p><%= @issue.sunday.moon_sign %></p>
+			<p><%= @issue.sunday.theme %></p>
+			<p><%= @issue.sunday.number_1 %></p>
+			<p><%= @issue.sunday.number_2 %></p>
+			<p><%= @issue.sunday.number_3 %></p>
+		<% end %>
+
+	</div>
 </div>
   
 

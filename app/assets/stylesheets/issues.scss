@@ -1,15 +1,23 @@
 // Place all the styles related to the Issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$white: "#ffffff";
+$white: #ffffff;
+$blackish: #333;
 
 .current_issue {
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 0 60px 0;
+  margin: 0 0 30px 0;
   padding: 30px 15px;
   color: $white;
-  min-height: 300px;
+  height: 300px;
+
+  .vert-center {
+    min-height: 50%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   .line {
     border-bottom: 1px solid $white;
@@ -21,13 +29,24 @@ $white: "#ffffff";
   h1 {
     margin: 0px;
     padding: 0px;
-    font-size: 4em;
+    font-size: 5em;
   }
 
-  p, h1 {
-    text-transform: uppercase;
-    margin-bottom: 0px;
+  h4 {
+    margin: 0px;
+    padding: 0 0 10px 0;
+    font-size: 2em;
   }
+
+  p, h4 {
+    text-transform: uppercase;
+  }
+
+}
+
+.current_issue.right-align {
+  text-align: right;
+  height: 200px !important;
 }
 
 .includes {
@@ -44,16 +63,43 @@ $white: "#ffffff";
 
 #guide_navigation {
   position: relative;
+  background-color: $white;
+  height: 90px;
 }
 
 .fix-nav {
   position: fixed !important;
   top: 10px;
+  transition: all .5s;
 }
 
-.fix-left {
+#sidebar {
   position: fixed !important;
-  left: 10px;
+  padding: 15px 0 0 0;
+  transition: all .25s;
+}
+
+.moon-btn {
+  display: block;
+  background: url(/assets/PinkMoonButton.png) no-repeat center;
+  background-size: contain;
+  display: block;
+  max-width: 220px;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 66px;
+  text-align: center;
+  color: $blackish;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Quattrocento', serif;
+  line-height: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .column {
@@ -103,10 +149,21 @@ $white: "#ffffff";
   }
 }
 
+
+
+.days {
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.3em;
+}
+
 @media (max-width: 414px) {
   .list_item .img-holder {
     padding-bottom: 15px;
   } 
+
+  .current_issue h1 {
+    font-size: 3em;
+  }
 }
 
 

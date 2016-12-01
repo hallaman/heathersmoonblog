@@ -1,12 +1,12 @@
 <div class="col-xs-12 current_issue" style="background-image: url('<%= @current.main_image.url %>');">
-	<div class="container">
+	<div class="vert-center container">
 		<div class="col-xs-12">
 			<p class="bold-gold">Current Issue</p>
 			<span class="line"></span>
 			<p>Issue <%= @current.issue_number %></p>
 			<h1><%= @current.week %></h1>
 			<p class="includes">
-			<% @current.sidebars.each do |item| %>
+			<% @current.sidebars.limit(3).each do |item| %>
 				<%= item.title %><br />
 			<% end %>
 			</p>

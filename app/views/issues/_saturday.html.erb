@@ -1,17 +1,15 @@
   
   <h2><%= f.label "Saturday" %></h2>
-    <%= f.fields_for :saturday do |saturday_form| %>
+    <%= f.simple_fields_for :saturday do |saturday_form| %>
     <div class="field">
       <%= saturday_form.label "Date" %><small> eg. November 14</small><br />
       <%= saturday_form.text_field :date %>
     </div>
     <div class="field">
-      <%= saturday_form.label "Text" %><br />
-      <%= saturday_form.text_area :entry, cols: 80, rows: 8 %>
+      <%= saturday_form.input :entry, as: :summernote %>
     </div>
     <div class="field">
-      <%= saturday_form.label "Affirmation" %><br />
-      <%= saturday_form.text_area :affirmation, cols: 80, rows: 8 %>
+      <%= saturday_form.input :affirmation, as: :summernote %>
     </div>
     <div class="field">
       <%= saturday_form.label "Moon in" %><br />

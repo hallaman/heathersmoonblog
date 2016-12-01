@@ -1,17 +1,15 @@
   
   <h2><%= f.label "Wednesday" %></h2>
-    <%= f.fields_for :wednesday do |wednesday_form| %>
+    <%= f.simple_fields_for :wednesday do |wednesday_form| %>
     <div class="field">
       <%= wednesday_form.label "Date" %><small> eg. November 14</small><br />
       <%= wednesday_form.text_field :date %>
     </div>
     <div class="field">
-      <%= wednesday_form.label "Text" %><br />
-      <%= wednesday_form.text_area :entry, cols: 80, rows: 8 %>
+      <%= wednesday_form.input :entry, as: :summernote %>
     </div>
     <div class="field">
-      <%= wednesday_form.label "Affirmation" %><br />
-      <%= wednesday_form.text_area :affirmation, cols: 80, rows: 8 %>
+      <%= wednesday_form.input :affirmation, as: :summernote %>
     </div>
     <div class="field">
       <%= wednesday_form.label "Moon in" %><br />
