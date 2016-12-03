@@ -1,8 +1,7 @@
 // Place all the styles related to the Issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$white: #ffffff;
-$blackish: #333;
+@import "_colors.scss";
 
 .current_issue {
   background-repeat: no-repeat;
@@ -65,6 +64,7 @@ $blackish: #333;
 #guide_navigation {
   position: relative;
   width: 100%;
+  padding-left: 15px;
 }
 
 #sidebar {
@@ -72,7 +72,7 @@ $blackish: #333;
   padding: 0;
   transition: all .5s;
   z-index: 999;
-  top: 300;
+  padding-top: 20px;
 }
 
 .fixNav {
@@ -84,9 +84,9 @@ $blackish: #333;
   background: url(/assets/PinkMoonButton.png) no-repeat center;
   background-size: contain;
   display: block;
-  max-width: 200px;
+  max-width: 160px;
   width: 100%;
-  height: 200px;
+  height: 160px;
   margin-bottom: 10px;
   text-decoration: none;
   cursor: pointer;
@@ -95,8 +95,8 @@ $blackish: #333;
   color: $blackish;
   font-weight: 600;
   font-family: 'Quattrocento', serif;
-  line-height: 1.4em;
-  font-size: 1.6em;
+  line-height: 1.2em;
+  font-size: 1.3em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,16 +161,33 @@ $blackish: #333;
   }
 }
 
-.days p {
-  font-family: 'Work Sans', sans-serif;
-  line-height: 1.6em;
+.days {
+
+  .line {
+    border-bottom: 1px solid $gold;
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+  }
+
+  p.bold-gold.text-uppercase {
+    padding-bottom: 0;
+  }
+
+  p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.4em;
+    line-height: 1.6em;
+    padding-bottom: 20px;
+  }
 }
 
-@media (min-width: 414px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .days {
     padding-left: 50px;
   }
 }
+
 
 @media (max-width: 414px) {
   .list_item .img-holder {

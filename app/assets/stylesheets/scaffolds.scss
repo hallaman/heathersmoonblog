@@ -1,7 +1,4 @@
-$gold: #a4772d;
-$blackish: #333;
-$eggshell: #f7f3ed;
-$white: #fff;
+@import "_colors.scss";
 
 html {
   min-height: 100%;
@@ -161,7 +158,7 @@ div {
   line-height: 1.42857143;
   border: none;
   padding: 10px 12px;
-  font-size: .95em;
+  font-size: 1.2em;
 }
 
 .tab-content {
@@ -191,6 +188,14 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+@media (max-width: 990px) {
+  .nav-tabs > li > a {
+    font-size: .85em;
+  }
+  
 }
 
 @media (max-width: 900px) {

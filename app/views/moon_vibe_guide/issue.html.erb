@@ -51,7 +51,7 @@
     <li role="presentation"><a href="#sunday-day" aria-controls="settings" role="tab" data-toggle="tab">Sunday</a></li>
   </ul>
 
-	<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-3 col-md-3 col-lg-2 col-xl-1 pull-left">
+	<div id="sidebar" class="visible-sm visible-md visible-lg col-sm-3 col-md-2 col-xl-1 pull-left">
 		<% @issue.sidebars.each do |item| %>
 			
 			<% if item.link.blank? %>
@@ -69,16 +69,18 @@
 		
 
 
-	<div class="tab-content col-xs-12 col-sm-9 col-md-9 col-lg-10 col-xl-11 pull-right days">
+	<div class="tab-content col-xs-12 col-sm-9 col-md-10 col-xl-11 pull-right days">
 	  <div class="tab-pane active collapse in" id="welcome-day">
 	    <h1>Hello my loves!</h1>
+	    <div class="line"></div>
 			<p><%= @issue.welcome.html_safe %></p>
 	  </div>
 
 	  <div class="tab-pane" id="monday-day">
-	    <p>Monday</p>
+	    <h2>Monday</h2>
 			<% if !@issue.monday.nil? %>
-				<p><%= @issue.monday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.monday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.monday.entry.html_safe %></p>
 				<p><%= @issue.monday.affirmation.html_safe %></p>
 				<p><%= @issue.monday.moon_sign %></p>
@@ -90,9 +92,10 @@
 	  </div>
 
 	  <div class="tab-pane" id="tuesday-day">
-	    <p>Tuesday</p>
+	    <h2>Tuesday</h2>
 			<% if !@issue.tuesday.nil? %>
-				<p><%= @issue.tuesday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.tuesday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.tuesday.entry.html_safe %></p>
 				<p><%= @issue.tuesday.affirmation.html_safe %></p>
 				<p><%= @issue.tuesday.moon_sign %></p>
@@ -104,9 +107,10 @@
 	  </div>
 
 	  <div class="tab-pane" id="wednesday-day">
-	    <p>Wednesday</p>
+	    <h2>Wednesday</h2>
 			<% if !@issue.wednesday.nil? %>
-				<p><%= @issue.wednesday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.wednesday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.wednesday.entry.html_safe %></p>
 				<p><%= @issue.wednesday.affirmation.html_safe %></p>
 				<p><%= @issue.wednesday.moon_sign %></p>
@@ -118,9 +122,10 @@
 	  </div>
 
 	  <div class="tab-pane" id="thursday-day">
-	    <p>Thursday</p>
+	    <h2>Thursday</h2>
 			<% if !@issue.thursday.nil? %>
-				<p><%= @issue.thursday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.thursday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.thursday.entry.html_safe %></p>
 				<p><%= @issue.thursday.affirmation.html_safe %></p>
 				<p><%= @issue.thursday.moon_sign %></p>
@@ -132,9 +137,10 @@
 	  </div>
 
 	  <div class="tab-pane" id="friday-day">
-	    <p>Friday</p>
+	    <h2>Friday</h2>
 			<% if !@issue.friday.nil? %>
-				<p><%= @issue.friday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.friday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.friday.entry.html_safe %></p>
 				<p><%= @issue.friday.affirmation.html_safe %></p>
 				<p><%= @issue.friday.moon_sign %></p>
@@ -146,9 +152,10 @@
 	  </div>
 
 	  <div class="tab-pane" id="saturday-day">
-	    <p>Saturday</p>
+	    <h2>Saturday</h2>
 			<% if !@issue.saturday.nil? %>
-				<p><%= @issue.saturday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.saturday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.saturday.entry.html_safe %></p>
 				<p><%= @issue.saturday.affirmation.html_safe %></p>
 				<p><%= @issue.saturday.moon_sign %></p>
@@ -160,9 +167,10 @@
 	  </div>
 
 	  <div class="tab-pane" id="sunday-day">
-	    <p>Sunday</p>
+	    <h2>Sunday</h2>
 			<% if !@issue.sunday.nil? %>
-				<p><%= @issue.sunday.date %></p>
+				<p class="bold-gold text-uppercase"><%= @issue.sunday.date %></p>
+				<div class="line"></div>
 				<p><%= @issue.sunday.entry.html_safe %></p>
 				<p><%= @issue.sunday.affirmation.html_safe %></p>
 				<p><%= @issue.sunday.moon_sign %></p>

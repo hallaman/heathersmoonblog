@@ -9,15 +9,10 @@ $(document).ready ->
 	window.onscroll = ->
 		if $(window).scrollTop() > top 
 			$('#sidebar').stop(false, true).animate().addClass 'fixNav'
-			$('#sidebar').css top: 10 
-
-	#	if $(window).scrollTop() > $(window).height() - 350
-	#		$('#sidebar').removeClass 'fixNav'
-	#		$('#sidebar').css top: ''
-	#		$('#sidebar').css bottom: 0
+			$('#sidebar').css top: 0 
 
 		if $(window).scrollTop() < top 
-			$('#sidebar').css top: 30
+			$('#sidebar').css top: 10
 			$('#sidebar').stop(false, true).animate().removeClass 'fixNav'
 		return
 	return
