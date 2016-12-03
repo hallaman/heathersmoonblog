@@ -1,0 +1,74 @@
+/*
+ * jQuery Bootstrap Responsive Tabs v2.0.1 | Valeriu Timbuc - vtimbuc.com
+ * github.com/vtimbuc/bootstrap-responsive-tabs
+ * @license WTFPL http://www.wtfpl.net/about/
+ */
+
+.tab-pane.collapse {
+  transition: all .5s;
+}
+
+.responsive-tabs-container {
+  .tab-pane {
+    margin-bottom: 15px;
+  }
+  .accordion-link {
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    color: #333;     
+
+  }
+}
+
+@media (max-width: 767px) {
+  .responsive-tabs-container.accordion-xs {
+    .nav-tabs {
+      display: none;
+    }
+    .accordion-link {
+      display: block;
+    }
+
+    .collapse {
+      display: none;
+    }
+    .collapse.in {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .responsive-tabs-container.accordion-sm {
+    .nav-tabs {
+      display: none;
+    }
+    .accordion-link {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .responsive-tabs-container.accordion-md {
+    .nav-tabs {
+      display: none;
+    }
+    .accordion-link {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .responsive-tabs-container.accordion-lg {
+    .nav-tabs {
+      display: none;
+    }
+    .accordion-link {
+      display: block;
+    }
+  }
+}

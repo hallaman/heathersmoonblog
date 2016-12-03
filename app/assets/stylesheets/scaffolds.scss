@@ -64,7 +64,6 @@ div {
 }
 
 .container {
-  overflow: auto;
   position: relative;
 }
 
@@ -134,13 +133,41 @@ div {
   }
 }
 
-// .field_with_errors {
-//   border: 2px solid #f2dede;
-//   display: table;
-//   padding: 15px 0;
-//   margin: 0px auto;
-//   font-weight: 100;
-// }
+.nav-tabs {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+  color: $blackish;
+  background-color: #fff;
+  border-bottom: 2px solid $gold;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  cursor: default;
+}
+
+.nav-tabs > li {
+  padding-left: 0;
+  float: none;
+  display: inline-block;
+}
+
+.nav-tabs > li > a {
+  margin-right: 0px;
+  line-height: 1.42857143;
+  border: none;
+  padding: 10px 12px;
+  font-size: .95em;
+}
+
+.tab-content {
+  text-align: left;
+  padding-top: 30px;
+}
 
 #error_explanation {
   width: 450px;
@@ -163,6 +190,12 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-tabs > li > a {
+    font-size: .75em;
   }
 }
 

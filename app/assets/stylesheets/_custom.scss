@@ -57,6 +57,10 @@ $notification-alert: #f2dede;
   }
 }
 
+.navbar-toggle {
+  float: left;
+}
+
 .navbar-bottom {
   z-index: 1;
 
@@ -68,3 +72,6 @@ $notification-alert: #f2dede;
     padding: 0;
   }
 }
+
+
+

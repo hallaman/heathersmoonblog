@@ -13,10 +13,11 @@ $blackish: #333;
   height: 300px;
 
   .vert-center {
-    min-height: 50%;
+    min-height: 80%;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    overflow: hidden;
   }
 
   .line {
@@ -66,17 +67,16 @@ $blackish: #333;
   width: 100%;
 }
 
-.fix-nav {
-  position: fixed !important;
-  top: 0px;
+#sidebar {
+  position: relative;
+  padding: 0;
   transition: all .5s;
+  z-index: 999;
+  top: 300;
 }
 
-#sidebar {
+.fixNav {
   position: fixed !important;
-  padding: 15px 0 0 0;
-  transition: all .25s;
-  z-index: 999;
 }
 
 .moon-btn {
@@ -160,8 +160,6 @@ $blackish: #333;
     }
   }
 }
-
-
 
 .days p {
   font-family: 'Work Sans', sans-serif;
