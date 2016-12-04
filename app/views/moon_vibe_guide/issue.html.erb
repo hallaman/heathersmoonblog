@@ -82,7 +82,11 @@
 				<p class="bold-gold text-uppercase"><%= @issue.monday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.monday.entry.html_safe %></p>
-				<p><%= @issue.monday.affirmation.html_safe %></p>
+				<div class="affirmation">
+					<img src="/assets/AN_logo.png" />
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<%= @issue.monday.affirmation.html_safe %>
+				</div>
 				<p><%= @issue.monday.moon_sign %></p>
 				<p><%= @issue.monday.theme %></p>
 				<p><%= @issue.monday.number_1 %></p>
