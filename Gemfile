@@ -48,7 +48,7 @@ gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon', '~> 2.2.4'
 
 # Paperclip for uploading images
-#gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.0.0"
 
 gem 'simple_form'
 
