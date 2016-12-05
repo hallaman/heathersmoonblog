@@ -52,6 +52,7 @@ gem 'gibbon', '~> 2.2.4'
 
 # Paperclip for uploading images
 gem "paperclip", "~> 5.0.0"
+gem "aws-sdk", '< 2.0'
 
 gem 'simple_form'
 
