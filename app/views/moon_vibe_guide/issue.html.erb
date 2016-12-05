@@ -1,4 +1,4 @@
-<div class="col-xs-12 current_issue right-align" style="background-color: #ECCFE1;">
+<div class="col-xs-12 current_issue right-align">
 	<div class="vert-center container">
 		<div class="col-xs-12">
 			<div class="pull-right">
@@ -82,19 +82,19 @@
 				<p class="bold-gold text-uppercase"><%= @issue.monday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.monday.entry.html_safe %></p>
+
+				<%= render partial: "key", locals: {moon: @issue.monday.moon_sign, theme: @issue.monday.theme, number_1: @issue.monday.number_1, number_2: @issue.monday.number_2, number_3: @issue.monday.number_3 } %>
+
 				<div class="affirmation">
-					<img src="/assets/AN_logo.png" />
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
 					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">MONDAY AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.monday.date %></span>
+					
 					<%= @issue.monday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
 				</div>
-				<p><%= @issue.monday.moon_sign %></p>
-				<p><%= @issue.monday.theme %></p>
-				<p><%= @issue.monday.number_1.present? ? Number.find(@issue.monday.number_1).number.to_s + ' ' + Number.find(@issue.monday.number_1).meaning : '' %> 
-				</p>	
-				<p><%= @issue.monday.number_2.present? ? Number.find(@issue.monday.number_2).number.to_s + ' ' + Number.find(@issue.monday.number_2).meaning : '' %> 
-				</p>	
-				<p><%= @issue.monday.number_3.present? ? Number.find(@issue.monday.number_3).number.to_s + ' ' + Number.find(@issue.monday.number_3).meaning : '' %> 
-				</p>	
 			<% end %>
 	  </div>
 
@@ -104,14 +104,20 @@
 				<p class="bold-gold text-uppercase"><%= @issue.tuesday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.tuesday.entry.html_safe %></p>
-				<p><%= @issue.tuesday.affirmation.html_safe %></p>
-				<p><%= @issue.tuesday.moon_sign %></p>
-				<p><%= @issue.tuesday.theme %></p>
-				<p><%= @issue.tuesday.number_1.present? ? Number.find(@issue.tuesday.number_1).number.to_s + ' ' + Number.find(@issue.tuesday.number_1).meaning : '' %> 
-				</p>	
-				<p><%= @issue.tuesday.number_2.present? ? Number.find(@issue.tuesday.number_2).number.to_s + ' ' + Number.find(@issue.tuesday.number_2).meaning : '' %> 
-				</p>	
-				<p><%= @issue.tuesday.number_3.present? ? Number.find(@issue.tuesday.number_3).number.to_s + ' ' + Number.find(@issue.tuesday.number_3).meaning : '' %> 		
+				
+				<%= render partial: "key", locals: {moon: @issue.tuesday.moon_sign, theme: @issue.tuesday.theme, number_1: @issue.tuesday.number_1, number_2: @issue.tuesday.number_2, number_3: @issue.tuesday.number_3 } %>
+
+				<div class="affirmation">
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">TUESDAY AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.tuesday.date %></span>
+					
+					<%= @issue.tuesday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
+				</div>
+
 			<% end %>
 	  </div>
 
@@ -121,12 +127,19 @@
 				<p class="bold-gold text-uppercase"><%= @issue.wednesday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.wednesday.entry.html_safe %></p>
-				<p><%= @issue.wednesday.affirmation.html_safe %></p>
-				<p><%= @issue.wednesday.moon_sign %></p>
-				<p><%= @issue.wednesday.theme %></p>
-				<p><%= @issue.wednesday.number_1 %></p>
-				<p><%= @issue.wednesday.number_2 %></p>
-				<p><%= @issue.wednesday.number_3 %></p>
+
+				<%= render partial: "key", locals: {moon: @issue.wednesday.moon_sign, theme: @issue.wednesday.theme, number_1: @issue.wednesday.number_1, number_2: @issue.wednesday.number_2, number_3: @issue.wednesday.number_3 } %>
+
+				<div class="affirmation">
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">wednesday AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.wednesday.date %></span>
+					
+					<%= @issue.wednesday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
+				</div>
 			<% end %>
 	  </div>
 
@@ -136,12 +149,18 @@
 				<p class="bold-gold text-uppercase"><%= @issue.thursday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.thursday.entry.html_safe %></p>
-				<p><%= @issue.thursday.affirmation.html_safe %></p>
-				<p><%= @issue.thursday.moon_sign %></p>
-				<p><%= @issue.thursday.theme %></p>
-				<p><%= @issue.thursday.number_1 %></p>
-				<p><%= @issue.thursday.number_2 %></p>
-				<p><%= @issue.thursday.number_3 %></p>
+				<%= render partial: "key", locals: {moon: @issue.thursday.moon_sign, theme: @issue.thursday.theme, number_1: @issue.thursday.number_1, number_2: @issue.thursday.number_2, number_3: @issue.thursday.number_3 } %>
+
+				<div class="affirmation">
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">thursday AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.thursday.date %></span>
+					
+					<%= @issue.thursday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
+				</div>
 			<% end %>
 	  </div>
 
@@ -151,12 +170,18 @@
 				<p class="bold-gold text-uppercase"><%= @issue.friday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.friday.entry.html_safe %></p>
-				<p><%= @issue.friday.affirmation.html_safe %></p>
-				<p><%= @issue.friday.moon_sign %></p>
-				<p><%= @issue.friday.theme %></p>
-				<p><%= @issue.friday.number_1 %></p>
-				<p><%= @issue.friday.number_2 %></p>
-				<p><%= @issue.friday.number_3 %></p>
+				<%= render partial: "key", locals: {moon: @issue.friday.moon_sign, theme: @issue.friday.theme, number_1: @issue.friday.number_1, number_2: @issue.friday.number_2, number_3: @issue.friday.number_3 } %>
+
+				<div class="affirmation">
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">friday AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.friday.date %></span>
+					
+					<%= @issue.friday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
+				</div>
 			<% end %>
 	  </div>
 
@@ -166,12 +191,18 @@
 				<p class="bold-gold text-uppercase"><%= @issue.saturday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.saturday.entry.html_safe %></p>
-				<p><%= @issue.saturday.affirmation.html_safe %></p>
-				<p><%= @issue.saturday.moon_sign %></p>
-				<p><%= @issue.saturday.theme %></p>
-				<p><%= @issue.saturday.number_1 %></p>
-				<p><%= @issue.saturday.number_2 %></p>
-				<p><%= @issue.saturday.number_3 %></p>
+				<%= render partial: "key", locals: {moon: @issue.saturday.moon_sign, theme: @issue.saturday.theme, number_1: @issue.saturday.number_1, number_2: @issue.saturday.number_2, number_3: @issue.saturday.number_3 } %>
+
+				<div class="affirmation">
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">saturday AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.saturday.date %></span>
+					
+					<%= @issue.saturday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
+				</div>
 			<% end %>
 	  </div>
 
@@ -181,12 +212,18 @@
 				<p class="bold-gold text-uppercase"><%= @issue.sunday.date %></p>
 				<div class="line"></div>
 				<p><%= @issue.sunday.entry.html_safe %></p>
-				<p><%= @issue.sunday.affirmation.html_safe %></p>
-				<p><%= @issue.sunday.moon_sign %></p>
-				<p><%= @issue.sunday.theme %></p>
-				<p><%= @issue.sunday.number_1 %></p>
-				<p><%= @issue.sunday.number_2 %></p>
-				<p><%= @issue.sunday.number_3 %></p>
+				<%= render partial: "key", locals: {moon: @issue.sunday.moon_sign, theme: @issue.sunday.theme, number_1: @issue.sunday.number_1, number_2: @issue.sunday.number_2, number_3: @issue.sunday.number_3 } %>
+
+				<div class="affirmation">
+					<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+					<h4 class="bold-gold">#MOONVIBETRIBE</h4>
+					<div class="line"></div>
+					<h5 class="bold-gold text-uppercase">sunday AFFIRMATION</h5>
+					<span class="bold-gold text-uppercase"><%= @issue.sunday.date %></span>
+					
+					<%= @issue.sunday.affirmation.html_safe %>
+					<%= image_tag("symbol.png", :border => 0, :alt => "Aquarius Nation") %>
+				</div>
 			<% end %>
 	  </div>
 	</div>

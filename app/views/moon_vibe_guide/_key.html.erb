@@ -1,0 +1,15 @@
+<div class="key">
+	<p><span class="bold-gold">MOON</span><br />
+	<%= moon %></p>
+	<p><span class="bold-gold">THEME</span><br /><%= theme %></p>
+	<h4 class="bold-gold">NUMEROLOGY VIBRATION</h4>
+	<p class="number"><span><%= Number.find(number_1).number.to_s + ': ' if number_1.present? %></span>
+	 <%= Number.find(number_1).meaning if number_1.present? %> 
+	</p>	
+	<p class="number"><span><%= Number.find(number_2).number.to_s + ': ' if number_2.present? %></span>
+	 <%= Number.find(number_2).meaning if number_2.present? %> 
+	</p>	
+	<p class="number"><span><%= Number.find(number_3).number.to_s + ': ' if number_3.present? %></span>
+	 <%= Number.find(number_3).meaning if number_3.present? %> 
+	</p>	
+</div>
