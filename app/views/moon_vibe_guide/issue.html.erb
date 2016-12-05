@@ -89,9 +89,12 @@
 				</div>
 				<p><%= @issue.monday.moon_sign %></p>
 				<p><%= @issue.monday.theme %></p>
-				<p><%= @issue.monday.number_1 %></p>
-				<p><%= @issue.monday.number_2 %></p>
-				<p><%= @issue.monday.number_3 %></p>
+				<p><%= @issue.monday.number_1.present? ? Number.find(@issue.monday.number_1).number.to_s + ' ' + Number.find(@issue.monday.number_1).meaning : '' %> 
+				</p>	
+				<p><%= @issue.monday.number_2.present? ? Number.find(@issue.monday.number_2).number.to_s + ' ' + Number.find(@issue.monday.number_2).meaning : '' %> 
+				</p>	
+				<p><%= @issue.monday.number_3.present? ? Number.find(@issue.monday.number_3).number.to_s + ' ' + Number.find(@issue.monday.number_3).meaning : '' %> 
+				</p>	
 			<% end %>
 	  </div>
 
@@ -103,10 +106,12 @@
 				<p><%= @issue.tuesday.entry.html_safe %></p>
 				<p><%= @issue.tuesday.affirmation.html_safe %></p>
 				<p><%= @issue.tuesday.moon_sign %></p>
-				<p><%= @issue.monday.theme %></p>
-				<p><%= @issue.monday.number_1 %></p>
-				<p><%= @issue.monday.number_2 %></p>
-				<p><%= @issue.monday.number_3 %></p>
+				<p><%= @issue.tuesday.theme %></p>
+				<p><%= @issue.tuesday.number_1.present? ? Number.find(@issue.tuesday.number_1).number.to_s + ' ' + Number.find(@issue.tuesday.number_1).meaning : '' %> 
+				</p>	
+				<p><%= @issue.tuesday.number_2.present? ? Number.find(@issue.tuesday.number_2).number.to_s + ' ' + Number.find(@issue.tuesday.number_2).meaning : '' %> 
+				</p>	
+				<p><%= @issue.tuesday.number_3.present? ? Number.find(@issue.tuesday.number_3).number.to_s + ' ' + Number.find(@issue.tuesday.number_3).meaning : '' %> 		
 			<% end %>
 	  </div>
 
