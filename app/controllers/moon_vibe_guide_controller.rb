@@ -14,6 +14,8 @@ class MoonVibeGuideController < ApplicationController
 
   def issue
   	@issue = Issue.find_by_id(params[:id])
+    @prev = Issue.where('id > ?', @issue).order("issue_number DESC").first
+    @next = Issue.where('id < ?', @issue).order("issue_number DESC").first
   end
 
   def reading

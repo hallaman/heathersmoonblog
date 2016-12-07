@@ -6,7 +6,7 @@
 .current_issue {
   background-color: $light-mauve;
   background-size: cover;
-  margin: 0 0 30px 0;
+  margin: 0;
   padding: 30px 15px;
   color: $white;
   height: 300px;
@@ -67,10 +67,14 @@
   padding-left: 15px;
 }
 
+#scroll-window.container-fluid {
+  padding: 0 !important;
+}
+
 #sidebar {
   position: relative;
   padding: 0;
-  transition: all .5s;
+  transition: position 1s;
   z-index: 999;
   padding-top: 20px;
 }
@@ -218,12 +222,12 @@
 
     span {
       font-size: .6em;
-      font-weight: 500;
+      font-weight: 400;
       text-transform: uppercase;
     }
 
     .number {
-      font-size: 1.2em;
+      font-size: 1.6em;
       font-weight: 400;
       margin: 20px 0;
        span {
@@ -264,22 +268,74 @@
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .days {
-    padding-left: 50px;
+.responsive-tabs {
+  border-bottom: 1px solid $light-mauve;
+  padding: 15px 0;
+  box-shadow: 0px 0px 5px 0px #ccc;
+
+  li {
+    height: 50px;
   }
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .col-sm-9.days {
+    padding-left: 50px;
+  }
+}
+@media (min-width: 768px) {
+  
+}
+
+@media (max-width: 768px) {
+ .tab-content {
+    padding-top: 0px;
+  }
+
+  .container .days {
+    padding: 8px;
+  }
+
+  .responsive-tabs {
+    padding-bottom: 10px;
+    li {
+      height: 40px;
+    }
+  }
+}
 
 @media (max-width: 414px) {
   .list_item .img-holder {
     padding-bottom: 15px;
   } 
-
+ 
   .current_issue h1 {
-    font-size: 3em;
+    font-size: 2.8em;
   }
 
+  .current_issue .vert-center {
+    min-height: 50%;
+  }
+
+  .days .key, .days .affirmation {
+    padding: 30px;
+  }
+
+  .responsive-tabs {
+    padding-bottom: 10px;
+  }
 }
 
+@media (max-width: 320px) {
 
+  .responsive-tabs {
+    padding-bottom: 5px;
+    li {
+      padding: 0;
+      a {
+        font-size: .65em;
+        padding: 8px 10px;
+      }
+    }
+  }
+}

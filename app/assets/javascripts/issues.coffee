@@ -3,17 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-	$('.responsive-tabs').responsiveTabs accordionOn: ['xs']
 
-	top = 260
+	top = 300
 	window.onscroll = ->
 		if $(window).scrollTop() > top 
-			$('#sidebar').stop(false, true).animate().addClass 'fixNav'
+			$('#sidebar').addClass 'fixNav'
 			$('#sidebar').css top: 0 
 
 		if $(window).scrollTop() < top 
 			$('#sidebar').css top: 10
-			$('#sidebar').stop(false, true).animate().removeClass 'fixNav'
+			$('#sidebar').removeClass 'fixNav'
 		return
 	return
 	

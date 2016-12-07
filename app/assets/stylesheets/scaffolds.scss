@@ -46,7 +46,7 @@ ul {
   padding: 0;
 
   li {
-    padding-left: 20px;
+    padding: 4px 0;
   }
 }
 
@@ -133,6 +133,7 @@ div {
 .nav-tabs {
   margin: 0px auto;
   text-align: center;
+  border-bottom: none;
 }
 
 .nav-tabs > li.active > a, 
@@ -157,7 +158,7 @@ div {
   margin-right: 0px;
   line-height: 1.42857143;
   border: none;
-  padding: 10px 12px;
+  padding: 10px;
   font-size: 1.2em;
 }
 
@@ -205,6 +206,10 @@ div {
 }
 
 @media (max-width: 414px) {
+
+  .logo img {
+    max-width: 360px;
+  }
 
   // Align text to center.
   .text-xs-center {
