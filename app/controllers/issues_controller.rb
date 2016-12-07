@@ -5,8 +5,8 @@ class IssuesController < ApplicationController
   $themes = ["Pull back to process.", "Bring it forward.", 
     "Start to get the ball rolling.", "Plant the seeds."];
 
-  $signs = ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", 
-    "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"]
+  $signs = ["Sagittarius/Capricorn", "Capricorn", "Capricorn/Aquarius", "Aquarius", "Aquarius/Pisces", "Pisces", "Pisces/Aries", "Aries", "Aries/Taurus", "Taurus", "Taurus/Gemini", "Gemini", "Gemini/Cancer", 
+    "Cancer", "Cancer/Leo", "Leo", "Leo/Virgo", "Virgo", "Virgo/Libra", "Libra", "Libra/Scorpio", "Scorpio", "Scorpio/Sagittarius", "Sagittarius"]
 
   # GET /issues
   # GET /issues.json
