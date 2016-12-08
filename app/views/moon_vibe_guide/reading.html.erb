@@ -3,20 +3,17 @@
 		<h1><%= @podcast.title %></h1>
 		<br /><br />
 		<div class="col-xs-12">
-		<% @podcast.podcast_details.each do |reading| %>
-			<% if @podcast.podcast_details.count == 1 %>
-				<p> <%= link_to "Click here to listen", reading.link, target: "_blank" %></p>
-			<% else %> 
+			<% @podcast.podcast_details.each do |reading| %>
 				<% if reading.entry.blank? %>
 					<div class="col-xs-6 col-sm-3 col-md-2">
-						<%= link_to reading.title, reading.link %></div>
+						<%= link_to (image_tag "/assets/" + reading.title.downcase.squish + ".jpg", class: 'zodiac'), reading.link %>
+					</div>
 				<% else %>
 					<div class="col-xs-6 col-sm-3 col-md-2">
 						<%= link_to (image_tag "/assets/" + reading.title.downcase.squish + ".jpg", class: 'zodiac'), moonvibeguide_view_reading_path(reading) %>
 					</div>
 				<% end %>
 			<% end %>
-		<% end %>
 		</div>
 	</div>
 </div>
