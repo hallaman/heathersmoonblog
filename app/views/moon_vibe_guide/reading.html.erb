@@ -16,11 +16,11 @@
 			<% @podcast.podcast_details.each do |reading| %>
 				<% if reading.entry.blank? %>
 					<div class="col-xs-6 col-sm-3 col-md-2">
-						<%= link_to (image_tag reading.title.downcase.squish + ".jpg", class: 'zodiac'), reading.link %>
+						<%= link_to (image_tag reading.title.downcase.squish + ".png", class: 'zodiac'), reading.link %>
 					</div>
 				<% else %>
 					<div class="col-xs-6 col-sm-3 col-md-2">
-						<%= link_to (image_tag reading.title.downcase.squish + ".jpg", class: 'zodiac'), moonvibeguide_view_reading_path(reading) %>
+						<%= link_to (image_tag reading.title.downcase.squish + ".png", class: 'zodiac'), moonvibeguide_view_reading_path(reading) %>
 					</div>
 				<% end %>
 			<% end %>
