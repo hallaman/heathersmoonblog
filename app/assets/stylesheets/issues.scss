@@ -131,10 +131,11 @@
   width:100%;
   background: image-url("PinkMoonButton.png") no-repeat center;
   background-size: contain;
-  transition: opacity .5s ease;
+  transition: all 1s linear forward;
 }
 .moon-btn:hover:before {
     opacity: 0.6;
+
 }
 
 .column {
