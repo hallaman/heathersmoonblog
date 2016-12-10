@@ -108,10 +108,6 @@ $(document).on 'turbolinks:load', ->
 	      'style'
 	      'start'
 	    ]
-#	  onpaste: (e) ->
-#		  bufferText = ((e.originalEvent or e).clipboardData or window.clipboardData).getData('Text')
-#		  e.preventDefault()
-#		  document.execCommand 'insertText', false, bufferText
 		}
 	return
 
