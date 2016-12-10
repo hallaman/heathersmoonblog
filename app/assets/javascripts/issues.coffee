@@ -23,6 +23,7 @@ $(document).on 'page:load', ->
 
 $(document).on 'turbolinks:load', ->
 	$('[data-provider="summernote"]').each ->
+
 		$(this).summernote {
 			fontNames: ['Work Sans', 'Lato', 'Laila']
 			toolbar: [
@@ -90,8 +91,8 @@ $(document).on 'turbolinks:load', ->
 	  cleaner:
 	    notTime: 2400
 	    action: 'both'
-	    newline: '<br>'
-	    notStyle: 'position:absolute;bottom:0;left:2px'
+	    newline: '<p></p>'
+	    notStyle: 'position:absolute;top:40px;left:2px'
 	    icon: '<i class="note-icon">Clean Text</i>'
 	    keepHtml: false
 	    badTags: [
@@ -107,6 +108,10 @@ $(document).on 'turbolinks:load', ->
 	      'style'
 	      'start'
 	    ]
+	  onpaste: (e) ->
+		  bufferText = ((e.originalEvent or e).clipboardData or window.clipboardData).getData('Text')
+		  e.preventDefault()
+		  document.execCommand 'insertText', false, bufferText
 		}
 	return
 
