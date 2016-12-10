@@ -88,26 +88,11 @@ $(document).on 'turbolinks:load', ->
 #	      [ 'help' ]
 #	    ]
 	  ]
-	  cleaner:
-	    notTime: 2400
-	    action: 'both'
-	    newline: '<p></p>'
-	    notStyle: 'position:absolute;top:40px;left:2px'
-	    icon: '<i class="note-icon">Clean Text</i>'
-	    keepHtml: false
-	    badTags: [
-	      'style'
-	      'script'
-	      'applet'
-	      'embed'
-	      'noframes'
-	      'noscript'
-	      'html'
-	    ]
-	    badAttributes: [
-	      'style'
-	      'start'
-	    ]
+
+	  onpaste: (e) ->
+		  bufferText = ((e.originalEvent or e).clipboardData or window.clipboardData).getData('Text')
+		  e.preventDefault()
+		  document.execCommand 'insertText', false, bufferText
 		}
 	return
 
