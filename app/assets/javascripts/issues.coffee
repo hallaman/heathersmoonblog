@@ -25,6 +25,90 @@ $(document).on 'turbolinks:load', ->
 	$('[data-provider="summernote"]').each ->
 		$(this).summernote {
 			fontNames: ['Work Sans', 'Lato', 'Laila']
+			toolbar: [
+	    [
+	      'cleaner'
+	      [ 'cleaner' ]
+	    ]
+	    [
+	      'style'
+	      [ 'style' ]
+	    ]
+	    [
+	      'font'
+	      [
+	        'bold'
+	        'italic'
+	        'underline'
+	        'clear'
+	      ]
+	    ]
+	    [
+	      'fontname'
+	      [ 'fontname' ]
+	    ]
+#	    [
+#	      'color'
+#	      [ 'color' ]
+#	    ]
+	    [
+	      'para'
+	      [
+	        'ul'
+	        'ol'
+	        'paragraph'
+	      ]
+	    ]
+	    [
+	      'height'
+	      [ 'height' ]
+	    ]
+	#    [
+	#      'table'
+	#      [ 'table' ]
+	#    ]
+	    [
+	      'insert'
+	      [
+	        'media'
+	        'link'
+	        'hr'
+	      ]
+	    ]
+	    [
+	      'view'
+	      [
+	        'fullscreen'
+	        'codeview'
+	      ]
+	    ]
+#	    [
+#	      'help'
+#	      [ 'help' ]
+#	    ]
+	  ]
+	  cleaner:
+	    notTime: 2400
+	    action: 'both'
+	    newline: '<br>'
+	    notStyle: 'position:absolute;bottom:0;left:2px'
+	    icon: '<i class="note-icon">Clean Text</i>'
+	    keepHtml: false
+	    badTags: [
+	      'style'
+	      'script'
+	      'applet'
+	      'embed'
+	      'noframes'
+	      'noscript'
+	      'html'
+	    ]
+	    badAttributes: [
+	      'style'
+	      'start'
+	    ]
 		}
 	return
+
+
 

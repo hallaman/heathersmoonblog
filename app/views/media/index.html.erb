@@ -19,7 +19,7 @@
     <% @media.each do |medium| %>
       <tr>
         <td><%= image_tag(medium.file.url(:thumb)) %></td>
-        <td><%= "http://www.moonvibeguide.com" + image_path(medium.file.url) %></td>
+        <td><%= image_path(medium.file.url) %></td>
         <td><%= medium.title %></td>
 
         <td><%= link_to 'Show', medium %></td>
