@@ -25,7 +25,7 @@ $(document).on 'turbolinks:load', ->
 	$('[data-provider="summernote"]').each ->
 
 		$(this).summernote {
-			fontNames: ['Work Sans', 'Lato', 'Laila']
+			fontNames: [ 'Lato', 'Work Sans', 'Laila']
 			toolbar: [
 	    [
 	      'cleaner'
