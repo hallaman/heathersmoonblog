@@ -16,5 +16,6 @@
 //= require bootstrap-sprockets
 
 //= require summernote
+//= require summernote_cleaner
 
 //= require_tree .
