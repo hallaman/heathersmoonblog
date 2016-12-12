@@ -26,6 +26,10 @@
     margin: 10px 0;
   }
 
+  small {
+    color: $white;
+  }
+
   h1 {
     margin: 0px;
     padding: 0px;
@@ -91,13 +95,13 @@
 .moon-btn {
   position: relative;  
   display: block;
-  max-width: 160px;
+  max-width: 180px;
   width: 100%;
-  height: 160px;
+  height: 180px;
   margin-bottom: 10px;
   text-decoration: none;
   cursor: pointer;
-  padding: 10px 15px 10px 17px;
+  padding: 6px 15px 6px 17px;
   text-align: center;
   font-weight: 400;
   font-family: 'Work Sans', sans-serif;
@@ -138,9 +142,9 @@
 
 }
 
-.column {
+#issue_container {
   margin: 0px auto;
-  max-width: 360px;
+  max-width: 860px;
 }
 
 .list_item {
@@ -186,17 +190,41 @@
 
 .days {
 
+  h1 {
+    font-size: 3em;
+    line-height: 2em;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
   h2 {
-    font-size: 3.6em;
+    font-size: 3em;
     padding-bottom: 0;
     margin-bottom: 0;
+    color: $light-mauve;
+    display: inline;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 2em;
+  }
+
+  h2:after {
+    content: ' || ';
+  }
+
+  .date {
+    font-size: 2.75em;
+    text-transform: capitalize;
+    color: $mauve;
+    font-weight: 800;
+    line-height: 1em;
   }
 
   .line {
-    border-bottom: 1px solid $gold;
+    border-bottom: 1px solid $mauve;
     width: 100%;
     display: block;
-    margin-top: 15px;
+    margin: 6px 0 18px;
   }
 
   p.bold-gold.text-uppercase {
@@ -218,7 +246,7 @@
     box-shadow: 0px 3px 5px 0px #ccc;
 
     p {
-      font-size: 2.2em;
+      font-size: 2.2em !important;
       font-weight: 400;
       padding-top: 0;
       line-height: 1.4em;
@@ -231,7 +259,7 @@
     }
 
     .number {
-      font-size: 1.6em;
+      font-size: 1.6em !important;
       font-weight: 400;
       margin: 20px 0;
        span {
@@ -244,7 +272,8 @@
     h4 {
       border-bottom: 2px solid $gold;
       padding: 30px 0 20px 0;
-      line-height: 1.4em
+      line-height: 1.4em;
+      font-size: 1.4em;
     }
   }
 
@@ -268,6 +297,10 @@
       padding-bottom: 30px;
       display: block;
     }
+
+    .symbol {
+      max-width: 160px;
+    }
   }
 }
 
@@ -281,22 +314,13 @@
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .col-sm-9.days {
-    padding-left: 50px;
-  }
-}
-@media (min-width: 768px) {
-  
-}
-
 @media (max-width: 768px) {
  .tab-content {
     padding-top: 0px;
   }
 
   .container .days {
-    padding: 8px;
+    padding: 20px 30px;
   }
 
   .responsive-tabs {
@@ -313,7 +337,7 @@
   } 
  
   .current_issue h1 {
-    font-size: 2.8em;
+    font-size: 2.6em;
   }
 
   .current_issue .vert-center {
@@ -326,6 +350,10 @@
 
   .responsive-tabs {
     padding-bottom: 10px;
+  }
+
+  .container .days {
+    padding: 20px 15px;
   }
 }
 

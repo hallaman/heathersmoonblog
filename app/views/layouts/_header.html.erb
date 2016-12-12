@@ -2,15 +2,15 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <%= link_to image_tag("AN_Logo.png"), moonvibeguide_path, :class => 'navbar-brand logo' %>
+      <%= link_to image_tag("AN_Logo.png"), root_path, :class => 'navbar-brand logo' %>
     </div>
 
 
       <ul class="nav navbar-nav navbar-right">
         <% if member_signed_in? %>
-          <li><%= link_to "Moon Vibe Guide", moonvibeguide_issues_path, class: 'bold' %></li>
+          <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, moonvibeguide_issues_path, class: 'bold' %></li>
         <% else %>
-          <li><%= link_to "Moon Vibe Guide", moonvibeguide_path, class: 'bold' %></li>
+          <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, moonvibeguide_path, class: 'bold' %></li>
         <% end %>
 
         <% if member_signed_in? && @issue.present? %>
