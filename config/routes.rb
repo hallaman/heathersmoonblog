@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :sidebars
   resources :issues
   
-  root :to => 'moon_vibe_guide#index'
+  root :to => 'welcome#index'
 
   get 'welcome/index'
 

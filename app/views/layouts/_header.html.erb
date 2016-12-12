@@ -10,7 +10,7 @@
         <% if member_signed_in? %>
           <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, moonvibeguide_issues_path, class: 'bold' %></li>
         <% else %>
-          <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, moonvibeguide_path, class: 'bold' %></li>
+          <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, login_path, class: 'bold' %></li>
         <% end %>
 
         <% if member_signed_in? && @issue.present? %>
