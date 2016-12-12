@@ -28,10 +28,6 @@ $(document).on 'turbolinks:load', ->
 			fontNames: [ 'Lato', 'Work Sans', 'Laila']
 			toolbar: [
 	    [
-	      'cleaner'
-	      [ 'cleaner' ]
-	    ]
-	    [
 	      'style'
 	      [ 'style' ]
 	    ]
@@ -48,10 +44,6 @@ $(document).on 'turbolinks:load', ->
 	      'fontname'
 	      [ 'fontname' ]
 	    ]
-#	    [
-#	      'color'
-#	      [ 'color' ]
-#	    ]
 	    [
 	      'para'
 	      [
@@ -64,10 +56,6 @@ $(document).on 'turbolinks:load', ->
 	      'height'
 	      [ 'height' ]
 	    ]
-	#    [
-	#      'table'
-	#      [ 'table' ]
-	#    ]
 	    [
 	      'insert'
 	      [
@@ -83,31 +71,11 @@ $(document).on 'turbolinks:load', ->
 	        'codeview'
 	      ]
 	    ]
-#	    [
-#	      'help'
-#	      [ 'help' ]
-#	    ]
 	  ]
-	  cleaner:
-	    notTime: 2400
-	    action: 'both'
-	    newline: '<p></p>'
-	    notStyle: 'position:absolute;top:40px;left:2px'
-	    icon: '<i class="note-icon">Clean Text</i>'
-	    keepHtml: false
-	    badTags: [
-	      'style'
-	      'script'
-	      'applet'
-	      'embed'
-	      'noframes'
-	      'noscript'
-	      'html'
-	    ]
-	    badAttributes: [
-	      'style'
-	      'start'
-	    ]
+	  onpaste: (e) ->
+		  bufferText = ((e.originalEvent or e).clipboardData or window.clipboardData).getData('Text')
+		  e.preventDefault()
+		  document.execCommand 'insertText', false, bufferText
 		}
 	return
 
