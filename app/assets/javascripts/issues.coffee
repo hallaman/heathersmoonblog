@@ -4,7 +4,7 @@
 
 $(document).ready ->
 
-	top = 300
+	top = 500
 	window.onscroll = ->
 		if $(window).scrollTop() > top 
 			$('#sidebar').addClass 'fixNav'

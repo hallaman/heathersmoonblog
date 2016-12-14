@@ -1,18 +1,19 @@
-<nav class="navbar navbar-default col-xs-12">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <%= link_to image_tag("AN_Logo.png"), root_path, :class => 'navbar-brand logo' %>
+       <% if member_signed_in? %>
+        <%= link_to image_tag("MVG_Logo.png"), moonvibeguide_issues_path, :class => 'navbar-brand mvg-logo' %>
+      <% else %>
+        <%= link_to image_tag("MVG_Logo.png"), login_path, :class => 'navbar-brand mvg-logo' %>
+      <% end %>
     </div>
 
-
+    <div class="navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to image_tag("AN_Logo.png"), root_path, :class => 'logo text-center' %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if member_signed_in? %>
-          <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, moonvibeguide_issues_path, class: 'bold' %></li>
-        <% else %>
-          <li><%= link_to "Moon Vibe <small>Guide</small>".html_safe, login_path, class: 'bold' %></li>
-        <% end %>
-
         <% if member_signed_in? && @issue.present? %>
           <li class="dropdown visible-xs">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
@@ -26,22 +27,22 @@
               <% end %>
             </ul>
           </li>
-          <% end %>
-
+        <% end %>
         <% if admin_signed_in? %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "MVG Issues", issues_path %><li>
-            <li><%= link_to "Readings", podcasts_path %><li>
-            <li><%= link_to "Numerology", numbers_path %><li>
-            <li><%= link_to "Media", media_path %><li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "Logout", destroy_admin_session_path %></li>
-          </ul>
-        </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "MVG Issues", issues_path %><li>
+              <li><%= link_to "Readings", podcasts_path %><li>
+              <li><%= link_to "Numerology", numbers_path %><li>
+              <li><%= link_to "Media", media_path %><li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Logout", destroy_admin_session_path %></li>
+            </ul>
+          </li>
         <% end %>
       </ul>
+          
       
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

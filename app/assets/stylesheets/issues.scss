@@ -4,12 +4,14 @@
 @import "_colors.scss";
 
 .current_issue {
-  background-color: $light-mauve;
-  background-size: cover;
+  background-image: url('header.png');
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: top center;
   margin: 0;
   padding: 30px 15px;
-  color: $white;
-  height: 300px;
+  color: $gold;
+  height: 315px;
 
   .vert-center {
     min-height: 80%;
@@ -19,43 +21,45 @@
     overflow: hidden;
   }
 
-  .line {
-    border-bottom: 1px solid $white;
-    width: 88px;
-    display: block;
-    margin: 10px 0;
+  .current {
+    padding-bottom: 0px;
+    color: $blackish;
+    font-size: 1.6em;
   }
 
-  small {
-    color: $white;
+  .line {
+    border-bottom: 1px solid $gold;
+    width: 88px;
+    display: block;
+    margin: 6px 0;
   }
 
   h1 {
     margin: 0px;
     padding: 0px;
-    font-size: 5em;
-  }
-
-  h4 {
-    margin: 0px;
-    padding: 0 0 10px 0;
-    font-size: 2em;
+    font-size: 2.75em;
   }
 
   p, h4 {
     text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .125em;
   }
 
 }
 
-.current_issue.right-align {
-  text-align: right;
-  height: 200px !important;
+.issue_no {
+  margin: 15px 0;
+  font-size: 2em;
+  color: $gold;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .1em;
 }
 
 .includes {
   text-transform: capitalize !important;
-  padding: 0 0 10px 0;
+  padding: 5px 0;
   font-family: 'Lato', sans-serif;
 }
 
@@ -119,6 +123,8 @@
     color: $blackish;
     opacity: 1;
     position: relative;
+    font-weight: 500;
+    letter-spacing: .125em;
   }
 
   .span:hover {
@@ -195,7 +201,7 @@
     font-size: 3em;
     line-height: 2em;
     padding-bottom: 0;
-    margin: 0;
+    margin: 23px 0 0 0;
   }
 
   h2 {
@@ -208,16 +214,13 @@
     line-height: 1.4em;
   }
 
-  // h2:after {
-  //   content: ' || ';
-  // }
-
   .date {
     font-size: 1.5em;
     text-transform: uppercase;
     color: $mauve;
     font-weight: 800;
     line-height: 1.4em;
+    letter-spacing: .125em;
   }
 
   .line {
@@ -329,6 +332,7 @@
       height: 40px;
     }
   }
+
 }
 
 @media (max-width: 414px) {
@@ -364,7 +368,6 @@
     li {
       padding: 0;
       a {
-        font-size: .65em;
         padding: 8px 10px;
       }
     }

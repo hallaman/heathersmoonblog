@@ -64,17 +64,25 @@ div {
   position: relative;
 }
 
-.logo img {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  padding-top: 5px;
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
 }
 
-.btn-gold {
-  color: $eggshell;
-  background-color: $gold;
-  border-color: $gold;
+.logo img {
+  max-width: 200px !important;
+  width: 100%;
+  height: auto;
+}
+
+.mvg-logo img {
+  max-width: 260px !important;
+  width: 100%;
+  height: auto;
+}
+
+.btn {
   padding: 10px 0;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
@@ -84,8 +92,23 @@ div {
   max-width: 200px;
   width: 100%;
 }
+
+.btn-gold {
+  color: $eggshell;
+  background-color: $gold;
+  border-color: $gold;
+}
 .btn-gold:hover {
   color: $blackish;
+}
+
+.btn-pink {
+  color: $eggshell;
+  background-color: $pink;
+  border-color: $pink;
+}
+.btn-pink:hover {
+  color: $gold;
 }
 
 .bold-gold {
@@ -95,7 +118,7 @@ div {
 
 .login-form {
   width: 300px;
-  margin: 0px auto;
+  margin: 0px auto 60px;
 }
 
 .share {
@@ -138,6 +161,7 @@ div {
   margin: 0px auto;
   text-align: center;
   border-bottom: none;
+  padding: 10px 12px;
 }
 
 .nav>li>a:hover, .nav>li>a:focus {
@@ -170,8 +194,7 @@ div {
   margin-right: 0px;
   line-height: 1.42857143;
   border: none;
-  padding: 10px;
-  font-size: 1.2em;
+  padding: 10px 12px;
 }
 
 .tab-content {
@@ -203,23 +226,63 @@ div {
   }
 }
 
-@media (max-width: 900px) {
+@media (min-width: 768px) and (max-width: 900px) {
   .nav-tabs > li > a {
-    font-size: .85em;
+    padding: 10px;
+    font-size: 1em;
   }
 }
 
-@media (max-width: 699px) {
+
+@media (min-width: 768px) {  
+  .login-form {
+    padding-top: 60px;
+  }
+
+  a.logo {
+    padding: 14px 0 0 !important;
+
+    img {
+      padding: 8px 0 0 0;
+    }
+  }
+
+  .mvg-logo img {
+    margin-left: 30px;
+    padding: 4px 0 0 0;
+  }
+
+  ul.dropdown{
+    padding-top: 6px;
+  }
+
+  
+
+} 
+
+@media (max-width: 767px) {
+
+  .logo img {
+    padding-top: 25px;
+  }
+
+  .mvg-logo img {
+    padding-top: 0px;
+  }
+
+  ul.navbar-right {
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
   .nav-tabs > li > a {
-    font-size: .75em;
+    padding: 10px 8px;
+    font-size: .8em;
   }
 }
 
-@media (max-width: 630px) {
-  .nav-tabs > li > a {
-    font-size: .6em;
-  }
-}
 
 @media (max-width: 414px) {
 
@@ -231,4 +294,16 @@ div {
   .text-xs-center {
     text-align: center;
   } 
+}
+
+@media (max-width: 375px) {
+  .nav-tabs > li > a {
+    font-size: .75em;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-tabs > li > a {
+    font-size: .65em;
+  }
 }
