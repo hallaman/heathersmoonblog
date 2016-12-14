@@ -2,10 +2,10 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-       <% if member_signed_in? %>
-        <%= link_to image_tag("MVG_Logo.png"), moonvibeguide_issues_path, :class => 'navbar-brand mvg-logo' %>
-      <% else %>
-        <%= link_to image_tag("MVG_Logo.png"), login_path, :class => 'navbar-brand mvg-logo' %>
+       <% if member_signed_in? && @issue.present? %>
+        <%= link_to "MOON VIBE GUIDE", moonvibeguide_issues_path, :class => 'navbar-brand mvg-logo' %>
+      <% elsif @issue.present? %>
+        <%= link_to "MOON VIBE GUIDE", login_path, :class => 'navbar-brand mvg-logo' %>
       <% end %>
     </div>
 

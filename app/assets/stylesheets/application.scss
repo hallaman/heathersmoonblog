@@ -36,6 +36,17 @@
 @import "summernote";
 @import "_responsive_tabs.scss";
 
+@font-face {
+  font-family: 'MANIFESTO';
+  src: url('MANIFESTO.eot');  
+  src: url('MANIFESTO.eot?#iefix') format('embedded-opentype'),  
+    url('MANIFESTO.woff') format('woff'),  
+    url('MANIFESTO.ttf') format('truetype'),  
+    url('MANIFESTO.svg#MANIFESTO') format('svg');  
+  font-weight: normal;  
+  font-style: normal;  
+}
+
 
 
 

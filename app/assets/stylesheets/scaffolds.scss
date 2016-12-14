@@ -60,14 +60,12 @@ div {
   }
 }
 
-.container {
-  position: relative;
+.field img {
+  padding: 10px;
 }
 
-.navbar-brand {
-  transform: translateX(-50%);
-  left: 50%;
-  position: absolute;
+.container {
+  position: relative;
 }
 
 .logo img {
@@ -76,13 +74,14 @@ div {
   height: auto;
 }
 
-.mvg-logo img {
-  max-width: 260px !important;
-  width: 100%;
-  height: auto;
+.mvg-logo {
+  font-family: 'MANIFESTO';
+  color: $gold !important;
+  font-size: 3em;
 }
 
-.btn {
+.btn-pink,
+.btn-gold {
   padding: 10px 0;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
@@ -247,11 +246,6 @@ div {
     }
   }
 
-  .mvg-logo img {
-    margin-left: 30px;
-    padding: 4px 0 0 0;
-  }
-
   ul.dropdown{
     padding-top: 6px;
   }
@@ -266,8 +260,8 @@ div {
     padding-top: 25px;
   }
 
-  .mvg-logo img {
-    padding-top: 0px;
+  .mvg-logo {
+    font-size: .9em;
   }
 
   ul.navbar-right {

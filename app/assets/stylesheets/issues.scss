@@ -23,8 +23,10 @@
 
   .current {
     padding-bottom: 0px;
+    margin-bottom: 0px;
     color: $blackish;
-    font-size: 1.6em;
+    font-size: 1.2em;
+    font-family: 'MANIFESTO';
   }
 
   .line {
@@ -208,17 +210,17 @@
     font-size: 3em;
     padding-bottom: 0;
     margin-bottom: 0;
-    color: $light-mauve;
-    text-transform: uppercase;
-    font-weight: 600;
+    color: $blackish;
+    text-transform: capitalize;
+    font-weight: 400;
     line-height: 1.4em;
   }
 
   .date {
     font-size: 1.5em;
     text-transform: uppercase;
-    color: $mauve;
-    font-weight: 800;
+    color: $gold;
+    font-weight: 400;
     line-height: 1.4em;
     letter-spacing: .125em;
   }
@@ -327,7 +329,6 @@
   }
 
   .responsive-tabs {
-    padding-bottom: 10px;
     li {
       height: 40px;
     }
@@ -350,10 +351,6 @@
 
   .days .key, .days .affirmation {
     padding: 30px;
-  }
-
-  .responsive-tabs {
-    padding-bottom: 10px;
   }
 
   .container .days {

@@ -94,17 +94,27 @@
 					<%= render partial: "day", locals: {day: 'Sunday', date: @issue.sunday.date, entry: @issue.sunday.entry.html_safe, moon: @issue.sunday.moon_sign, theme: @issue.sunday.theme, number_1: @issue.sunday.number_1, number_2: @issue.sunday.number_2, number_3: @issue.sunday.number_3, affirmation: @issue.sunday.affirmation.html_safe } %>
 				<% end %>
 		  </div>
-		</div>
+	
 
-		<!-- <nav aria-label="...">
 		  <ul class="pager">
-		    <li><%# link_to "Previous Issue", moonvibeguide_issue_path(@prev) %></li>
-		    <li><%# link_to "Next Issue", moonvibeguide_issue_path(@next) %></li>
+		    <li class="pull-left">
+		    	<%= link_to moonvibeguide_issue_path(@prev_issue) do %>
+					    <i class="fa fa-angle-left"></i> Previous Issue
+					<% end %>
+		    </li>
+		    <li class="pull-right">
+		    	<%= link_to moonvibeguide_issue_path(@next_issue) do %>
+					    Next Issue <i class="fa fa-angle-right"></i>
+					<% end %>
+				</li>
 		  </ul>
-		</nav> -->
 
+		</div>
 	</div>
-</div>	  
+</div>
+	
+	
+	  
 
 
 

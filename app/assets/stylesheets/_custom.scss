@@ -1,8 +1,9 @@
 /* modifications to bootstrap */
+@import "_colors.scss";
 
-$notification-confirm: #d0e9c6;  
-$notification-warning: #fcf8e3;                 
-$notification-alert: #f2dede;          
+$notification-confirm: $light-mauve;  
+$notification-warning: $purple;                 
+$notification-alert: $pink;          
 
 %notification {
   border-radius: 5px;
@@ -57,6 +58,13 @@ $notification-alert: #f2dede;
   }
 }
 
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 51%;
+  position: absolute;
+  top: 10px;
+}
+
 .navbar-toggle {
   float: left;
 }
@@ -73,5 +81,27 @@ $notification-alert: #f2dede;
   }
 }
 
+.pager li > a, .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+}
 
+.pager li > a:hover {
+  background-color: #fff;
+  opacity: .6;
+  transition: opacity .5s ease forward;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    transform: translateX(-50%);
+    left: 51%;
+    position: absolute;
+    top: 0px;
+  }
+}
 
