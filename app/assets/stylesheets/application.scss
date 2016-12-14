@@ -38,11 +38,11 @@
 
 @font-face {
   font-family: 'MANIFESTO';
-  src: url('MANIFESTO.eot');  
-  src: url('MANIFESTO.eot?#iefix') format('embedded-opentype'),  
-    url('MANIFESTO.woff') format('woff'),  
-    url('MANIFESTO.ttf') format('truetype'),  
-    url('MANIFESTO.svg#MANIFESTO') format('svg');  
+  src: asset-url('MANIFESTO.eot');  
+  src: asset-url('MANIFESTO.eot?#iefix') format('embedded-opentype'),  
+    asset-url('MANIFESTO.woff') format('woff'),  
+    asset-url('MANIFESTO.ttf') format('truetype'),  
+    asset-url('MANIFESTO.svg#MANIFESTO') format('svg');  
   font-weight: normal;  
   font-style: normal;  
 }
