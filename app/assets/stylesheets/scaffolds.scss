@@ -3,6 +3,7 @@
 html {
   min-height: 100%;
   position: relative;
+
 }
 
 body {
@@ -12,6 +13,8 @@ body {
   letter-spacing: .1em;
   line-height: 1.2em;
   margin: 0 auto 260px auto;
+  width: 100%;
+  height: 100%;
 
   font-family: 'Lato', sans-serif;
 
@@ -102,7 +105,7 @@ div {
 }
 
 .btn-pink {
-  color: $eggshell;
+  color: $white;
   background-color: $pink;
   border-color: $pink;
 }
@@ -117,7 +120,15 @@ div {
 
 .login-form {
   width: 300px;
-  margin: 0px auto 60px;
+  margin: 60px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    margin-bottom: 30px;
+  }
 }
 
 .share {
@@ -234,9 +245,6 @@ div {
 
 
 @media (min-width: 768px) {  
-  .login-form {
-    padding-top: 60px;
-  }
 
   a.logo {
     padding: 14px 0 0 !important;

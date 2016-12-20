@@ -26,10 +26,13 @@
 				  </div>
 				  <div class="col-xs-12 col-sm-4 col-md-6 info">
 				    <p class="issue_no">ISSUE <%= issue.issue_number %></p>
+						<span class="line"></span>
 						<h3><%= issue.week %></h3>
-						<% issue.sidebars.each do |item| %>
-							<p class="includes"><%= item.title %></p>
-						<% end %>
+						<p class="includes">
+							<% issue.sidebars.each do |item| %>
+								<%= item.title %><br />
+							<% end %>
+						</p>
 						<%= link_to "Read Now", moonvibeguide_issue_path(issue), class: 'btn btn-pink' %>
 				  </div>
 				</div>
