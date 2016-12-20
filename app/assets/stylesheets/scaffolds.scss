@@ -129,6 +129,14 @@ div {
   h2 {
     margin-bottom: 30px;
   }
+
+  .simple_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
 }
 
 .share {
