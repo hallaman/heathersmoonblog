@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128202942) do
+ActiveRecord::Schema.define(version: 20161228214550) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20161128202942) do
   end
 
   create_table "issues", force: :cascade do |t|
-    t.string   "issue_number"
+    t.integer  "issue_number"
     t.string   "week"
     t.binary   "main_image"
     t.string   "moon_phase"
