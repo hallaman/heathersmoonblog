@@ -43,6 +43,10 @@ $notification-alert: $pink;
     background-color: $notification-warning;
 }
 
+#error_explanation ul li {
+  margin: 0 40px 0;
+}
+
 .navbar {
   margin-bottom: 0;
 }

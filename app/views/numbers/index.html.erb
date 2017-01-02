@@ -17,9 +17,9 @@
       <tr>
         <td><%= number.number %></td>
         <td><%= number.meaning %></td>
-        <td><%= link_to 'Show', number %></td>
+        <td><%# link_to 'Show', number %></td>
         <td><%= link_to 'Edit', edit_number_path(number) %></td>
-        <td><%= link_to 'Destroy', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

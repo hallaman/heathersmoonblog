@@ -1,0 +1,1 @@
+ bin/rails generate scaffold Posts title:string body:text main_image:binary category:string publish_date:datetime 

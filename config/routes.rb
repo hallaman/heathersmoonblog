@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   resources :media
   resources :podcast_details
   resources :podcasts
