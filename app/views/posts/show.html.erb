@@ -22,6 +22,7 @@
   <p>
     <%= c.body %>
   </p>
+  <p><%= link_to 'reply', new_comment_path(c.id) %></p>
 <% end %>
 
 <%= form_for [@post, @post.comments.new] do |f| %>
@@ -35,6 +36,7 @@
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :parent_id %>
   <%= f.label :author, "Author" %><br />
   <%= f.text_field :author, class: 'form-control' %><br />
   <%= f.label :link, "Link (optional)" %><br />

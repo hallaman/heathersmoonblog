@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :posts do
-    resources :comments
+    resources :comments, only: [:index, :create]
   end
+
   resources :media
   resources :podcast_details
   resources :podcasts
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   match "/moonvibeguide/view_reading/:id", to: "moon_vibe_guide#view_reading", :via => 'get', :as => 'moonvibeguide_view_reading'
 
   match "/blog", to: "blog#index", :via => 'get'
+  get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
 
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }
