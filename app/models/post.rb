@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	#has_many :comments, autosave: true, dependent: :destroy
+	has_many :comments, autosave: true, dependent: :destroy
 
 	validates :title, presence: true
   validates :publish_date, presence: true

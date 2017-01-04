@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post %></td>
+        <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

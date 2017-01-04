@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102195813) do
+ActiveRecord::Schema.define(version: 20170104003749) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(version: 20170102195813) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "comment_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "comment_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_udx", unique: true
+  add_index "comment_hierarchies", ["descendant_id"], name: "comment_desc_idx"
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "author"
+    t.string   "link"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "parent_id"
+    t.integer  "post_id"
+  end
 
   create_table "fridays", force: :cascade do |t|
     t.integer  "issue_id"

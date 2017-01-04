@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :media
   resources :podcast_details
   resources :podcasts
@@ -24,6 +26,8 @@ Rails.application.routes.draw do
   match "/moonvibeguide/issue/:id", to: "moon_vibe_guide#issue", :via => 'get', :as => 'moonvibeguide_issue'
   match "/moonvibeguide/reading/:id", to: "moon_vibe_guide#reading", :via => 'get', :as => 'moonvibeguide_reading'
   match "/moonvibeguide/view_reading/:id", to: "moon_vibe_guide#view_reading", :via => 'get', :as => 'moonvibeguide_view_reading'
+
+  match "/blog", to: "blog#index", :via => 'get'
 
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }

@@ -54,6 +54,9 @@ gem 'summernote-rails', '0.8.2'
 
 gem 'bootstrap_form'
 
+# for nested commenting
+gem 'closure_tree'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
