@@ -4,8 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
-    
+    @comments = Comment.hash_tree(limit_depth: 4)
   end
 
   # GET /comments/1
@@ -54,7 +53,9 @@ class CommentsController < ApplicationController
       flash[:success] = 'Your comment was successfully added!'
       redirect_to post_url(@post)
     else
-      render 'new'
+      flash[:warning] = 'Please enter name and comment before posting.'
+      redirect_to post_url(@post)
+      #render 'new'
     end
   end
 

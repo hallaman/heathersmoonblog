@@ -4,5 +4,5 @@
 
 .replies { margin-left: 50px; }
 
-/* 2 levels nesting */
-.replies .replies { margin-left: 0; }
+/* 4 levels nesting */
+.replies .replies .replies .replies { margin-left: 0; }
