@@ -12,18 +12,9 @@
 
 <h2>Comments</h2>
 
-<% @post.comments.each do |c| %>
-  <p>
-    <b><%= c.link.present? ? link_to(c.author, c.link) : c.author %> said:</b><br />
-    <%= time_ago_in_words(c.created_at) %>
-    ago
-  </p>
+<%= comments_tree_for @comments %>
 
-  <p>
-    <%= c.body %>
-  </p>
-  <p><%= link_to 'reply', new_comment_path(c.id) %></p>
-<% end %>
+<!-- in comments/_comment -->
 
 <%= form_for [@post, @post.comments.new] do |f| %>
   <% if @post.comments.new.errors.any? %>
@@ -36,7 +27,6 @@
       </ul>
     </div>
   <% end %>
-  <%= f.hidden_field :parent_id %>
   <%= f.label :author, "Author" %><br />
   <%= f.text_field :author, class: 'form-control' %><br />
   <%= f.label :link, "Link (optional)" %><br />

@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    @comments = @post.comments.hash_tree(limit_depth: 4)
+    #@comments = Comment.hash_tree(limit_depth: 4)
   end
 
   # GET /posts/new

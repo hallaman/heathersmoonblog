@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all
+    
   end
 
   # GET /comments/1
@@ -14,7 +15,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new(parent_id: params[:parent_id])
+    @comment = Comment.new(parent_id: params[:parent_id], post_id: params[:post_id])
   end
 
   # GET /comments/1/edit
@@ -36,23 +37,25 @@ class CommentsController < ApplicationController
     #   end
     # end
 
-    @post = Post.find(params[:post_id])
+    
     # @comment = @post.comments.create(comment_params_with_post)
     # redirect_to @post
 
+    @post = Post.find(params[:post_id])
+
     if params[:comment][:parent_id].to_i > 0
       parent = Comment.find_by_id(params[:comment].delete(:parent_id))
-      @comment = parent.children.build(comment_params_with_post)
+      @comment = parent.children.build(comment_params)
     else
       @comment = @post.comments.create(comment_params_with_post)
     end
 
-    # if @comment.save
-    #   format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-    #   format.json { render :show, status: :created, location: @comment }
-    # else
-    #   render 'new'
-    # end
+    if @comment.save
+      flash[:success] = 'Your comment was successfully added!'
+      redirect_to post_url(@post)
+    else
+      render 'new'
+    end
   end
 
   # PATCH/PUT /comments/1
