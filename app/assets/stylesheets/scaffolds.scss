@@ -138,8 +138,8 @@ div {
 }
 
 .share {
-  background-color: $eggshell;
-  border-top: 1px solid $gold;
+  background-color: $soft-pink;
+  box-shadow: 0px 0px 3px 0px $light-mauve;
   color: $gold;
   padding: 60px 10px;
   margin: 0px auto;
@@ -150,25 +150,27 @@ div {
     font-weight: 400;
     font-family: 'Lato', sans-serif;
     line-height: 1.65em;
+    font-style: italic;
   }
 
   a {
     font-family: 'Work Sans', sans-serif;
-    font-size: .75em;
-    font-weight: 800;
+    font-size: 1em;
+    font-weight: 500;
+    font-style: normal;
     padding: 0 0 0 20px;
   }
 }
 
 .copyright {
-  background-color: $gold;
+  background-color: $white;
   margin: 0px auto;
   text-align: center;
 
   p {
     font-family: 'Work Sans', sans-serif;
-    color: $eggshell;
-    font-size: .75em; 
+    color: $gold;
+    font-size: 1em; 
     padding: 10px 0 0;
   }
 }
@@ -181,7 +183,7 @@ div {
 }
 
 .nav>li>a:hover, .nav>li>a:focus {
-  background-color: #fff;
+  background-color: $soft-pink;
   opacity: .6;
   transition: opacity .5s ease forward;
 }
@@ -190,8 +192,8 @@ div {
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover, 
 .nav-tabs > li.active > a:focus {
-  color: $blackish;
-  background-color: #fff;
+  color: $gold;
+  background-color: $soft-pink;
   border-bottom: 2px solid $gold;
   border-top: transparent;
   border-left: transparent;
