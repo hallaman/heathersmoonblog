@@ -51,6 +51,11 @@ $notification-alert: $pink;
   margin-bottom: 0;
 }
 
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: $gold;
+}
+
 .navbar-default {
   background-color: #fff;
   border: none;
