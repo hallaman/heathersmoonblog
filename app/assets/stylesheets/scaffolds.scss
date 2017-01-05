@@ -252,7 +252,7 @@ div {
 }
 
 
-@media (min-width: 768px) {  
+@media (min-width: 767px) {  
 
   a.logo {
     padding: 14px 0 0 !important;
@@ -265,10 +265,15 @@ div {
   ul.dropdown{
     padding-top: 6px;
   }
-
-  
-
 } 
+
+@media (max-width: 991px) {
+
+  .mvg-logo {
+    font-size: 2.5em;
+  }
+
+}
 
 @media (max-width: 767px) {
 
