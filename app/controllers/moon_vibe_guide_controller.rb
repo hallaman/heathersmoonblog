@@ -1,5 +1,5 @@
 class MoonVibeGuideController < ApplicationController
-	before_action :authenticate_member!, except: [:index]
+	before_action :authenticate_member!, except: [:index, :daily_reading]
 
   layout 'moon_vibe_guide'
 
@@ -21,6 +21,12 @@ class MoonVibeGuideController < ApplicationController
 
     @prev_issue = @prev.present? ? @prev : @last
     @next_issue = @next.present? ? @next : @first
+  end
+
+  def daily_reading
+    @daily_reading = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
+
+    @daily_reading_text = @daily_reading.present? ? @daily_reading.body : '<p class="text-center">Please stay tuned.</p>'
   end
 
   def reading

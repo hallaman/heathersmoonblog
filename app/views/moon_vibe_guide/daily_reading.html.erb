@@ -2,7 +2,6 @@
 	<div class="vert-center container">
 		<div class="col-xs-12">
 			<div>
-				<h1>MOON VIBE <small>GUIDE</small></h1>
 			</div>
 		</div>
 	</div>
@@ -10,9 +9,15 @@
 
 <div class="col-xs-12">
 	<div class="container">
-		<p>Daily reading for <%= Time.new %></p>
+		<div class="col-xs-12">
+		  <div class="container issues">
+		    <div class="col-xs-12">
+		    	<h4 class="text-center"><%= Date.today.strftime('%A %-d %B %Y') %></h4>
 
-		
+					<%= @daily_reading_text.html_safe %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 

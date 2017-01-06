@@ -1,31 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Blog Posts</h1>
+  <h1>Blog Posts</h1>
 
-<%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
+  <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Publish date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.category %></td>
-        <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Publish date</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.category %></td>
+          <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

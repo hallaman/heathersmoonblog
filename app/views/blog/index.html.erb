@@ -1,17 +1,37 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Post</th>
-      <th>Date</th>
-    </tr>
-  </thead>
+<div class="col-xs-12">
+  <div class="container issues">
+    <div class="col-xs-12">
+      <% @posts.each do |post| %>
+        <% if post.main_image.present? %>
+          <div class="row list_item">
+            <div class="col-xs-4 img-holder">
+              <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) %>
+            </div>
+            <div class="col-xs-8 info">
+              <p class="issue_no"><%= post.publish_date.strftime('%A, %B %-d, %Y') %></p>
+              <span class="line"></span>
+              <h3><%= post.title %></h3>
+              <p class="includes">
+                <%= truncate(strip_tags(post.body), :length => 180) %>
+              </p>
+              <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
+            </div>
+          </div>
+        <% else %>
+          <div class="row list_item">
+            <div class="col-xs-12 info">
+              <p class="issue_no"><%= post.publish_date.strftime('%A, %B %-d, %Y') %></p>
+              <span class="line"></span>
+              <h3><%= post.title %></h3>
+              <p class="includes">
+                <%= truncate(strip_tags(post.body), :length => 180) %>
+              </p>
+              <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
+            </div>
+          </div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-        <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
