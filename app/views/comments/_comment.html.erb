@@ -4,6 +4,13 @@
 
   <blockquote>
     <p><%= comment.body %></p>
+    <p>
+    	<%= link_to post_comment_like_path(:post_id => comment.post_id,
+    :id => comment.id, :comment_id => comment.id), class: 'like', method: :put, remote: true, data: { type: :json } do %>
+		  Like
+		  <% end %>
+			<span id="likes_<%= comment.id %>" class="badge"><%= comment.likes %></span>
+	</p>
   </blockquote>
 
   <% from_reply_form ||= nil %>
@@ -50,3 +57,14 @@
 		</div>
 	<% end %>
 </div>
+
+<script>
+    $('.like')
+  .on('ajax:send', function () { $(this).addClass('loading'); })
+  .on('ajax:complete', function () { $(this).removeClass('loading'); })
+  .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
+  .on('ajax:success', function(e, data, status, xhr) { 
+  	$(this).html("Thank you for voting!"); 
+  	$('#likes_'+data.id).html(data.count); 
+	});
+</script>

@@ -1,6 +1,16 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+  def upvote 
+    @comment = Comment.find_by_id(params[:id])
+    @comment.likes = @comment.likes.present? ? @comment.likes + 1 : 1
+    @comment.save
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render json: { count: @comment.likes, id: @comment.id } }
+    end
+  end  
+
   # GET /comments
   # GET /comments.json
   def index
