@@ -48,7 +48,7 @@ $notification-alert: $pink;
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: transparentize(#ffffff, .7);
   border: none;
 
   .moon_guide_title {
