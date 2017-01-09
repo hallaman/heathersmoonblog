@@ -1,6 +1,60 @@
+require 'gibbon'
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:show]
+
+  def send_campaign 
+    @post = Post.find(params[:id])
+
+    # API key in initializers/gibbon.rb
+    gibbon = Gibbon::Request.new 
+
+    recipients = {
+      list_id: "1a93406f49"
+    }
+    settings = {
+      subject_line: "Subject Line",
+      title: @post.title,
+      from_name: "KV",
+      reply_to: "KV@aquariusnation.com"
+    }
+
+    body = {
+      type: "regular",
+      recipients: recipients,
+      settings: settings,
+      template: {
+        id: '153317',
+        sections: {
+          "header-image": @post.main_image,
+          "std_content00": @post.body
+        }
+      }
+    }
+
+    begin
+      gibbon.campaigns.create(body: body)
+      gibbon.campaigns.content.upsert(body: body)
+      gibbon.campaigns.send
+
+      format.html { redirect_to posts_path, notice: 'Sent to MailChimp list!' }
+      format.json { render :index }
+    rescue Gibbon::MailChimpError => e
+      format.html { render :index, notice: "Houston, we have a problem: #{e.message} - #{e.raw_body}" }
+      format.json { render json: @post.errors, status: :unprocessable_entity }
+    end
+
+    # respond_to do |format|
+    #   if @post.save
+    #     format.html { redirect_to posts_path, notice: 'Sent to MailChimp list!' }
+    #     format.json { render :index }
+    #   else
+    #     format.html { render :index }
+    #     format.json { render json: @post.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end 
 
   # GET /posts
   # GET /posts.json

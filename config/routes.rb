@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   match "/blog", to: "blog#index", :via => 'get'
   get '/comments/new/(:post_id)/(:parent_id)', to: 'comments#new', as: :new_comment
+  get '/posts/send_campaign/:id', to: 'posts#send_campaign', as: :send_campaign
 
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
   controllers: { sessions: 'sessions', registrations: "registrations" }

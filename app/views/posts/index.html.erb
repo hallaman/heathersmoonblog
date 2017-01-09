@@ -1,6 +1,4 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
   <h1>Blog Posts</h1>
 
   <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
@@ -11,7 +9,7 @@
         <th>Title</th>
         <th>Category</th>
         <th>Publish date</th>
-        <th colspan="3"></th>
+        <th colspan="4"></th>
       </tr>
     </thead>
 
@@ -24,6 +22,9 @@
           <td><%= link_to 'Show', post %></td>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to_if(post.category == 'Blog Post', 'Send to MailChimp List', send_campaign_path(post.id), class: "btn btn-danger") do
+
+            end %></td>
         </tr>
       <% end %>
     </tbody>
