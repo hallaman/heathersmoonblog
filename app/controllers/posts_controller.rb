@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def send_campaign 
     @post = Post.find(params[:id])
+    @post_body_title = '<span class="h1">'+@post.title+'</span>'+@post.body
 
     # API key in initializers/gibbon.rb
     gibbon = Gibbon::Request.new 
@@ -30,8 +31,8 @@ class PostsController < ApplicationController
       template: {
         id: 153317,
         sections: {
-          "header-image": @post.main_image,
-          "std_content00": @post.body
+          "std_preheader_content": @post.title,
+          "std_content00": @post_body_title
         }
       }
     }
