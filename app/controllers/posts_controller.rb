@@ -14,18 +14,21 @@ class PostsController < ApplicationController
       list_id: "1a93406f49"
     }
     settings = {
-      subject_line: "Subject Line",
+      subject_line: @post.title,
       title: @post.title,
       from_name: "KV",
       reply_to: "KV@aquariusnation.com"
     }
 
-    body = {
+    @campaign_body = {
       type: "regular",
       recipients: recipients,
-      settings: settings,
+      settings: settings
+    }
+
+    @email_body = {
       template: {
-        id: '153317',
+        id: 153317,
         sections: {
           "header-image": @post.main_image,
           "std_content00": @post.body
@@ -34,15 +37,20 @@ class PostsController < ApplicationController
     }
 
     begin
-      gibbon.campaigns.create(body: body)
-      gibbon.campaigns.content.upsert(body: body)
-      gibbon.campaigns.send
+      @new_campaign = gibbon.campaigns.create(body: @campaign_body)
+      @new_campaign_id = @new_campaign["id"]
+      gibbon.campaigns(@new_campaign_id).content.upsert(body: @email_body)
+      gibbon.campaigns(@new_campaign_id).actions.send.create
 
-      format.html { redirect_to posts_path, notice: 'Sent to MailChimp list!' }
-      format.json { render :index }
+      respond_to do |format|
+        format.html { redirect_to posts_path, notice: 'Sent to MailChimp list!' }
+        format.json { render :index }
+      end
     rescue Gibbon::MailChimpError => e
-      format.html { render :index, notice: "Houston, we have a problem: #{e.message} - #{e.raw_body}" }
-      format.json { render json: @post.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        format.html { redirect_to posts_path, notice: "Houston, we have a problem: #{e.message} - #{e.raw_body}" }
+        format.json { render json: :index, status: :unprocessable_entity }
+      end
     end
 
     # respond_to do |format|
