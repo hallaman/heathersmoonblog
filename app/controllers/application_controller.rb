@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper_method :newsbar
+
+  def newsbar
+    @newsbar = Newsbar.where(show: true).last
+  end
+
   def after_sign_in_path_for(resource)
     case resource
     when :member, Member

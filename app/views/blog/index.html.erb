@@ -12,7 +12,7 @@
               <span class="line"></span>
               <h3><%= post.title %></h3>
               <p class="includes">
-                <%= truncate(strip_tags(post.body), :length => 180) %>
+                <%= strip_tags(post.body).truncate_words(44) %>
               </p>
               <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
             </div>
@@ -24,7 +24,7 @@
               <span class="line"></span>
               <h3><%= post.title %></h3>
               <p class="includes">
-                <%= truncate(strip_tags(post.body), :length => 180) %>
+                <%= strip_tags(post.body).truncate_words(44) %>
               </p>
               <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
             </div>

@@ -1,5 +1,26 @@
+<div id="home_header" class="col-xs-12">
+	<div class="vert-center container">
+		<div class="col-xs-12">
+		</div>
+	</div>
+</div>
 <div class="col-xs-12">
 	<div class="container">
-		Homepage!
-	</div>
+		<% 
+  		if @daily_reading_text.present? 
+  		  @daily_reading_text = strip_tags(@daily_reading.body).truncate_words(160).split(".").in_groups(2)
+
+	      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
+	      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
+	    end
+	  %>
+
+		<div class="entry col-xs-12 col-md-6 text-left">
+			<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+		</div>
+
+		<div class="entry col-xs-12 col-md-6 text-left">
+			<%= @daily_para_2.to_s if @daily_para_2.present? %>
+		</div>
+</div>
 </div>

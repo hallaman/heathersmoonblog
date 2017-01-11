@@ -1,3 +1,25 @@
 // Place all the styles related to the MoonVibeGuide controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.daily {
+	h2 {
+		font-family: 'MANIFESTO';
+	}
+
+	h4 {
+		text-transform: uppercase;
+		font-weight: 300;
+		.emph-day {
+			font-size: 1.2em;
+			padding-right: 12px;
+		}
+	}
+
+	.entry {
+		padding: 30px 20px;
+		line-height: 3em;
+		font-size: 1.2em;
+	}
+
+}

@@ -69,9 +69,9 @@ $notification-alert: $pink;
 
 .navbar-brand {
   transform: translateX(-50%);
-  left: 51%;
+  left: 53%;
   position: absolute;
-  top: 10px;
+  top: 8px;
 }
 
 .navbar-collapse {
@@ -109,12 +109,10 @@ $notification-alert: $pink;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar-brand {
-    transform: translateX(-50%);
-    left: 51%;
-    position: absolute;
     top: 0px;
+    left: 50%;
   }
 }
 

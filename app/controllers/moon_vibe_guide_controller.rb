@@ -26,7 +26,14 @@ class MoonVibeGuideController < ApplicationController
   def daily_reading
     @daily_reading = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
 
-    @daily_reading_text = @daily_reading.present? ? @daily_reading.body : '<p class="text-center">Please stay tuned.</p>'
+    @daily_reading_text = @daily_reading.present? ? @daily_reading.body : 'Please stay tuned.'
+
+    if @daily_reading.body.present?
+      @daily_reading_text = @daily_reading.body
+    else 
+      @stay_tuned = '<p>Please stay tuned.</p>'
+    end
+
   end
 
   def reading

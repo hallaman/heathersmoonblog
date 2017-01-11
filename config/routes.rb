@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :newsbars
   resources :posts do
     resources :comments, only: [:index, :create] do 
       put "like", to: "comments#upvote"

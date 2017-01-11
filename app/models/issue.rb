@@ -41,7 +41,6 @@ class Issue < ActiveRecord::Base
   validates :issue_number, presence: true, uniqueness: { 
     message: "already being used" }
   validates :week, presence: true
-  validates :main_image, presence: true
   validates :moon_phase, presence: true
 
   has_attached_file :main_image, styles: {  thumb: ["400x300>", :png] }, :convert_options => { :thumb => "-quality 70 -interlace Plane" }

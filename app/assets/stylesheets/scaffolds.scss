@@ -193,6 +193,26 @@ div {
   }
 }
 
+.topbar {
+  background-color: $gray-purple;
+  padding: 5px 0 0 !important;
+
+  p {
+    padding: 0;
+  }
+
+  a {
+    color: $white;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .btn {
+    background-color: $eggshell;
+    color: $gray-purple;
+  }
+}
+
 .nav-tabs {
   margin: 0px auto;
   text-align: center;
@@ -200,7 +220,20 @@ div {
   padding: 10px 12px;
 }
 
-.nav>li>a:hover, .nav>li>a:focus {
+.nav > li > a {
+  padding: 15px 10px;  
+}
+
+.nav > li > a,
+.dropdown-menu > li > a {
+  font-size: .85em;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+}
+
+.nav > li > a:hover, 
+.nav > li > a:focus {
   background-color: $soft-pink;
   opacity: .6;
   transition: opacity .5s ease forward;

@@ -1,0 +1,1 @@
+json.partial! "newsbars/newsbar", newsbar: @newsbar

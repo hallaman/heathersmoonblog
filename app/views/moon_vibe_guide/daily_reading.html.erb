@@ -10,11 +10,32 @@
 <div class="col-xs-12">
 	<div class="container">
 		<div class="col-xs-12">
-		  <div class="container issues">
+		  <div class="daily text-center">
 		    <div class="col-xs-12">
-		    	<h4 class="text-center"><%= Date.today.strftime('%A %-d %B %Y') %></h4>
+		    	<%= image_tag('daily_readings_symbol.png', width: 100) %>
 
-					<%= @daily_reading_text.html_safe %>
+		    	<h2>DAILY MOON VIBE READING</h2>
+		    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
+
+		    	<%= @stay_tuned if @stay_tuned.present? %>
+
+		    	<% 
+		    		if @daily_reading_text.present? 
+  		  			@daily_reading_text = strip_tags(@daily_reading_text).split('.').in_groups(2)
+
+				      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
+				      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
+				    end
+				  %>
+
+					<div class="entry text-left">
+						<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+					</div>
+
+					<div class="entry text-left">
+						<%= @daily_para_2.to_s if @daily_para_2.present? %>
+					</div>
+
 				</div>
 			</div>
 		</div>

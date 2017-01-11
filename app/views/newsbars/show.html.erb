@@ -1,0 +1,14 @@
+<div class="container">
+	<p>
+	  <strong>Message:</strong>
+	  <%= @newsbar.message.html_safe %>
+	</p>
+
+	<p>
+	  <strong>Show:</strong>
+	  <%= @newsbar.show %>
+	</p>
+
+	<%= link_to 'Edit', edit_newsbar_path(@newsbar) %> |
+	<%= link_to 'Back', newsbars_path %>
+</div>

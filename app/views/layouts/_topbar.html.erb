@@ -1,0 +1,10 @@
+<div class="topbar container-fluid">
+  <div class="container">
+		
+		<p class="pull-left"><%= newsbar.message.html_safe if newsbar.present? %></p>
+
+		<p class="pull-right">
+			<%= link_to 'Subscribe Now', 'http://www.google.com', class: 'btn btn-default' %>
+		</p>
+	</div>
+</div>
