@@ -29,6 +29,36 @@
     <%= link_to 'New Newsbar', new_newsbar_path, class: 'btn btn-default' %>
     <%= link_to 'View All', newsbars_path, class: 'btn btn-success' %>
   </div>
-</div>
 
-<hr />
+
+	<hr />
+
+  <h4 class="bold-gold text-center">Current Video</h4>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Video</th>
+        <th>Show</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @video.embed_code.html_safe %></td>
+        <td><%= @video.show %></td>
+        <td><%= link_to 'Edit', edit_video_path(@video) %></td>
+        <td><%= link_to 'Delete', @video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="text-center">
+    <%= link_to 'New Video', new_video_path, class: 'btn btn-default' %>
+    <%= link_to 'View All', videos_path, class: 'btn btn-success' %>
+  </div>
+
+	<hr />
+
+</div>

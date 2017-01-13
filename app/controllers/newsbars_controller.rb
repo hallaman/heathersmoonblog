@@ -1,10 +1,11 @@
 class NewsbarsController < ApplicationController
   before_action :set_newsbar, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
   # GET /newsbars
   # GET /newsbars.json
   def index
-    @newsbars = Newsbar.all
+    @newsbars = Newsbar.order("id DESC").all
   end
 
   # GET /newsbars/1

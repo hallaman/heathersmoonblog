@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111185317) do
+ActiveRecord::Schema.define(version: 20170113192710) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -242,6 +242,13 @@ ActiveRecord::Schema.define(version: 20170111185317) do
     t.integer  "number_3"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "embed_code"
+    t.boolean  "show"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", force: :cascade do |t|

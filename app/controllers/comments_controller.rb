@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!
 
   def upvote 
     @comment = Comment.find_by_id(params[:id])
