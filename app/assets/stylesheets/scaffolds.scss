@@ -197,14 +197,19 @@ div {
   background-color: $gray-purple;
   padding: 5px 0 0 !important;
 
-  p {
-    padding: 0;
+  .message {
+    padding: 10px 0;
+    display: block;
+    color: $white;
+    p {
+      display: block;
+      padding: 0;
+    }
   }
 
   a {
     color: $white;
-    padding: 10px 0;
-    display: block;
+    
   }
 
   .btn {

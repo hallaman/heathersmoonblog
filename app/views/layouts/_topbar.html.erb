@@ -1,7 +1,7 @@
 <div class="topbar container-fluid">
   <div class="container">
 		
-		<p class="pull-left"><%= newsbar.message.html_safe if newsbar.present? %></p>
+		<div class="message pull-left"><%= newsbar.message.html_safe if newsbar.present? %></div>
 
 		<p class="pull-right">
 			<%= link_to 'Subscribe Now', 'http://www.google.com', class: 'btn btn-default' %>

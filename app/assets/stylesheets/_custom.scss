@@ -2,8 +2,9 @@
 @import "_colors.scss";
 
 $notification-confirm: $light-mauve;  
-$notification-warning: $pink;                 
-$notification-alert: $pink;          
+$notification-warning: $eggshell;                 
+$notification-alert: $pink; 
+$notification-error: $gray-purple;         
 
 %notification {
   border-radius: 5px;
@@ -27,20 +28,33 @@ $notification-alert: $pink;
 }
 
 /*flash*/
-.alert-error {
-    background-color: $notification-warning;
+.alert-error,
+.btn-error,
+.btn-error:hover,
+.btn-error:active {
+    background-color: $notification-error;
+    border: none;
  }
 
-.alert-alert {
+.alert-alert,
+.btn-alert,
+.btn-alert:hover,
+.btn-alert:active {
     background-color: $notification-alert;
+    border: none;
  }
 
-.alert-success {
+.alert-success,
+.btn-success,
+.btn-success:hover,
+.btn-success:active {
     background-color: $notification-confirm;
+    border: none;
  }
 
 .alert-notice {
     background-color: $notification-warning;
+    border: 1px solid $gold;
 }
 
 #error_explanation ul li {
