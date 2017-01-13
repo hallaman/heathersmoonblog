@@ -210,6 +210,11 @@ div {
   .btn {
     background-color: $eggshell;
     color: $gray-purple;
+    border-radius: 0;
+    padding: 8px 25px 5px;
+    margin-top: 5px;
+    font-family: 'MANIFESTO';
+    font-size: .8em;
   }
 }
 

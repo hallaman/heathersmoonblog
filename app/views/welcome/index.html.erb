@@ -6,21 +6,53 @@
 </div>
 <div class="col-xs-12">
 	<div class="container">
-		<% 
-  		if @daily_reading_text.present? 
-  		  @daily_reading_text = strip_tags(@daily_reading.body).truncate_words(160).split(".").in_groups(2)
+		<div class="row manifesto">
+			<h4 class="text-center">A PLACE FOR THE RAINBOW TRIBE</h4>
+			<h4 class="text-center">WHO ARE WAKING UP</h4>
+			<h4 class="text-center">AND ALIGNING</h4>
+			<h4 class="text-center">TO THE AGE OF AQUARIUS</h4>
+			<h4 class="text-center">TO BRING LOVE AND HEALING TO THE PLANET</h4>
 
-	      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
-	      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
-	    end
-	  %>
+			<p class="text-center"><%= image_tag('top_symbol.png', width: 100) %></p>
 
-		<div class="entry col-xs-12 col-md-6 text-left">
-			<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
 		</div>
-
-		<div class="entry col-xs-12 col-md-6 text-left">
-			<%= @daily_para_2.to_s if @daily_para_2.present? %>
-		</div>
+	</div>
 </div>
+<div class="moonplanner">
+	<div class="col-xs-12">
+		<div class="container">
+			<div class="row">
+				<h2>Moon Planner stuff<h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-xs-12">
+	<div class="container">
+		<div class="row text-center daily">
+			<%= image_tag('daily_readings_symbol.png', width: 100) %>
+
+    	<h2>DAILY MOON VIBE READING</h2>
+    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
+
+			<% 
+	  		if @daily_reading_text.present? 
+	  		  @daily_reading_text = strip_tags(@daily_reading.body).truncate_words(193).split(".").in_groups(2)
+
+		      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
+		      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
+		    end
+		  %>
+
+			<div class="entry col-xs-12 col-md-6 text-left">
+				<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+			</div>
+
+			<div class="entry col-xs-12 col-md-6 text-left">
+				<%= @daily_para_2.to_s + '...' if @daily_para_2.present? %>
+			</div>
+
+			<hr />
+		</div>
+	</div>
 </div>

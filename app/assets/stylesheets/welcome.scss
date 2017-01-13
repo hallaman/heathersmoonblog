@@ -1,6 +1,7 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_colors.scss";
 
 #home_header {
 	background-image: image-url('home_header.png');
@@ -10,4 +11,24 @@
   margin: 0 0 30px 0;
   padding: 0;
   height: 450px;
+}
+
+.manifesto {
+	h4 {
+		font-weight: 400;
+		line-height: 1.5em;
+	}
+}
+.moonplanner {
+	background-image: image-url('purple_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin: 0 0 30px 0;
+  padding: 0;
+  height: 450px;
+  overflow: hidden;
+  width: 100%;
+  color: $white;
+  
 }
