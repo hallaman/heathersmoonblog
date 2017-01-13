@@ -40,7 +40,7 @@
             <ul class="dropdown-menu">
               <% @issue.sidebars.each do |item| %>
                 <% if item.link.blank? %>
-                  <li><%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) %></li>
+                  <li><%= link_to item.title, moonvibeguide_reading_path(item.podcast_link_id) if item.podcast_link_id.present? %></li>
                 <% else %>
                   <li><%= link_to item.title, item.link, target: '_blank' %></li>
                 <% end %>
