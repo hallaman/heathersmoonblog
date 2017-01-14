@@ -1,4 +1,5 @@
 require 'mailchimp'
+require 'gibbon'
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
@@ -13,7 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def subscribers 
-    @subscribers = '706' 
+    # API key in initializers/gibbon.rb
+    list_id = 'b6efc69609'
+    @listdata = Gibbon::Request.lists(list_id).retrieve
+    @subscribers = ::ApplicationController.helpers.number_to_human(@listdata['stats']['member_count'], precision: 4,  separator: ',', units: {million: "", thousand: ""}).to_s
   end
 
   def after_sign_in_path_for(resource)
