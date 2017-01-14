@@ -4,7 +4,7 @@
 $notification-confirm: $light-mauve;  
 $notification-warning: $eggshell;                 
 $notification-alert: $pink; 
-$notification-error: $gray-purple;         
+$notification-error: $light-gray-purple;         
 
 %notification {
   border-radius: 5px;
@@ -120,6 +120,10 @@ $notification-error: $gray-purple;
   background-color: #fff;
   opacity: .6;
   transition: opacity .5s ease forward;
+}
+
+.row {
+  padding: 20px 0;
 }
 
 

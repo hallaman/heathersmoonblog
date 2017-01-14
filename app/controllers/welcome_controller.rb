@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-
+  	@video = Video.where(show: true).last
+  	
   	# daily reading
   	@daily_reading = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
 

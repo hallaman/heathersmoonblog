@@ -6,9 +6,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :newsbar
+  helper_method :subscribers
 
   def newsbar
     @newsbar = Newsbar.where(show: true).last
+  end
+
+  def subscribers 
+    @subscribers = '706' 
   end
 
   def after_sign_in_path_for(resource)
