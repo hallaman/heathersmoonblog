@@ -1,37 +1,33 @@
-<div class="container">
-  <%# image_tag @post.main_image.url(:display) %>
-  <h1><%= @post.title %></h1>
-  <p class="small"><%= @post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></p>
-  <p>
-    <strong>Category:</strong>
-    <%= @post.category %>
-  </p>
+<% if @post.category == 'MVG Daily Reading' %>
+    <%= render 'daily' %>
+<% else %>
+  <div class="container">
+    <%= render 'post' %>
+<% end %>  
+  <div class="container">
+    <%= comments_tree_for @comments %>
 
-  <%= @post.body.html_safe %>
+    <!-- in comments/_comment -->
 
-  <%= comments_tree_for @comments %>
-
-  <!-- in comments/_comment -->
-
-  <%= form_for [@post, @post.comments.new] do |f| %>
-    <% if @post.comments.new.errors.any? %>
-      <div class="alert alert-danger">
-        <h4>There are <%= pluralize(@post.errors.count, "error") %>.</h4>
-        <ul>
-          <%= @post.comments.new.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </ul>
+    <%= form_for [@post, @post.comments.new] do |f| %>
+      <% if @post.comments.new.errors.any? %>
+        <div class="alert alert-danger">
+          <h4>There are <%= pluralize(@post.errors.count, "error") %>.</h4>
+          <ul>
+            <%= @post.comments.new.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.label :author, "Name" %><br />
+      <%= f.text_field :author, class: 'form-control' %><br />
+      <%= f.label :link, "Link (optional)" %><br />
+      <%= f.text_field :link, class: 'form-control' %><br />
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 1, class: 'form-control', placeholder: "Enter comment body" %>
+      <div class="actions">
+        <%= f.submit "Submit Comment", class: 'btn btn-default' %>
       </div>
     <% end %>
-    <%= f.label :author, "Name" %><br />
-    <%= f.text_field :author, class: 'form-control' %><br />
-    <%= f.label :link, "Link (optional)" %><br />
-    <%= f.text_field :link, class: 'form-control' %><br />
-    <%= f.label :body %>
-    <%= f.text_area :body, rows: 1, class: 'form-control', placeholder: "Enter comment body" %>
-    <div class="actions">
-      <%= f.submit "Submit Comment", class: 'btn btn-default' %>
-    </div>
-  <% end %>
-</div>
+  </div>
