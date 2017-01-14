@@ -23,17 +23,6 @@ class MoonVibeGuideController < ApplicationController
     @next_issue = @next.present? ? @next : @first
   end
 
-  def daily_reading
-    @daily_reading = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
-
-    if @daily_reading.present?
-      @daily_reading_text = @daily_reading.body
-    else 
-      @stay_tuned = 'Please stay tuned.'
-    end
-
-  end
-
   def reading
     @podcast = Podcast.find_by_id(params[:id])
   end

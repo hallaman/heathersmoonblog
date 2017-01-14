@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :newsbar
-  helper_method :subscribers
+  helper_method :newsbar, :subscribers, :daily
 
   def newsbar
     @newsbar = Newsbar.where(show: true).last
@@ -15,9 +14,17 @@ class ApplicationController < ActionController::Base
 
   def subscribers 
     # API key in initializers/gibbon.rb
-    list_id = 'b6efc69609'
-    @listdata = Gibbon::Request.lists(list_id).retrieve
+    @list_id = 'b6efc69609'
+    @listdata = Gibbon::Request.lists(@list_id).retrieve
     @subscribers = ::ApplicationController.helpers.number_to_human(@listdata['stats']['member_count'], precision: 4,  separator: ',', units: {million: "", thousand: ""}).to_s
+  end
+
+  def daily
+    @daily = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
+    if @daily.nil?
+      #@daily = Post.new(id: Post.last.id+1, body: 'Please stay tuned.', publish_date: DateTime.now.beginning_of_day, category: 'MVG Daily Reading') 
+      @daily = Post.find(1)
+    end
   end
 
   def after_sign_in_path_for(resource)
