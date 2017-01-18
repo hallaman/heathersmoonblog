@@ -92,7 +92,9 @@
 
 			<div class="videoholder">
 				<div class="videoborder">
-					<%= @video.embed_code.html_safe if @video.present? %>
+					<div class="videowrapper">
+						<%= @video.embed_code.html_safe if @video.present? %>
+					</div>
 				</div>
 			</div>
 

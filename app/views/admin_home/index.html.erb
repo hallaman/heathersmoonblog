@@ -29,10 +29,11 @@
     <%= link_to 'New Newsbar', new_newsbar_path, class: 'btn btn-default' %>
     <%= link_to 'View All', newsbars_path, class: 'btn btn-success' %>
   </div>
-
+</div>
 
 	<hr />
-
+  
+<div class="container">
   <h4 class="bold-gold text-center">Current Video</h4>
 
   <table class="table">
@@ -46,7 +47,7 @@
 
     <tbody>
       <tr>
-        <td><%= @video.embed_code.html_safe %></td>
+        <td><%= @video.embed_code %></td>
         <td><%= @video.show %></td>
         <td><%= link_to 'Edit', edit_video_path(@video) %></td>
         <td><%= link_to 'Delete', @video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
