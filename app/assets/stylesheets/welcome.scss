@@ -77,6 +77,13 @@
   color: $white; 
 }
 
+.latestitems {
+  h3 {
+    font-family: 'MANIFESTO';
+    padding-bottom: 15px;
+  }
+}
+
 @media (max-width: 414px) {
   #home_header {
     width: 100%;

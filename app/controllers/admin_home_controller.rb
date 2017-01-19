@@ -4,6 +4,8 @@ class AdminHomeController < ApplicationController
   def index
     @newsbar = Newsbar.where(show: true).last
     @video = Video.where(show: true).last
+
+    @latestitems = LatestItem.where(show: true).limit(3)
   end
 
 end

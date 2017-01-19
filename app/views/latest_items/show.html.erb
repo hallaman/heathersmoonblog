@@ -1,0 +1,24 @@
+<div class="container">
+	<p>
+	  <strong>Title:</strong>
+	  <%= @latest_item.title %>
+	</p>
+
+	<p>
+	  <strong>Link:</strong>
+	  <%= @latest_item.link %>
+	</p>
+
+	<p>
+	  <strong>Show:</strong>
+	  <%= @latest_item.show %>
+	</p>
+
+	<p>
+	  <strong>Image:</strong>
+  	<%= image_tag(@latest_item.image.url(:thumb)) %>
+	</p>
+
+	<%= link_to 'Edit', edit_latest_item_path(@latest_item) %> |
+	<%= link_to 'Back', latest_items_path %>
+</div>

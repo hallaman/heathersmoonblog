@@ -31,24 +31,27 @@ $notification-error: $light-gray-purple;
 .alert-error,
 .btn-error,
 .btn-error:hover,
-.btn-error:active {
-    background-color: $notification-error;
+.btn-error:active,
+.btn-error:focus {
+    background-color: $notification-error !important;
     border: none;
  }
 
 .alert-alert,
 .btn-alert,
 .btn-alert:hover,
-.btn-alert:active {
-    background-color: $notification-alert;
+.btn-alert:active,
+.btn-alert:focus {
+    background-color: $notification-alert !important;
     border: none;
  }
 
 .alert-success,
 .btn-success,
 .btn-success:hover,
-.btn-success:active {
-    background-color: $notification-confirm;
+.btn-success:active,
+.btn-success:focus {
+    background-color: $notification-confirm !important;
     border: none;
  }
 

@@ -1,0 +1,1 @@
+json.partial! "latest_items/latest_item", latest_item: @latest_item
