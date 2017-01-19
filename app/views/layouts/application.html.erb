@@ -36,7 +36,7 @@
 
 </head>
 <body>
-  <%= render 'layouts/topbar', locals: { newsbar: @newsbar } %>
+  <%= render 'layouts/topbar', locals: { newsbar: @newsbar } if !newsbar.nil? %>
 
   <%= render 'layouts/header' %>
   <div class="container-fluid"> 

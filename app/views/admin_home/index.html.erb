@@ -1,65 +1,7 @@
-<% render 'newsbar', locals: { newsbar: @newsbar, subscribers: @subscribers } %>
+<%= render 'admin_home/newsbar', newsbar: @newsbar if !newsbar.nil? %>
 
-<div class="container">
-	<h2>Listing Home Page</h2>
-	<hr />
+<hr />
 
-  <h4 class="bold-gold text-center">Current Newsbar</h4>
+<%= render 'admin_home/latestvideo', latestvideo: @video if !@video.nil?%>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Message</th>
-        <th>Show</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td><%= @newsbar.message.html_safe %></td>
-        <td><%= @newsbar.show %></td>
-        <td><%= link_to 'Edit', edit_newsbar_path(@newsbar) %></td>
-        <td><%= link_to 'Delete', @newsbar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p class="text-center">
-    <%= link_to 'New Newsbar', new_newsbar_path, class: 'btn btn-default' %>
-    <%= link_to 'View All', newsbars_path, class: 'btn btn-success' %>
-  </div>
-</div>
-
-	<hr />
-  
-<div class="container">
-  <h4 class="bold-gold text-center">Current Video</h4>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Video</th>
-        <th>Show</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td><%= @video.embed_code %></td>
-        <td><%= @video.show %></td>
-        <td><%= link_to 'Edit', edit_video_path(@video) %></td>
-        <td><%= link_to 'Delete', @video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p class="text-center">
-    <%= link_to 'New Video', new_video_path, class: 'btn btn-default' %>
-    <%= link_to 'View All', videos_path, class: 'btn btn-success' %>
-  </div>
-
-	<hr />
-
-</div>
+<hr />
