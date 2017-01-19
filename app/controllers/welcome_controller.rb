@@ -10,5 +10,7 @@ class WelcomeController < ApplicationController
     else 
       @stay_tuned = '<p>Please stay tuned.</p>'
     end
+
+    @latest_items = LatestItem.where(show: true).limit(3)
   end
 end

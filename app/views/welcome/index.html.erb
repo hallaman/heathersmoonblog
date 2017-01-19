@@ -118,18 +118,15 @@
 		<div class="row text-center latestitems">
 			<h3>LATEST FROM AQUARIUS NATION</h3>
 
-			<div class="col-xs-12 col-sm-4">
-				<%= link_to 'New Newsbar', new_newsbar_path, class: 'btn btn-default an-button' %>
-			</div>
+			 <% @latest_items.each do |latest_item| 
+			 		@button = !latest_item.button_text.nil? ? latest_item.button_text : 'READ MORE'
+			 	%>
+					<div class="col-xs-12 col-sm-4">
+						<%= link_to @button, latest_item.link, class: 'btn btn-default an-button' %>
+					</div>
 
-			<div class="col-xs-12 col-sm-4">
-				<%= link_to 'New Newsbar', new_newsbar_path, class: 'btn btn-default an-button' %>				
-			</div>
+				<% end %>
 
-			<div class="col-xs-12 col-sm-4">
-					<%= link_to 'New Newsbar', new_newsbar_path, class: 'btn btn-default an-button' %>
-			
-			</div>
 		</div>
 	</div>
 </div>
