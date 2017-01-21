@@ -335,6 +335,17 @@ div {
   }
 }
 
+.footer {
+  font-style: 'Lato', sans-serif;
+  .bottom {
+    padding-top: 20px;
+  }
+  h4 {
+    font-family: "MANIFESTO";
+    padding-top: 20px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 900px) {
   .nav-tabs > li > a {
     padding: 10px;
