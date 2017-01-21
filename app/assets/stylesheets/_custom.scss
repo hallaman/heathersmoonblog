@@ -130,7 +130,19 @@ $notification-error: $light-gray-purple;
 }
 
 .row {
-  padding: 20px 0;
+  padding: 60px 0;
+}
+
+.carousel-indicators {
+
+}
+
+.carousel-indicators li {
+  border: 1px solid $blackish;
+}
+
+.carousel-indicators .active {
+  background-color: $blackish;
 }
 
 

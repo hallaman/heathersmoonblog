@@ -1,0 +1,19 @@
+<%= simple_form_for(@testimonial) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :body, as: :summernote %>
+    <div class="field">
+      <%= f.label "Image" %><br>
+      <%= f.file_field :image %>
+      <%= image_tag @testimonial.image.url(:image) %>
+    </div>
+    
+    <%= f.input :show %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

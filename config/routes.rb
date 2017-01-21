@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :testimonials
   resources :latest_items
   resources :videos
   resources :newsbars

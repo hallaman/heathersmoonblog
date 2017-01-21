@@ -6,6 +6,8 @@ class AdminHomeController < ApplicationController
     @video = Video.where(show: true).last
 
     @latestitems = LatestItem.where(show: true).limit(3)
+    @testimonials = Testimonial.where(show: true)
+
   end
 
 end

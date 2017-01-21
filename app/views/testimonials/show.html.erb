@@ -1,0 +1,24 @@
+<div class="container">
+	<p>
+	  <strong>Title:</strong>
+	  <%= @testimonial.title %>
+	</p>
+
+	<p>
+	  <strong>Body:</strong>
+	  <%= @testimonial.body.html_safe %>
+	</p>
+
+	<p>
+	  <strong>Image:</strong>
+    <%= image_tag @testimonial.image.url(:thumb) %>
+	</p>
+
+	<p>
+	  <strong>Show:</strong>
+	  <%= @testimonial.show %>
+	</p>
+
+	<%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
+	<%= link_to 'Back', testimonials_path %>
+</div>

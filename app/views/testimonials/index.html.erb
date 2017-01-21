@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h1>Listing Testimonials</h1>
+
+  <%= link_to 'New Testimonial', new_testimonial_path, class: 'btn btn-default' %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Image</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @testimonials.each do |testimonial| %>
+        <tr>
+          <td><%= testimonial.title %></td>
+          <td><%= testimonial.body.html_safe %></td>
+          <td><%= image_tag(testimonial.image.url(:thumb)) %></td>
+          <td><%= testimonial.show %></td>
+          <td><%= link_to 'Edit', edit_testimonial_path(testimonial) %></td>
+          <td><%= link_to 'Delete', testimonial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+
