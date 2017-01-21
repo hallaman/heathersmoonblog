@@ -129,6 +129,12 @@ $notification-error: $light-gray-purple;
   transition: opacity .5s ease forward;
 }
 
+.thumbnail {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
 .row {
   padding: 60px 0;
 }

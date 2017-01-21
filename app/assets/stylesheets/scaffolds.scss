@@ -38,6 +38,7 @@ h4 {
   font-family: "MANIFESTO";
   font-weight: 400;
   margin: 0;
+  line-height: 1.5em;
 }
 
 p, ol, ul, td {
@@ -352,14 +353,18 @@ div {
 }
 
 .subscribe-footer {  
+  .container {
+    max-width: 650px;
+    margin: 0px auto;
+    text-align: center;
+  }
   h4 {
-    line-height: 2em;
     padding-top: 0;
     padding-bottom: 20px;
   }
 
   .footer-links {
-    text-align: right;
+    text-align: left;
     p a {
       color: $white;
     }

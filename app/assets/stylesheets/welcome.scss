@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_colors.scss";
 
+.welcome {
+  .container {
+    max-width: 650px;
+    margin: 0px auto;
+    text-align: center;
+  }
+}
+
 #home_header {
 	background-image: image-url('home_header.png');
   background-size: cover;
@@ -69,6 +77,50 @@
   overflow: hidden;
   width: 100%;
   color: $white; 
+}
+
+.birthchart,
+.moonplanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    font-size: 2.4em;
+  }
+
+  p {
+    line-height: 2.8em;
+    font-size: 1.3em;
+    padding: 15px 0;
+    font-weight: 300;
+    max-width: 280px;
+  }
+  .an-btn {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+  }
+
+}
+
+.apothecary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    line-height: 2.6em;
+    font-size: 1em;
+    padding: 20px 0;
+    font-weight: 400;
+  }
+  .an-btn {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+  }
+
 }
 
 .latestitems {
@@ -145,17 +197,12 @@
 }
 
 .testimonials {
-  #myCarousel {
-    max-width: 800px;
-    margin: 0px auto;
-    text-align: center;
-  }
-  
 
   .thumbnail {
     margin: 35px 0;
     display: inline-block;
     overflow: hidden;
+    border-radius: 0;
   }
   .testimonial-img {
     width: 180px;
@@ -167,7 +214,7 @@
   }
 
   h3 {
-    font-family: 'Rouge Script', cursive;
+    font-family: 'Dancing Script', cursive;
   }
 }
 
