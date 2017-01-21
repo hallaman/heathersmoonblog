@@ -1,3 +1,5 @@
+require 'instagram'
+
 class WelcomeController < ApplicationController
   def index
   	@video = Video.where(show: true).last
@@ -12,5 +14,8 @@ class WelcomeController < ApplicationController
     end
 
     @latest_items = LatestItem.where(show: true).limit(3)
+
+    client = Instagram.client(:access_token => '1517317818.1677ed0.daa3778c68b149cc82e9608c931a59d6')
+    @insta = client.user_recent_media
   end
 end

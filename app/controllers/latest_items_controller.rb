@@ -70,6 +70,6 @@ class LatestItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def latest_item_params
-      params.require(:latest_item).permit(:title, :link, :show, :image)
+      params.require(:latest_item).permit(:title, :link, :show, :image, :button_text)
     end
 end

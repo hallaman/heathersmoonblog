@@ -18,7 +18,7 @@
 		</div>
 	</div>
 </div>
-<div class="moonplanner">
+<div class="purple-bg moonplanner">
 	<div class="col-xs-12">
 		<div class="container">
 			<div class="row">
@@ -57,7 +57,7 @@
 </div>
 <%= link_to image_tag('read_more.png'), post_path(daily), class: 'readmore' %>
 
-<div class="moonvibetribe">
+<div class="purple-bg moonvibetribe">
 	<div class="col-xs-12">
 		<div class="container">
 			<div class="row">
@@ -75,7 +75,7 @@
 	</div>
 </div>
 
-<div class="birthchart">
+<div class="purple-bg birthchart">
 	<div class="col-xs-12">
 		<div class="container">
 			<div class="row">
@@ -103,7 +103,7 @@
 	</div>
 </div>
 
-<div class="apothecary">
+<div class="purple-bg apothecary">
 	<div class="col-xs-12">
 		<div class="container">
 			<div class="row">
@@ -117,16 +117,68 @@
 	<div class="container">
 		<div class="row text-center latestitems">
 			<h3>LATEST FROM AQUARIUS NATION</h3>
-
-			 <% @latest_items.each do |latest_item| 
-			 		@button = !latest_item.button_text.nil? ? latest_item.button_text : 'READ MORE'
-			 	%>
+			<div class="container">
+				<% @latest_items.each do |latest_item| 
+					@button = !latest_item.button_text.blank? ? latest_item.button_text : 'READ MORE'
+				%>
 					<div class="col-xs-12 col-sm-4">
-						<%= link_to @button, latest_item.link, class: 'btn btn-default an-button' %>
+						<%= link_to image_tag(latest_item.image.url(:thumb)), latest_item.link, class: 'shop-img' %>
+						<h4><%= link_to latest_item.title, latest_item.link, class: 'shop-title' %></h4>
+						<%= link_to @button, latest_item.link, class: 'btn btn-default an-btn' %>
 					</div>
 
 				<% end %>
+			</div>
 
+			<div class="row text-center insta">
+				<h5>CONNECT WITH AQ</h5>
+				<div class="container">
+					<% @insta.take(4).each do |insta| %>
+					  <div class="col-xs-12 col-sm-3">
+					    <div class="thumbnail">
+					      <a href="<%= insta.link %>" target="_blank">
+					      	<%= image_tag insta.images.thumbnail.url %>
+					      </a>
+					    </div>
+					  </div>
+					<% end %>
+
+					<div class="connect">
+						<a href="https://www.facebook.com/aquariusnationastrology" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="https://www.youtube.com/user/aquariusnation1111" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+						<a href="https://www.instagram.com/aquariusnation/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+						<a href="https://plus.google.com/118294992650915534853" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="purple-bg">
+	<div class="col-xs-12">
+		<div class="container">
+			<div class="row">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-xs-12">
+	<div class="container">
+		<div class="row text-center testimonials">
+		
+		</div>
+	</div>
+</div>
+
+<div class="purple-bg subscribe-footer">
+	<div class="col-xs-12">
+		<div class="container">
+			<div class="row">
+				Subscribe for love and cosmic updates
+			</div>
 		</div>
 	</div>
 </div>

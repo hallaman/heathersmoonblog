@@ -12,7 +12,7 @@
 
 <p>
   <strong>File:</strong>
-  <%= image_tag(@medium.file.url(:thumb)) %>
+  <div class="thumbnail"><%= image_tag(@medium.file.url(:thumb)) %></div>
 </p>
 
 <%= link_to 'Edit', edit_medium_path(@medium) %> |

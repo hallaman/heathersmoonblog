@@ -62,10 +62,7 @@
   }
 }
 
-.moonplanner,
-.moonvibetribe,
-.birthchart,
-.apothecary {
+.purple-bg {
 	background-image: image-url('purple_bg.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -78,11 +75,79 @@
 }
 
 .latestitems {
-  h3 {
+  h3, h5 {
     font-family: 'MANIFESTO';
     padding-bottom: 15px;
+    margin-bottom: 0;
+  }
+
+  .an-btn {
+    width: 180px;
+    margin-bottom: 40px;
+  }
+
+  .col-sm-4 {
+    padding: 0;
+  }
+
+  .container  {
+    border-top: 1px solid rgba($gold, .3);
+    border-bottom: 1px solid rgba($gold, .3);
+    max-width: 650px; 
+    margin: 0px auto;
+    padding: 0;
+  }
+
+  .shop-img {
+    margin: 15px 0;
+    display: inline-block;
+    overflow: hidden;
+    img {
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  h4 {
+    width: 150px;
+    margin: 0px auto;
+    padding-bottom: 15px;             
+    a {
+      color: $blackish;
+      font-size: .8em;
+      font-weight: 400;
+    }
+
+  }
+
+  .insta {
+    .container  {
+      border-top: none;
+      border-bottom: none;
+
+    }
   }
 }
+
+.connect a {
+  margin: 5px;
+
+  i.fa {
+    color: $white;  
+    width: 30px;
+    padding: 10px 5px 10px 6px; 
+    background-color: #333;
+    border-radius: 100%;
+  }
+
+  i.fa:hover {
+    background-color: #eee;
+    color: $blackish;
+    transition: .2s all ease-in-out;
+  }
+}
+
+
 
 @media (max-width: 414px) {
   #home_header {
