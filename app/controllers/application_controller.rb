@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     if !@daily.present?
       @daily = Post.last 
     end
-    @daily = @daily.id
+    @daily = @daily.id 
   end
 
   def about 
