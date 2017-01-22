@@ -5,7 +5,7 @@
 
 .welcome {
   .container {
-    max-width: 650px;
+    max-width: 800px;
     margin: 0px auto;
     text-align: center;
   }
@@ -16,7 +16,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  margin: 0 0 30px 0;
   padding: 0;
   height: 450px;
   width: 100%;
@@ -24,7 +23,9 @@
 
 .manifesto {
 	h4 {
-		line-height: 1.5em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+		line-height: 2em;
 	}
 }
 
@@ -72,11 +73,32 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  margin: 0 0 30px 0;
   padding: 0;
   overflow: hidden;
   width: 100%;
   color: $white; 
+}
+
+.moonvibetribe {
+  h3 {
+    font-family: "MANIFESTO";
+    margin-top: 0px;
+  }
+
+  .entry {
+    padding: 30px 20px;
+    line-height: 3em;
+    font-size: 1.2em;
+  }
+  p {
+    margin: 0px auto;
+    text-align: center;
+  }
+  .an-btn {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+  }
 }
 
 .birthchart,
@@ -94,7 +116,7 @@
     font-size: 1.3em;
     padding: 15px 0;
     font-weight: 300;
-    max-width: 280px;
+    margin: 0px auto;
   }
   .an-btn {
     background-color: transparent;
@@ -111,9 +133,9 @@
 
   p {
     line-height: 2.6em;
-    font-size: 1em;
-    padding: 20px 0;
-    font-weight: 400;
+    font-size: 1.2em;
+    padding: 10px 0;
+    font-weight: 300;
   }
   .an-btn {
     background-color: transparent;
@@ -142,7 +164,6 @@
   .container  {
     border-top: 1px solid rgba($gold, .3);
     border-bottom: 1px solid rgba($gold, .3);
-    max-width: 650px; 
     margin: 0px auto;
     padding: 0;
   }
@@ -160,20 +181,26 @@
   h4 {
     width: 150px;
     margin: 0px auto;
-    padding-bottom: 15px;             
+    padding-bottom: 15px;
+    font-family: 'Lato', sans-serif;             
     a {
       color: $blackish;
-      font-size: .8em;
+      font-size: .9em;
       font-weight: 400;
     }
 
   }
 
   .insta {
+    padding: 30px 0 0;
+
+    h5 {
+      padding-bottom: 30px;
+      padding-top:  0;
+    }
     .container  {
       border-top: none;
       border-bottom: none;
-
     }
   }
 }
@@ -198,11 +225,16 @@
 
 .testimonials {
 
+  .carousel-indicators {
+    bottom: -40px
+  }
+
   .thumbnail {
     margin: 35px 0;
     display: inline-block;
     overflow: hidden;
     border-radius: 0;
+    
   }
   .testimonial-img {
     width: 180px;
@@ -211,6 +243,9 @@
 
   .item {
     min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   h3 {

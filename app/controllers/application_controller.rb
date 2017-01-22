@@ -20,11 +20,11 @@ class ApplicationController < ActionController::Base
   end
 
   def daily
-    @daily = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
-    if @daily.nil?
-      #@daily = Post.new(id: Post.last.id+1, body: 'Please stay tuned.', publish_date: DateTime.now.beginning_of_day, category: 'MVG Daily Reading') 
-      @daily = Post.find(1)
+    @daily = Post.where(category: 'MVG Daily Reading').where('publish_date BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).last
+    if !@daily.present?
+      @daily = Post.last 
     end
+    @daily = @daily.id
   end
 
   def after_sign_in_path_for(resource)

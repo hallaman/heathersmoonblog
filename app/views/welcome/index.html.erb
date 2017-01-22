@@ -50,7 +50,7 @@
 
 				<% 
 		  		if @daily_reading_text.present? 
-		  		  @daily_reading_text = strip_tags(@daily_reading.body).truncate_words(193).split(".").in_groups(2)
+		  		  @daily_reading_text = strip_tags(@daily_reading.body).truncate_words(193).split(/[^'\w^.\w^,\w^!\w^?\w]+/).in_groups(2)
 
 			      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
 			      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
@@ -58,11 +58,11 @@
 			  %>
 
 				<div class="entry col-xs-12 col-md-6 text-left">
-					<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+					<%= @daily_para_1.to_s  if @daily_para_1.present? %>
 				</div>
 
 				<div class="entry col-xs-12 col-md-6 text-left">
-					<%= @daily_para_2.to_s + '...' if @daily_para_2.present? %>
+					<%= @daily_para_2.to_s  if @daily_para_2.present? %>
 				</div>
 
 			</div>
@@ -74,7 +74,16 @@
 		<div class="col-xs-12">
 			<div class="container">
 				<div class="row">
-					<h2>Moon Vibe Tribe stuff<h2>
+					<h3 class="text-center">MOON VIBE TRIBE</h3>
+					<div class="entry col-xs-12 col-md-6 text-left">
+						<%= @daily_para_1.to_s  if @daily_para_1.present? %>
+						<p class="text_center"><%= link_to "LOG IN", login_path, class: "btn btn-default an-btn" %></p>
+					</div>
+
+					<div class="entry col-xs-12 col-md-6 text-left">
+						<%= @daily_para_2.to_s  if @daily_para_2.present? %>
+						<p class="text_center"><%= link_to "READ MORE", moonvibeguide_path, class: "btn btn-default an-btn" %></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -95,13 +104,13 @@
 					<div class="birthchart">	
 						<div class="col-xs-12 col-sm-6">
 							<div class="thumbnail">
-								<%= link_to image_tag('birthchart.png'), "http://eepurl.com/crMxQL" %>
+								<%= link_to image_tag('birthchart.png'), "http://eepurl.com/cc--Sb" %>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<h4>BIRTH CHART BOOKS</h4>
 							<p>sign up below to be notified when birth chart books commence again.</p>
-							<%= link_to "SIGN UP", "http://eepurl.com/crMxQL", class: "btn btn-default an-btn" %>
+							<%= link_to "SIGN UP", "http://eepurl.com/cc--Sb", class: "btn btn-default an-btn" %>
 						</div>
 					</div>
 				</div>
@@ -226,7 +235,7 @@
 			       	<% end %>
 			          	
 			          	<% if testimonial.image.present? %>
-			          		<div class="hidden-xs col-sm-3">
+			          		<div class="hidden-xs col-sm-3 pic">
 			          			<div class="thumbnail">
 			           				<%= image_tag(testimonial.image.url(:thumb), class: 'testimonial-img') %>
 			           			</div>

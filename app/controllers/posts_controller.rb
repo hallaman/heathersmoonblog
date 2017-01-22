@@ -54,15 +54,6 @@ class PostsController < ApplicationController
       end
     end
 
-    # respond_to do |format|
-    #   if @post.save
-    #     format.html { redirect_to posts_path, notice: 'Sent to MailChimp list!' }
-    #     format.json { render :index }
-    #   else
-    #     format.html { render :index }
-    #     format.json { render json: @post.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end 
 
   # GET /posts
