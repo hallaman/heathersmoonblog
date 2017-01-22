@@ -68,7 +68,7 @@
 			</div>
 		</div>
 	</div>
-	<%= link_to image_tag('read_more.png'), post_path(daily), class: 'readmore' if daily.present? %>
+	<%= link_to image_tag('read_more.png'), post_path(daily), class: 'readmore' if !daily.nil? %>
 
 	<div class="purple-bg moonvibetribe">
 		<div class="col-xs-12">
