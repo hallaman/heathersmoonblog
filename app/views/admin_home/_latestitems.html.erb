@@ -16,7 +16,7 @@
         <tr>
           <td><%= latest_item.title %></td>
           <td><%= latest_item.link %></td>
-          <td><div class="thumbnail"><%= image_tag(latest_item.image.url(:thumb)) %></div>
+          <td style="width: 100px; height: 100px; overflow: hidden;"><div class="thumbnail"><%= image_tag(latest_item.image.url(:thumb)) %></div>
 </td>
           <td><%= link_to 'Edit', edit_latest_item_path(latest_item) %></td>
           <td><%= link_to 'Delete', latest_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

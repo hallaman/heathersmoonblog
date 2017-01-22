@@ -8,7 +8,6 @@
     <thead>
       <tr>
         <th>Message</th>
-        <th>Show</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -16,7 +15,6 @@
     <tbody>
       <tr>
         <td><%= newsbar.message.html_safe %></td>
-        <td><%= newsbar.show %></td>
         <td><%= link_to 'Edit', edit_newsbar_path(newsbar) %></td>
         <td><%= link_to 'Delete', newsbar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

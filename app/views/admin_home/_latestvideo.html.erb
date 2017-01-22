@@ -5,15 +5,17 @@
     <thead>
       <tr>
         <th>Video</th>
-        <th>Show</th>
         <th colspan="2"></th>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <td><%= latestvideo.embed_code %></td>
-        <td><%= latestvideo.show %></td>
+        <td style="width: 300px;">
+          <div class="embed-responsive embed-responsive-4by3">
+            <%= latestvideo.embed_code.html_safe %>
+          </div>
+        </td>
         <td><%= link_to 'Edit', edit_video_path(latestvideo) %></td>
         <td><%= link_to 'Delete', latestvideo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

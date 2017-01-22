@@ -27,7 +27,7 @@
 
         <% if controller.controller_name != 'moon_vibe_guide' %>
 
-          <li><a href="#">About</a></li>
+          <li><%= link_to "About", page_path(about) %></li>
           <li><a href="#">Moon Planner</a></li>
           <li><a href="#">Shop</a></li>
           <li><%= link_to "Blog", blog_path %><li>
@@ -61,6 +61,7 @@
               <li role="separator" class="divider"></li>
               <li><%= link_to "Blog & Daily", posts_path %><li>
               <li><%= link_to "Home Page", admin_home_path %><li>
+              <li><%= link_to "Pages", pages_path %><li>
               <li role="separator" class="divider"></li>
               <li><%= link_to "Logout", destroy_admin_session_path %></li>
             </ul>

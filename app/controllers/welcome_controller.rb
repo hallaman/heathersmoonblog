@@ -20,5 +20,7 @@ class WelcomeController < ApplicationController
 
     @testimonials = Testimonial.where(show: true)
 
+    @about = Page.where(name: 'About').first
+
   end
 end

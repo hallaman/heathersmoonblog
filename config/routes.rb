@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :pages
   resources :testimonials
   resources :latest_items
   resources :videos
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
   match "/moonvibeguide/issue/:id", to: "moon_vibe_guide#issue", :via => 'get', :as => 'moonvibeguide_issue'
   match "/moonvibeguide/reading/:id", to: "moon_vibe_guide#reading", :via => 'get', :as => 'moonvibeguide_reading'
   match "/moonvibeguide/view_reading/:id", to: "moon_vibe_guide#view_reading", :via => 'get', :as => 'moonvibeguide_view_reading'
-
+    
   match "/blog", to: "blog#index", :via => 'get'
   get '/comments/new/(:post_id)/(:parent_id)', to: 'comments#new', as: :new_comment
   get '/posts/send_campaign/:id', to: 'posts#send_campaign', as: :send_campaign
