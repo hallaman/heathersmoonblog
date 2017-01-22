@@ -27,7 +27,7 @@
 
         <% if controller.controller_name != 'moon_vibe_guide' %>
 
-          <li><%= link_to "About", page_path(about) %></li>
+          <li><%= link_to "About", page_path(about) if about.present? %></li>
           <li><a href="#">Moon Planner</a></li>
           <li><a href="#">Shop</a></li>
           <li><%= link_to "Blog", blog_path %><li>
