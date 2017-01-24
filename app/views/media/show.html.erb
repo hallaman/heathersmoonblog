@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+		<p>
+		  <strong>Link:</strong>
+		  <%= image_path(@medium.file.url) %>
+		</p>
 
-<p>
-  <strong>Link:</strong>
-  <%= image_path(@medium.file.url) %>
-</p>
+		<p>
+		  <strong>Title:</strong>
+		  <%= @medium.title %>
+		</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @medium.title %>
-</p>
+		<p>
+		  <strong>File:</strong>
+		  <div class="thumbnail"><%= image_tag(@medium.file.url(:thumb)) %></div>
+		</p>
 
-<p>
-  <strong>File:</strong>
-  <div class="thumbnail"><%= image_tag(@medium.file.url(:thumb)) %></div>
-</p>
-
-<%= link_to 'Edit', edit_medium_path(@medium) %> |
-<%= link_to 'Back', media_path %>
+		<%= link_to 'Edit', edit_medium_path(@medium) %> |
+		<%= link_to 'Back', media_path %>
+	</div>
+</div>

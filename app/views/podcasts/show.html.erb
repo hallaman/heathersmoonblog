@@ -1,17 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
 
-<p>
-  <strong>Title:</strong>
-  <%= @podcast.title %>
-</p>
+		<p>
+		  <strong>Title:</strong>
+		  <%= @podcast.title %>
+		</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @podcast.main_image.url(:thumb) %>
-</p>
+		<p>
+		  <strong>Image:</strong>
+		  <%= image_tag @podcast.main_image.url(:thumb) %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @podcast.description %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @podcast.description %>
+		</p>
+	</div>
+</div>
 

@@ -1,25 +1,26 @@
 <div class="container">
-  <h1>Readings</h1>
+  <div class="row">
+    <h1>Readings</h1>
 
-  <%= link_to 'New Reading', new_podcast_path, class: 'btn btn-default' %>
+    <%= link_to 'New Reading', new_podcast_path, class: 'btn btn-default' %>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @podcasts.each do |podcast| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= podcast.title %></td>
-          <td><%= link_to 'Edit', edit_podcast_path(podcast) %></td>
-          <td><%= link_to 'Delete', podcast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Title</th>
+          <th colspan="2"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
 
+      <tbody>
+        <% @podcasts.each do |podcast| %>
+          <tr>
+            <td><%= podcast.title %></td>
+            <td><%= link_to 'Edit', edit_podcast_path(podcast) %></td>
+            <td><%= link_to 'Delete', podcast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
