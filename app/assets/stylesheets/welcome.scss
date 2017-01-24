@@ -94,7 +94,7 @@
   }
 
   .entry {
-    padding: 30px 20px;
+    padding: 15px 20px;
     line-height: 3em;
     font-size: 1.2em;
   }
@@ -254,10 +254,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: 1.2em;
+    line-height: 2em;
   }
 
   h3 {
     font-family: 'Dancing Script', cursive;
+    font-size: 3em;
   }
 }
 

@@ -1,19 +1,16 @@
-<div class="col-xs-12">
-	<div class="container">
-		<div class="col-xs-12">
-		  <div class="daily text-center">
-		    <div class="col-xs-12">
-		    	<%= image_tag('daily_readings_symbol.png', width: 100) %>
+<div class="container">
+  <div class="daily text-center">
+    <div class="col-xs-12">
+    	<%= image_tag('daily_readings_symbol.png', width: 100) %>
 
-		    	<h2><%= @post.title %></h2>
-		    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
+    	<h2><%= @post.title %></h2>
+    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
 
-					<div class="entry text-left">
-						<%= @post.body.html_safe %>
-					</div>
-
-				</div>
+			<div class="entry text-left">
+				<%= @post.body.html_safe %>
 			</div>
+
 		</div>
 	</div>
 </div>
+

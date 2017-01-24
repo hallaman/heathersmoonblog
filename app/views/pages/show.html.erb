@@ -1,9 +1,11 @@
 <div class="container">
 	<div class="col-xs-12">
 		<div class="row">
-			<p class="entry"><div class="thumbnail" style="display: inline; float: left; padding-right: 20px;">
-				<%= image_tag @page.main_image.url(:thumb) %>
-			</div><%= @page.body.html_safe %></p>
+			<p class="entry">
+				<div class="thumbnail hidden-xs" style="display: inline; float: left; padding-right: 20px;">
+					<%= image_tag @page.main_image.url(:thumb) %>
+				</div>
+			<%= @page.body.html_safe %></p>
 		</div>
 	</div>
 </div>

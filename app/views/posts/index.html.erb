@@ -1,32 +1,34 @@
 <div class="container">
-  <h1>Blog Posts</h1>
+  <div class="row">
+    <h1>Blog Posts</h1>
 
-  <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
+    <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Publish date</th>
-        <th colspan="4"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @posts.each do |post| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= post.title %></td>
-          <td><%= post.category %></td>
-          <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to_if(post.category == 'Blog Post', 'Send to MailChimp List', send_campaign_path(post.id), class: "btn btn-danger") do
-
-            end %></td>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Publish date</th>
+          <th colspan="4"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.category %></td>
+            <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to_if(post.category == 'Blog Post', 'Send to MailChimp List', send_campaign_path(post.id), class: "btn btn-danger") do
+
+              end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

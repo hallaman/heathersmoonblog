@@ -7,33 +7,29 @@
 	</div>
 </div>
 
-<div class="col-xs-12">
-	<div class="container">
-		<div class="col-xs-12">
-		  <div class="daily text-center">
-		    <div class="col-xs-12">
-		    	<%= image_tag('daily_readings_symbol.png', width: 100) %>
 
-		    	<h2>DAILY MOON VIBE READING</h2>
-		    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
+<div class="container">
+  <div class="daily text-center">
+  	<%= image_tag('daily_readings_symbol.png', width: 100) %>
 
-		    	<% 
-		  			@daily_reading_text = strip_tags(@post.body).split('.').in_groups(2)
+  	<h2>DAILY MOON VIBE READING</h2>
+  	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
 
-			      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
-			      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
-				  %>
+  	<% 
+			@daily_reading_text = strip_tags(@post.body).split('.').in_groups(2)
 
-					<div class="entry text-left">
-						<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
-					</div>
+      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
+      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
+	  %>
 
-					<div class="entry text-left">
-						<%= @daily_para_2.to_s if @daily_para_2.present? %>
-					</div>
-
-				</div>
-			</div>
+		<div class="entry text-left">
+			<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
 		</div>
+
+		<div class="entry text-left">
+			<%= @daily_para_2.to_s if @daily_para_2.present? %>
+		</div>
+
 	</div>
 </div>
+
