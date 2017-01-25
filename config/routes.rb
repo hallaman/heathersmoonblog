@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :faqs
   resources :pages
   resources :testimonials
   resources :latest_items
@@ -39,6 +40,8 @@ Rails.application.routes.draw do
   get '/posts/send_campaign/:id', to: 'posts#send_campaign', as: :send_campaign
 
   match "/admin/home", to: "admin_home#index", :via => 'get'
+
+  match "/faq", to: "faqs#listing", :via => 'get', as: :list_faq
 
 
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 

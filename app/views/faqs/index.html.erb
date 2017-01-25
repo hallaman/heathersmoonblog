@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <h1>Listing Faqs</h1>
+    <%= link_to 'New Faq', new_faq_path, class: 'btn btn-default' %>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @faqs.each do |faq| %>
+          <tr>
+            <td><%= faq.title %></td>
+            <td><%= faq.body %></td>
+            <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
+            <td><%= link_to 'Delete', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>

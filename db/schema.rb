@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122032450) do
+ActiveRecord::Schema.define(version: 20170125203446) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20170122032450) do
     t.integer  "parent_id"
     t.integer  "post_id"
     t.integer  "likes"
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "fridays", force: :cascade do |t|
