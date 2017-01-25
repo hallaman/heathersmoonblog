@@ -7,8 +7,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Body</th>
+          <th>FAQ</th>
           <th colspan="2"></th>
         </tr>
       </thead>
@@ -16,8 +15,7 @@
       <tbody>
         <% @faqs.each do |faq| %>
           <tr>
-            <td><%= faq.title %></td>
-            <td><%= faq.body %></td>
+            <td><h5><%= faq.title %></h5><%= strip_tags(faq.body).truncate_words(90) %></td>
             <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
             <td><%= link_to 'Delete', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
