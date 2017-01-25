@@ -14,7 +14,7 @@
             </div>
             <div id="collapse-<%= faq.id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= faq.id %>">
               <div class="panel-body">
-                <%= faq.body %>
+                <%= faq.body.html_safe %>
               </div>
             </div>
           </div>
