@@ -5,6 +5,7 @@
 $(document).ready ->
 
 	top = 500
+	footer_pos = $(document).height() - 600
 	window.onscroll = ->
 		if $(window).scrollTop() > top 
 			$('#sidebar').addClass 'fixNav'
@@ -13,6 +14,12 @@ $(document).ready ->
 		if $(window).scrollTop() < top 
 			$('#sidebar').css top: 10
 			$('#sidebar').removeClass 'fixNav'
+
+		if $(window).scrollTop() > footer_pos
+			$('#sidebar').css top: -200
+
+		console.log $(window).scrollTop()
+		console.log footer_pos
 		return
 	return
 	

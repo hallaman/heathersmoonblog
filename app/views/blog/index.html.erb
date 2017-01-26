@@ -1,5 +1,8 @@
-<div class="col-xs-12">
-  <div class="container issues">
+<div class="container-fluid cropped_header">
+  <%= image_tag('cropped_header.png', style: 'visibility: hidden; width: 100%; height: auto;') %>
+</div>
+
+<div class="page container issues">
     <div class="col-xs-12">
       <% @posts.each do |post| %>
         <% if post.main_image.present? %>

@@ -39,7 +39,7 @@
   display: block;
   img {
     width: 100%;
-    max-width: 277px;
+    max-width: 230px;
     height: auto;
   }
 }
@@ -81,6 +81,7 @@
       border-bottom: 1px solid #b3b2b2;
       max-width: 460px;
       margin: 0px auto;
+      padding: 30px 0;
     }
   }
 }
@@ -128,13 +129,13 @@
     font-size: 2.4em;
   }
 
-  p {
-    line-height: 2.8em;
-    font-size: 1.3em;
+   p {
+    line-height: 2.4em;
     padding: 15px 0;
     font-weight: 300;
     margin: 0px auto;
   }
+
   .an-btn {
     background-color: transparent;
     border: 1px solid $white;
@@ -142,6 +143,8 @@
   }
 
 }
+
+
 
 .apothecary {
   display: flex;
@@ -222,21 +225,24 @@
   }
 }
 
-.connect a {
-  margin: 5px;
+.connect {
+  padding: 20px 0 0;
+  a {
+    margin: 5px;
 
-  i.fa {
-    color: $white;  
-    width: 30px;
-    padding: 10px 5px 10px 6px; 
-    background-color: #333;
-    border-radius: 100%;
-  }
+    i.fa {
+      color: $white;  
+      width: 30px;
+      padding: 10px 5px 10px 6px; 
+      background-color: #333;
+      border-radius: 100%;
+    }
 
-  i.fa:hover {
-    background-color: #eee;
-    color: $blackish;
-    transition: .2s all ease-in-out;
+    i.fa:hover {
+      background-color: #eee;
+      color: $blackish;
+      transition: .2s all ease-in-out;
+    }
   }
 }
 

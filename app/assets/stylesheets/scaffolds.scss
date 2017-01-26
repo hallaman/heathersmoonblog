@@ -44,8 +44,8 @@ h4 {
 }
 
 p, ol, ul, td {
-  font-size: 13px;
-  line-height: 18px;
+  line-height: 2em;
+  font-size: 1.4em;
 }
 
 a {
@@ -64,6 +64,10 @@ ul {
   li {
     padding: 4px 0;
   }
+}
+
+.thumbnail {
+  margin-bottom: 0;
 }
 
 .bold {
@@ -350,14 +354,24 @@ div {
 
 .footer {
   font-style: 'Lato', sans-serif;
+  .row {
+    padding: 20px 0;
+
+    h4 {
+      font-size: 1.3em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
   .bottom {
     padding-top: 20px;
+    margin-bottom: 0px;
   }
 }
 
 .subscribe-footer {  
   .container {
-    max-width: 650px;
     margin: 0px auto;
     text-align: center;
   }
@@ -367,8 +381,9 @@ div {
   }
 
   .footer-links {
-    text-align: left;
+    text-align: right;
     p a {
+      text-align: left;
       color: $white;
     }
   }
@@ -387,6 +402,11 @@ div {
       max-width: 330px;
       margin: 0px auto 20px;
       text-align: center;
+    }
+
+    .an-btn {
+      background-color: #000;
+      color: #fff;
     }
 
     .email {
