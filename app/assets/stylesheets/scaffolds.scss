@@ -71,6 +71,23 @@ hr.gold-line {
   opacity: .3;
 }
 
+.badge {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 1em;
+  // border: 1px solid $gold;
+  font-family: "MANIFESTO";
+  color: $gold;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 100%;
+  transition: all .5s ease-in-out;
+}
 
 .thumbnail {
   margin-bottom: 0;

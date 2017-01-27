@@ -1,7 +1,7 @@
 
 @media print {
   .navbar, .navbar-bottom, .nav, .print, 
-	div#sidebar, .symbol, img, .current_issue {
+	div#sidebar, .symbol, img, .current_issue, .pager {
 		display: none !important;
 	}
 

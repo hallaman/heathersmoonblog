@@ -10,9 +10,19 @@
 	    	<h2><%= @post.title %></h2>
 	    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
 
+
+
 				<div class="entry text-left">
 					<%= @post.body.html_safe %>
 				</div>
+
+				<div class="share-this">
+				  <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				  <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				  <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+				  <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+				</div> 
+				
 			</div>
 		</div>
 	</div>

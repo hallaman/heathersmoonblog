@@ -1,13 +1,29 @@
 <div class="well">
-  <p class="text-muted">Added by <strong><%= comment.author %></strong> on
-    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+  <p class="text-muted">Added by <strong><%= comment.author %></strong>
+    <%= time_ago_in_words(comment.created_at, format: '%B, %d %Y %H:%M:%S') %> ago</p>
 
   <blockquote>
     <p><%= comment.body %></p>
     <p>
     	<%= link_to post_comment_like_path(:post_id => comment.post_id,
     :id => comment.id, :comment_id => comment.id), class: 'like', method: :put, remote: true, data: { type: :json } do %>
-		  Like
+	    <svg height="0" width="0" class="heart">
+	    	<defs>
+		      <linearGradient id="Gradient-<%= comment.id %>" x1="0" x2="0" y1="0" y2="1">
+		        <stop class="stop1" offset="0%"/>
+		        <stop class="stop2" offset="20%"/>
+		        <stop class="stop3" offset="40%"/>
+		        <stop class="stop4" offset="60%"/>
+		        <stop class="stop5" offset="80%"/>
+		        <stop class="stop6" offset="100%"/>
+		      </linearGradient>
+		     
+		  	</defs>
+				<path id="heart-icon-<%= comment.id %>" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454
+				    C30,20.335,16,28.261,16,28.261z" fill="url(#Gradient-<%= comment.id %>)"/>    
+
+    	</svg>
+
 		  <% end %>
 			<span id="likes_<%= comment.id %>" class="badge"><%= comment.likes %></span>
 	</p>
@@ -64,7 +80,7 @@
   .on('ajax:complete', function () { $(this).removeClass('loading'); })
   .on('ajax:error', function () { $(this).after('<div class="error">There was an issue.</div>'); })
   .on('ajax:success', function(e, data, status, xhr) { 
-  	$(this).html("Thank you for voting!"); 
+  	$(this).find('.heart').addClass('rainbow'); 
   	$('#likes_'+data.id).html(data.count); 
 	});
 </script>
