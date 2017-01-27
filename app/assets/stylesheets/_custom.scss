@@ -72,6 +72,11 @@ $notification-error: $light-gray-purple;
   margin-bottom: 0;
 }
 
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: #fff;
+}
+
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: $gold;

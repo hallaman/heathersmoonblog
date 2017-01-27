@@ -45,7 +45,7 @@
     </div>
     <%= yield %>
   </div>
-  <%=  render 'layouts/footer' %> 
+  <%=  render 'layouts/footer' if current_admin.blank? %> 
 
 </body>
 </html>

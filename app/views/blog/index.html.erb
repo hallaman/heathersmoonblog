@@ -14,8 +14,8 @@
               <p class="issue_no"><%= post.publish_date.strftime('%A, %B %-d, %Y') %></p>
               <span class="line"></span>
               <h3><%= post.title %></h3>
-              <p class="includes">
-                <%= strip_tags(post.body).truncate_words(44) %>
+              <p>
+                <%= strip_tags(post.body).truncate_words(26) %>
               </p>
               <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
             </div>
@@ -26,8 +26,8 @@
               <p class="issue_no"><%= post.publish_date.strftime('%A, %B %-d, %Y') %></p>
               <span class="line"></span>
               <h3><%= post.title %></h3>
-              <p class="includes">
-                <%= strip_tags(post.body).truncate_words(44) %>
+              <p>
+                <%= strip_tags(post.body).truncate_words(26) %>
               </p>
               <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
             </div>

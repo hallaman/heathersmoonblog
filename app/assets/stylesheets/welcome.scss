@@ -37,18 +37,41 @@
   overflow: hidden;
   position:relative;
   display: block;
-  img {
-    width: 100%;
-    max-width: 230px;
-    height: auto;
+  background-image: image-url('read_more.png');
+  background-repeat: no-repeat;
+  background-position: center 32px;
+  background-size: 190px;
+  height: 200px;
+
+  .an-btn {
+    margin: 0;
+    border: 1px solid $gold;
+    color: $gold;
   }
 }
 
 .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .thumbnail img {
+    align-self: center;
+    padding-top: 40px;
+    width: 230px;
+  }
+
+  .row {
+    padding: 100px 0;
+    > .col-sm-6 {
+      padding-right: 0;
+    }
+  }
   .entry {
     text-align: left;
     line-height: 3em;
     font-size: 1.2em;
+    padding: 15px 0;
   }
 }
 
@@ -98,6 +121,11 @@
 }
 
 .moonvibetribe {
+  .row {
+    height: 360;
+  }
+  
+
   h3 {
     font-family: "MANIFESTO";
     margin-top: 0px;
@@ -116,6 +144,10 @@
     background-color: transparent;
     border: 1px solid $white;
     color: $white;
+  }
+
+  .button {
+    padding-bottom: 0;
   }
 }
 

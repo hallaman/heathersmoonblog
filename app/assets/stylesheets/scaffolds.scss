@@ -66,6 +66,12 @@ ul {
   }
 }
 
+hr.gold-line {
+  border-bottom: 1px solid $gold !important;
+  opacity: .3;
+}
+
+
 .thumbnail {
   margin-bottom: 0;
 }
@@ -118,12 +124,12 @@ div {
   background-color: $white;
   color: $blackish;
   border-radius: 0;
-  padding: 8px 40px 5px;
-  min-width: 50%;
+  padding: 8px 0px 5px;
   margin-top: 5px;
   font-family: 'MANIFESTO';
   font-size: 1.4em;
   border: 2px solid $blackish;
+  width: 185px;
 }
 
 .btn-pink,
@@ -374,16 +380,22 @@ div {
   .container {
     margin: 0px auto;
     text-align: center;
+    
   }
   h4 {
     padding-top: 0;
     padding-bottom: 20px;
   }
 
+  .links-center {
+    display: flex;
+    align-items: center;
+    height: 258px;
+  }
+
   .footer-links {
-    text-align: right;
+    text-align: left;
     p a {
-      text-align: left;
       color: $white;
     }
   }
@@ -490,6 +502,11 @@ div {
 
   ul.navbar-right {
     text-align: center;
+  }
+
+  .links-center {
+    display: block !important;
+    height: auto;
   }
 
   .footer-links {
