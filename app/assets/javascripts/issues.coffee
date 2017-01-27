@@ -69,6 +69,8 @@ $(document).on 'turbolinks:load', ->
 	        'media'
 	        'link'
 	        'hr'
+	        'video'
+	        'picture'
 	      ]
 	    ]
 	    [

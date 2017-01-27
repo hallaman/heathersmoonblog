@@ -19,7 +19,7 @@ body {
   width: 100%;
   height: 100%;
 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
 
   > .container {
   }
@@ -30,7 +30,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
   font-weight: 400;
   margin: 0;
   padding-bottom: 10px;
@@ -236,7 +236,7 @@ div {
   p {
     font-size: 1.65em;
     font-weight: 400;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
     line-height: 1.65em;
     font-style: italic;
   }
@@ -309,7 +309,7 @@ div {
   font-size: .85em;
   text-transform: capitalize;
   font-weight: 400;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
 }
 
 .nav > li > a:hover, 
@@ -376,7 +376,7 @@ div {
 }
 
 .footer {
-  font-style: 'Lato', sans-serif;
+  font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
   .row {
     padding: 20px 0;
 
@@ -425,7 +425,7 @@ div {
     padding: 30px;
     margin: 0px auto;
     text-align: center;
-    font-style: 'Lato', sans-serif;
+    font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
 
     p {
       max-width: 330px;
