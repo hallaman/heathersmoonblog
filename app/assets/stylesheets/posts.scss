@@ -72,6 +72,9 @@ blockquote {
 }
 
 .share-this {
+	iframe {
+		display: inline-block;
+	}
 	a {
 		display: inline-block;
 		overflow: hidden;
@@ -83,4 +86,6 @@ blockquote {
 		padding: 0 10px;
 	}
 }
+
+
 
