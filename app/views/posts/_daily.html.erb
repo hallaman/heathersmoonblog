@@ -1,34 +1,38 @@
 <div class="container">
   <div class="daily text-center">
-  	<%= image_tag('daily_readings_symbol.png', width: 100) %>
+  	<div class="col-xs-12">
+    	<div class="row">
+				<%= image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 30px;') %>
 
-  	<h2>DAILY MOON VIBE READING</h2>
-  	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
+		  	<h2>DAILY MOON VIBE READING</h2>
+		  	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
 
 
 
-  	<% 
-			@daily_reading_text = strip_tags(@post.body).split('.').in_groups(2)
+		  	<% 
+					@daily_reading_text = strip_tags(@post.body).split('.').in_groups(2)
 
-      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
-      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
-	  %>
+		      @daily_para_1 = @daily_reading_text[0].join(' ').to_s 
+		      @daily_para_2 = @daily_reading_text[1].join(' ').to_s
+			  %>
 
-		<div class="entry text-left">
-			<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+				<div class="entry text-left">
+					<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+				</div>
+
+				<div class="entry text-left">
+					<%= @daily_para_2.to_s if @daily_para_2.present? %>
+				</div>
+
+				<div class="share-this">
+				  <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				  <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				  <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+				  <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+				</div> 
+
+			</div>
 		</div>
-
-		<div class="entry text-left">
-			<%= @daily_para_2.to_s if @daily_para_2.present? %>
-		</div>
-
-		<div class="share-this">
-		  <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-		  <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-		  <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-		  <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-		</div> 
-
 	</div>
 </div>
 

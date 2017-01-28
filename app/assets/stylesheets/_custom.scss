@@ -162,5 +162,9 @@ $notification-error: $light-gray-purple;
     top: 0px;
     left: 50%;
   }
+
+  .navbar-nav .open .dropdown-menu {
+    text-align: center;
+  }
 }
 
