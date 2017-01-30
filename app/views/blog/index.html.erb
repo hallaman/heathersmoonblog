@@ -2,39 +2,35 @@
   <%= image_tag('cropped_header.png', style: 'visibility: hidden; width: 100%; height: auto;') %>
 </div>
 
-<div class="page container issues">
+<div class="page container">
     <div class="col-xs-12">
       <% @posts.each do |post| %>
-        <% if post.main_image.present? %>
-          <div class="row list_item">
-            <div class="col-xs-12 col-sm-5 img-holder">
-              <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) %>
-            </div>
-            <div class="col-xs-12 col-sm-7 info">
-              <p class="issue_no"><%= post.publish_date.strftime('%A, %B %-d, %Y') %></p>
-              <span class="line"></span>
-              <h3><%= post.title %></h3>
-              <p>
-                <%# strip_tags(post.body).truncate_words(26) %>
-              </p>
-              <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
-            </div>
-          </div>
-        <% else %>
-          <div class="row list_item">
-            <div class="col-xs-12 info">
-              <p class="issue_no"><%= post.publish_date.strftime('%A, %B %-d, %Y') %></p>
-              <span class="line"></span>
-              <h3><%= post.title %></h3>
-              <p>
-                <%# strip_tags(post.body).truncate_words(26) %>
-              </p>
-              <%= link_to "Read Now", post_path(post), class: 'btn btn-pink' %>
-            </div>
-          </div>
 
-        <% end %>
+        <div class="row list_item">
+          <div class="col-xs-12 text-center post-listing">
+            <h4><%= link_to post.publish_date.strftime('%-d-%m-%Y'), post_path(post) %></h4>
+            <h3><%= link_to post.title, post_path(post) %></h3>
+            <div class="thumbnail">
+              <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) if post.main_image.present? %>
+            </div>
+            <!-- <p>
+              <%# strip_tags(post.body).truncate_words(26) %>
+            </p> -->
+            <%= link_to image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 20px;', :alt => post.title), post_path(post) %>
+            <p><%= link_to "Read Post", post_path(post), class: 'read-post' %></p>
+            <p class="pull-left"><%= post.comments.count %> comments</p>
+            <p class="pull-right share-comments">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="https://pinterest.com/pin/create/button/?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>&media=<%= post.main_image.url %>&description=<%=  post.title %>" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+              <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+              <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
+            </p>
+          </div>
+        </div>
+      
       <% end %>
+     
     </div>
   </div>
 </div>

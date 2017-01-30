@@ -81,11 +81,45 @@ blockquote {
 		height: auto;
 	}
 
-	.fa {
-		font-size: 2.8em;
-		padding: 0 10px;
+
+}
+
+.post-listing {
+	max-width: 800px;
+	margin: 0px auto;
+	text-align: center;
+	a {
+		color: $blackish;
+	}
+	h4 {
+		margin-bottom: 20px;
+	}
+	h3 {
+		font-family: "MANIFESTO";
+		padding-bottom: 20px !important;
+		font-size: 2.2em !important;
+		line-height: 1.8em !important;
 	}
 }
 
+.comments-section {
+	.row {
+		padding: 0 0 60px;
+	}
+}
 
+.read-post {
+	font-family: "MANIFESTO";
+	color: $blackish;
+}
+
+.share-comments {
+	border-bottom: 1px solid #eeeeee;
+
+	.fa {
+		font-size: 1em;
+		padding: 0 5px;
+		color: $blackish;
+	}
+}
 

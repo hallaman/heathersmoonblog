@@ -1,28 +1,22 @@
 <div class="container">
-  <div class="daily text-center">
-    <div class="col-xs-12">
-    	<div class="row">
-	    	<div class="thumbnail">
-					<%= image_tag @post.main_image.url(:thumb) if @post.main_image.present? %>
-	    	</div>
+	<div class="daily text-center">
+	  <div class="col-xs-12 post-listing">
+	  	<div class="row">
+	  		<h4><%= @post.publish_date.strftime('%-d-%m-%Y') %></h4>
+	      <h3><%= @post.title %></h3>
+	      <div class="thumbnail">
+	        <%= link_to image_tag(@post.main_image.url(:thumb), :alt => @post.title, :class => "issue-img"), post_path(@post) if @post.main_image.present? %>
+	      </div>
+	    	
 				<%= image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 30px;') %>
-
-	    	<h2><%= @post.title %></h2>
-	    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
-
 
 
 				<div class="entry text-left">
 					<%= @post.body.html_safe %>
 				</div>
-
+				<hr class="col-xs-12" />
 				<div class="share-this">
 					<div class="addthis_inline_share_toolbox"></div>
-					
-				  <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				  <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				  <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-				  <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a> -->
 				</div> 
 				
 			</div>
