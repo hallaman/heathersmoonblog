@@ -83,7 +83,6 @@ blockquote {
 	.fa {
 		font-size: 1.8em;
 		padding: 0 10px;
-		color: $blackish;
 	}
 
 }
@@ -100,9 +99,13 @@ blockquote {
 	}
 	h3 {
 		font-family: "MANIFESTO";
-		padding-bottom: 20px !important;
+		padding-top: 30px !important;
 		font-size: 2.2em !important;
 		line-height: 1.8em !important;
+	}
+	h2 {
+		font-weight: 300;
+		padding-bottom: 30px !important;
 	}
 }
 
@@ -126,7 +129,6 @@ blockquote {
 	.fa {
 		font-size: 1em;
 		padding: 0 5px;
-		color: $blackish;
 	}
 }
 

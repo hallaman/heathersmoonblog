@@ -9,13 +9,12 @@
         <div class="row list_item">
           <div class="col-xs-12 text-center post-listing">
             <h4><%= link_to post.publish_date.strftime('%-d-%m-%Y'), post_path(post) %></h4>
-            <h3><%= link_to post.title, post_path(post) %></h3>
+            <h2><%= link_to post.title.truncate_words(4, omission: ''), post_path(post) %></h2>
             <div class="thumbnail">
               <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) if post.main_image.present? %>
             </div>
-            <!-- <p>
-              <%# strip_tags(post.body).truncate_words(26) %>
-            </p> -->
+            <h3><%= link_to post.title, post_path(post) %></h3>
+
             <%= link_to image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 20px;', :alt => post.title), post_path(post) %>
             <p><%= link_to "Read Post", post_path(post), class: 'read-post' %></p>
             <div class=" share-comments">
