@@ -80,7 +80,11 @@ blockquote {
 		overflow: hidden;
 		height: auto;
 	}
-
+	.fa {
+		font-size: 1.8em;
+		padding: 0 10px;
+		color: $blackish;
+	}
 
 }
 
@@ -115,6 +119,9 @@ blockquote {
 
 .share-comments {
 	border-bottom: 1px solid #eeeeee;
+	padding-bottom: 10px;
+	overflow: hidden;
+	height: auto;
 
 	.fa {
 		font-size: 1em;
