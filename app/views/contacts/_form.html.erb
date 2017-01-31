@@ -1,0 +1,20 @@
+<h3 class="text-center">Yes! How can we help you??</h3>
+
+<%= simple_form_for @contact, :html => {:class => 'form-horizontal contact-form' } do |f| %>
+  <div class="col-xs-12 col-sm-6">
+    <%= f.input :name, :required => true, :placeholder => 'NAME', :class => 'form-control' %>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <%= f.input :email, :required => true, :placeholder => 'EMAIL', :class => 'form-control' %>
+  </div>
+  <div class="col-xs-12">
+    <%= f.input :message, :as => :text, :required => true, :placeholder => 'MESSAGE', :class => 'form-control' %>
+  </div>
+  <div class= "hidden">
+    <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+  </div>
+  <div class="text-center">
+    <br /><br /><br />
+    <%= f.button :submit, 'SEND', :class=> "btn btn-default an-btn" %>
+  </div>
+<% end %>

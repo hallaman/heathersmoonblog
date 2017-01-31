@@ -50,6 +50,8 @@ gem "aws-sdk"
 
 gem 'simple_form'
 
+gem 'mail_form'
+
 # wysiwig editor
 gem 'summernote-rails', '0.8.2'
 

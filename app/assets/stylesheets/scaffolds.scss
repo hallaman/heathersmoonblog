@@ -475,6 +475,16 @@ div {
 }
 
 
+.contact-form {
+  label {
+    display: none;
+  }
+  .form-group {
+    margin: 0 5px;
+    padding: 10px 0;
+  }
+}
+
 
 @media (min-width: 768px) and (max-width: 900px) {
   .nav-tabs > li > a {

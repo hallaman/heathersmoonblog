@@ -130,6 +130,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    mail_form (1.6.0)
+      actionmailer (>= 3.2, < 5.1)
+      activemodel (>= 3.2, < 5.1)
     mailchimp-api (2.0.6)
       excon (>= 0.16.0)
       json (>= 1.7.7)
@@ -247,6 +250,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener
+  mail_form
   mailchimp-api
   paperclip!
   pg

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :mondays
   resources :sidebars
   resources :issues
+  resources "contacts", only: [:new, :create]
   
   root :to => 'welcome#index'
 
@@ -42,6 +43,9 @@ Rails.application.routes.draw do
   match "/admin/home", to: "admin_home#index", :via => 'get'
 
   match "/faq", to: "faqs#listing", :via => 'get', as: :list_faq
+
+  match '/contact',     to: 'contacts#new',             via: 'get'
+  
 
 
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
