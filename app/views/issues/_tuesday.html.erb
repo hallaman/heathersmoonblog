@@ -9,7 +9,9 @@
       <%= tuesday_form.input :entry, as: :summernote %>
     </div>
     <div class="field">
-      <%= tuesday_form.input :affirmation, as: :summernote %>
+      <%= tuesday_form.label "Mantra" %><br>
+      <%= tuesday_form.file_field :mantra %>
+      <%= image_tag @issue.tuesday.mantra.url(:thumb)  %>
     </div>
     <div class="field">
       <%= tuesday_form.label "Moon in" %><br />

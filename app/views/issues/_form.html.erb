@@ -19,17 +19,15 @@
     <%= f.label "Week" %><small> eg. November 14 - 20</small><br>
     <%= f.text_field :week %>
   </div>
-  <div class="field">
-    <%= f.label "Image" %><br>
-    <%= f.file_field :main_image %>
-    <%= image_tag @issue.main_image.url(:thumb) %>
-  </div>
+  
   <div class="field">
     <%= f.label "Theme for Moon phase" %><br>
     <%= f.select :moon_phase, 
         options_for_select($themes, {:selected => @issue.moon_phase})
     %>
   </div>
+
+
  
   <div class="field">
     <%= f.label "Sidebar" %><br>

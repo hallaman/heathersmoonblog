@@ -8,8 +8,13 @@
     <%= monday_form.input :entry, as: :summernote %>  
   </div>
   <div class="field">
-    <%= monday_form.input :affirmation, as: :summernote %> 
+    <%= monday_form.label "Mantra" %><br>
+    <%= monday_form.file_field :mantra %>
+    <%= image_tag @issue.monday.mantra.url(:thumb)  %>
   </div>
+ <!--  <div class="field">
+    <%# monday_form.input :affirmation, as: :summernote %> 
+  </div> -->
   <div class="field">
     <%= monday_form.label "Moon in" %><br />
     <%= monday_form.select :moon_sign, 

@@ -52,43 +52,43 @@
 
       <div class="tab-pane active collapse in" id="monday-day">
         <% if !@issue.monday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Monday', date: @issue.monday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.monday.theme, number_1: @issue.monday.number_1, number_2: @issue.monday.number_2, number_3: @issue.monday.number_3, affirmation: @issue.monday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Monday', date: @issue.monday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.monday.theme, number_1: @issue.monday.number_1, number_2: @issue.monday.number_2, number_3: @issue.monday.number_3, affirmation: @issue.monday.affirmation.html_safe, mantra: @issue.monday.mantra.url(:thumb) } %>
         <% end %>
       </div>
 
       <div class="tab-pane" id="tuesday-day">
         <% if !@issue.tuesday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Tuesday', date: @issue.tuesday.date, entry: @issue.tuesday.entry.html_safe, moon: @issue.tuesday.moon_sign, theme: @issue.tuesday.theme, number_1: @issue.tuesday.number_1, number_2: @issue.tuesday.number_2, number_3: @issue.tuesday.number_3, affirmation: @issue.tuesday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Tuesday', date: @issue.tuesday.date, entry: @issue.tuesday.entry.html_safe, moon: @issue.tuesday.moon_sign, theme: @issue.tuesday.theme, number_1: @issue.tuesday.number_1, number_2: @issue.tuesday.number_2, number_3: @issue.tuesday.number_3, affirmation: @issue.tuesday.affirmation.html_safe, mantra: @issue.tuesday.mantra.url(:thumb) } %>
         <% end %>
       </div>
 
       <div class="tab-pane" id="wednesday-day">
         <% if !@issue.wednesday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Wednesday', date: @issue.wednesday.date, entry: @issue.wednesday.entry.html_safe, moon: @issue.wednesday.moon_sign, theme: @issue.wednesday.theme, number_1: @issue.wednesday.number_1, number_2: @issue.wednesday.number_2, number_3: @issue.wednesday.number_3, affirmation: @issue.wednesday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Wednesday', date: @issue.wednesday.date, entry: @issue.wednesday.entry.html_safe, moon: @issue.wednesday.moon_sign, theme: @issue.wednesday.theme, number_1: @issue.wednesday.number_1, number_2: @issue.wednesday.number_2, number_3: @issue.wednesday.number_3, affirmation: @issue.wednesday.affirmation.html_safe, mantra: @issue.wednesday.mantra.url(:thumb) } %>
         <% end %>
       </div>
 
       <div class="tab-pane" id="thursday-day">
         <% if !@issue.thursday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Thursday', date: @issue.thursday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.thursday.theme, number_1: @issue.thursday.number_1, number_2: @issue.thursday.number_2, number_3: @issue.thursday.number_3, affirmation: @issue.thursday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Thursday', date: @issue.thursday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.thursday.theme, number_1: @issue.thursday.number_1, number_2: @issue.thursday.number_2, number_3: @issue.thursday.number_3, affirmation: @issue.thursday.affirmation.html_safe, mantra: @issue.thursday.mantra.url(:thumb) } %>
         <% end %>
       </div>
 
       <div class="tab-pane" id="friday-day">
         <% if !@issue.friday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Friday', date: @issue.friday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.friday.theme, number_1: @issue.friday.number_1, number_2: @issue.friday.number_2, number_3: @issue.friday.number_3, affirmation: @issue.friday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Friday', date: @issue.friday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.friday.theme, number_1: @issue.friday.number_1, number_2: @issue.friday.number_2, number_3: @issue.friday.number_3, affirmation: @issue.friday.affirmation.html_safe, mantra: @issue.friday.mantra.url(:thumb) } %>
         <% end %>
       </div>
 
       <div class="tab-pane" id="saturday-day">
         <% if !@issue.saturday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Saturday', date: @issue.saturday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.saturday.theme, number_1: @issue.saturday.number_1, number_2: @issue.saturday.number_2, number_3: @issue.saturday.number_3, affirmation: @issue.saturday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Saturday', date: @issue.saturday.date, entry: @issue.monday.entry.html_safe, moon: @issue.monday.moon_sign, theme: @issue.saturday.theme, number_1: @issue.saturday.number_1, number_2: @issue.saturday.number_2, number_3: @issue.saturday.number_3, affirmation: @issue.saturday.affirmation.html_safe, mantra: @issue.saturday.mantra.url(:thumb) } %>
         <% end %>
       </div>
 
       <div class="tab-pane" id="sunday-day">
         <% if !@issue.sunday.nil? %>
-          <%= render partial: "/issues/day", locals: {day: 'Sunday', date: @issue.sunday.date, entry: @issue.sunday.entry.html_safe, moon: @issue.sunday.moon_sign, theme: @issue.sunday.theme, number_1: @issue.sunday.number_1, number_2: @issue.sunday.number_2, number_3: @issue.sunday.number_3, affirmation: @issue.sunday.affirmation.html_safe } %>
+          <%= render partial: "/issues/day", locals: {day: 'Sunday', date: @issue.sunday.date, entry: @issue.sunday.entry.html_safe, moon: @issue.sunday.moon_sign, theme: @issue.sunday.theme, number_1: @issue.sunday.number_1, number_2: @issue.sunday.number_2, number_3: @issue.sunday.number_3, affirmation: @issue.sunday.affirmation.html_safe, mantra: @issue.sunday.mantra.url(:thumb) } %>
         <% end %>
       </div>
   

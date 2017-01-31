@@ -4,29 +4,47 @@
 <div class="line"></div>
 <p><%= entry %></p>
 
-<div class="key">
-	<p><span class="bold-gold">MOON</span><br />
-	<%= moon %></p>
-	<p><span class="bold-gold">THEME</span><br /><%= theme %></p>
-	<h4 class="bold-gold">NUMEROLOGY VIBRATION</h4>
-	<p class="number"><span><%= Number.find(number_1).number.to_s + ': ' if number_1.present? %></span>
-	 <%= Number.find(number_1).meaning if number_1.present? %> 
-	</p>	
-	<p class="number"><span><%= Number.find(number_2).number.to_s + ': ' if number_2.present? %></span>
-	 <%= Number.find(number_2).meaning if number_2.present? %> 
-	</p>	
-	<p class="number"><span><%= Number.find(number_3).number.to_s + ': ' if number_3.present? %></span>
-	 <%= Number.find(number_3).meaning if number_3.present? %> 
-	</p>	
+<div class="moontheme">
+	<p><span><<< MOON >>></span><br /><span class="theme-width"><%= moon %></span></p>
+	<p><span><<< THEME >>></span><br /><span class="theme-width"><%= theme %></span></p>
 </div>
 
-<div class="affirmation">
-	<%= image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
-	<h4 class="bold-gold">#MOONVIBETRIBE</h4>
-	<div class="line"></div>
-	<h5 class="bold-gold text-uppercase"><%= day %> AFFIRMATION</h5>
-	<span class="bold-gold text-uppercase"><%= date %></span>
-	
-	<%= affirmation %>
-	<%= image_tag("symbol.png", :class => 'symbol', :alt => "Aquarius Nation") %>
+<div class="visible-xs visible-sm" style="clear: both; height: 40px;"></div>
+
+<hr class="gold-line" style="clear: both;"/>
+
+<div class="key">
+	<%= image_tag("numerology.png", :border => 0, :alt => "Aquarius Nation", :style => 'margin-top: -100px; width: 200px; z-index: 2;') %>
+
+	<h4>NUMEROLOGY VIBRATION</h4>
+	<h5>
+		<%= raw('<span>' + number_1.to_s + '</span>') if number_1.present? %>
+		<%= raw('<span>' + number_2.to_s + '</span>') if number_2.present? %>
+		<%= raw('<span>' + number_3.to_s + '</span>') if number_3.present? %>
+	</h5>
+	<div class="text-center">
+	<p class="number"><span><%= number_1.to_s + ': ' if number_1.present? %></span>
+	 <%= Number.find(number_1).meaning if number_1.present? %> 
+	</p>	
+	<p class="number"><span><%= number_2.to_s + ': ' if number_2.present? %></span>
+	 <%= Number.find(number_2).meaning if number_2.present? %> 
+	</p>	
+	<p class="number"><span><%= number_3.to_s + ': ' if number_3.present? %></span>
+	 <%= Number.find(number_3).meaning if number_3.present? %> 
+	</p>
+	</div>	
 </div>
+
+<div class="text-center">
+<%= image_tag(mantra, :border => 0, :alt => "Aquarius Nation", :style => 'width: 100%;') %>
+</div>
+
+<!-- <div class="affirmation">
+	<%# image_tag("AN_Logo.png", :border => 0, :alt => "Aquarius Nation") %>
+	
+	<div class="text"><%= affirmation %></div>
+
+	<h4>#MOONVIBETRIBE</h4>
+
+	<%# image_tag(symbol, :class => 'symbol', :alt => "Aquarius Nation") %>
+</div> -->

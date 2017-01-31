@@ -100,15 +100,15 @@ class IssuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:issue_number, :week, :main_image, :moon_phase, :welcome, 
+      params.require(:issue).permit(:issue_number, :week, :moon_phase,
         sidebars_attributes: [:id, :title, :link, :podcast_link_id, :_destroy], 
-        monday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
-        tuesday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
-        wednesday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
-        thursday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
-        friday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
-        saturday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3],
-        sunday_attributes: [:id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3]
+        monday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3],
+        tuesday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3],
+        wednesday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3],
+        thursday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3],
+        friday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3],
+        saturday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3],
+        sunday_attributes: [:id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3]
 
         )
     end

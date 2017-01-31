@@ -70,6 +70,6 @@ class TuesdaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tuesday_params
-      params.require(:tuesday).permit(:issue_id, :date, :entry, :affirmation, :moon_sign, :theme, :number_1, :number_2, :number_3)
+      params.require(:tuesday).permit(:issue_id, :date, :entry, :mantra, :moon_sign, :theme, :number_1, :number_2, :number_3)
     end
 end

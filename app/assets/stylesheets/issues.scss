@@ -265,69 +265,117 @@
     font-size: 1.4em;
   }
 
+  .moontheme {
+    clear: both; 
+    width: 100%;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+
+    p {
+      width: 50%;
+      display: inline-block;
+      float: left;
+
+      span {
+        font-size: 2em;
+      }
+
+      .theme-width {
+        font-size: 1em;
+        width: 200px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.1em;
+      }
+    }
+
+    
+  }
+
   .key {
-    font-family: 'Work Sans', sans-serif;
-    background-color:  rgba($light-mauve, .6);
-    padding: 50px;
+    font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
+    background-color: $soft-pink;
+    background-position: left 10px;
+    padding: 0 5px 50px 5px;
     margin: 30px 0;
-    color: $gold;
-    box-shadow: 0px 3px 5px 0px #ccc;
+    color: $blackish;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    clear: both;
+
+    h4 {
+      color: $mauve;
+      font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
+      padding: 30px 0 0px 0;
+      font-size: 2.8em;
+    }
+
+    h5 {
+      font-size: 2.6em !important;
+      text-align: center;
+      font-weight: bold;
+      span {
+        padding: 0 5px;
+        display: inline-block;
+      }
+    }
 
     p {
       font-size: 2.2em !important;
       font-weight: 400;
       padding-top: 0;
       line-height: 1.4em;
-    }
 
-    span {
-      font-size: .6em;
-      font-weight: 400;
-      text-transform: uppercase;
     }
 
     .number {
+      font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
       font-size: 1.6em !important;
       font-weight: 400;
       margin: 20px 0;
+      text-align: left;
        span {
-        font-size: 1.3em;
+        font-size: 1em;
         font-weight: 600;
         padding-top: 20px;
       }
-    }
-
-    h4 {
-      border-bottom: 2px solid $gold;
-      padding: 30px 0 20px 0;
-      line-height: 1.4em;
-      font-size: 1.4em;
     }
   }
 
   .affirmation {
     text-align: center;
-    border: 1px solid $gold;
     padding: 50px;
     margin: 30px 0;
+    border: 60px solid;
+    border-image: image-url("affirmation.png") 60;
+
+    .text {
+      color: $maroon;
+      font-size: 1.8em;
+      padding-top: 20px;
+      p {
+        line-height: 1.4em;
+      }
+    }
 
     img {
       width: 100%;
       height: auto;
-      max-width: 280px;
+      max-width: 260px;
+      margin-bottom: 20px;
     }
 
-    h5.bold-gold {
-      margin-top: 20px;
-    }
-
-    span.bold-gold {
-      padding-bottom: 30px;
-      display: block;
+    h4 {
+      color: $maroon;
+      font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
+      padding: 20px 0;
     }
 
     .symbol {
-      max-width: 160px;
+      max-width: 140px;
     }
   }
 }
@@ -362,6 +410,14 @@
     display: block;
   }
 
+  .moontheme p {
+    width: 100% !important;
+    float: none;
+    display: block !important;
+    margin: 15px 0;
+  }
+
+
 }
 
 @media (max-width: 414px) {
@@ -383,6 +439,19 @@
 
   .container .days {
     padding: 20px 15px;
+  }
+
+  .affirmation {
+    border: 2px solid !important;
+
+    .text {
+      font-size: 1.2em;
+    }
+  }
+
+ 
+  .key {
+    margin-top: 30px !important;
   }
 }
 

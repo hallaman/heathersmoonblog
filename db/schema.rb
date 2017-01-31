@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125203446) do
+ActiveRecord::Schema.define(version: 20170131223414) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -68,8 +68,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
   create_table "issues", force: :cascade do |t|
@@ -84,6 +88,11 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.string   "main_image_content_type"
     t.integer  "main_image_file_size"
     t.datetime "main_image_updated_at"
+    t.binary   "symbol"
+    t.string   "symbol_file_name"
+    t.string   "symbol_content_type"
+    t.integer  "symbol_file_size"
+    t.datetime "symbol_updated_at"
   end
 
   create_table "latest_items", force: :cascade do |t|
@@ -140,8 +149,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
   create_table "newsbars", force: :cascade do |t|
@@ -221,8 +234,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
   create_table "sidebars", force: :cascade do |t|
@@ -245,8 +262,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
   create_table "testimonials", force: :cascade do |t|
@@ -272,8 +293,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
   create_table "tuesdays", force: :cascade do |t|
@@ -286,8 +311,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
   create_table "videos", force: :cascade do |t|
@@ -322,8 +351,12 @@ ActiveRecord::Schema.define(version: 20170125203446) do
     t.integer  "number_1"
     t.integer  "number_2"
     t.integer  "number_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "mantra_file_name"
+    t.string   "mantra_content_type"
+    t.integer  "mantra_file_size"
+    t.datetime "mantra_updated_at"
   end
 
 end

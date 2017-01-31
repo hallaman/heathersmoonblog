@@ -22,15 +22,9 @@
 			<% @past.each do |issue| %>
 				<div class="row list_item">
 				  <div class="col-xs-12 col-sm-8 col-md-6 img-holder">
-				    <% if issue.main_image.present? %>
-				     
-				     <%= link_to image_tag(issue.main_image.url(:thumb), :alt => issue.issue_number, :class => "issue-img"), moonvibeguide_issue_path(issue) %> 
-
-				    <% else %>
-
+				    
 				    	<%= link_to image_tag(image_path('mandala_button.png'), :alt => issue.issue_number, :class => "issue-img"), moonvibeguide_issue_path(issue) %>
 
-				    <% end %>
 				  </div>
 				  <div class="col-xs-12 col-sm-4 col-md-6 info">
 				    <p class="issue_no">ISSUE <%= issue.issue_number %></p>
@@ -63,7 +57,6 @@
 
 				    	<%= link_to image_tag('mandala_symbol.png', :alt => podcast.title, :class => "issue-img"), moonvibeguide_reading_path(podcast) %>
 				    <% end %>
-				    %>
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-6 info">
 						<h3><%= podcast.title %></h3>

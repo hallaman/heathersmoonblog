@@ -69,6 +69,8 @@ ul {
 hr.gold-line {
   border-bottom: 1px solid $gold !important;
   opacity: .3;
+  border-top: 0;
+  z-index: 1;
 }
 
 .badge {
