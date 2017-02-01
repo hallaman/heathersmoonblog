@@ -4,6 +4,16 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, except: [:show]
 
+  def upvote 
+    @post = Post.find_by_id(params[:id])
+    @post.likes = @post.likes.present? ? @post.likes + 1 : 1
+    @post.save
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render json: { count: @post.likes, id: @post.id } }
+    end
+  end  
+
   def send_campaign 
     @post = Post.find(params[:id])
     @post_body_title = '<span class="h1">'+@post.title+'</span>'+@post.body
@@ -127,6 +137,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:short_title, :title, :body, :main_image, :category, :publish_date)
+      params.require(:post).permit(:short_title, :title, :body, :main_image, :category, :publish_date, :likes)
     end
 end

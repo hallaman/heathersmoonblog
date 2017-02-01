@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :videos
   resources :newsbars
   resources :posts do
+    put "like", to: "posts#upvote"
     resources :comments, only: [:index, :create] do 
       put "like", to: "comments#upvote"
     end

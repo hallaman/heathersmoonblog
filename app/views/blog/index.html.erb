@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-xs-12 text-center post-listing">
             <h4><%= link_to post.publish_date.strftime('%-d-%m-%Y'), post_path(post) %></h4>
-            <h2><%= link_to post.short_title, post_path(post) if @post.short_title.present? %></h2>
+            <h2><%= link_to post.short_title, post_path(post) if post.short_title.present? %></h2>
             <div class="thumbnail">
               <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) if post.main_image.present? %>
             </div>

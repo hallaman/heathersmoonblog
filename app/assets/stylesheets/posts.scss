@@ -70,6 +70,22 @@ blockquote {
     .stop5 { stop-color: blue; stop-opacity: .7; }
     .stop6 { stop-color: purple; stop-opacity: .7; }
 	}
+	&.purple {
+		.stop1 { stop-color: $purple; stop-opacity: .7;}
+    .stop2 { stop-color: $purple; stop-opacity: .7; }
+    .stop3 { stop-color: $purple; stop-opacity: .7; }
+    .stop4 { stop-color: $purple; stop-opacity: .7;}
+    .stop5 { stop-color: $purple; stop-opacity: .7; }
+    .stop6 { stop-color: $purple; stop-opacity: .7; }
+	}
+	&.random {
+		.stop1 { stop-color: $gold;}
+    .stop2 { stop-color: $mauve;  }
+    .stop3 { stop-color: $purple;  }
+    .stop4 { stop-color: $purple; }
+    .stop5 { stop-color: $mauve;  }
+    .stop6 { stop-color: $gold;  }
+	}
 }
 
 .share-this {
