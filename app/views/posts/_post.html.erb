@@ -40,7 +40,7 @@
 				</div>
 				<hr class="col-xs-12" />
 				<div class="share-this">
-					 <div class="a2a_kit">
+					<div class="a2a_kit" data-a2a-url="<%=  URI.parse(request.base_url + request.original_fullpath) %>" data-a2a-title="<%= @post.title %>">
               <a class="a2a_button_facebook a2a_counter">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
