@@ -6,7 +6,7 @@
 
 <div class="moontheme">
 	<p><span><<< MOON >>></span><br /><span class="theme-width"><%= moon %></span></p>
-	<p><span><<< THEME >>></span><br /><span class="theme-width"><%= theme %></span></p>
+	<p class="pull-right"><span><<< THEME >>></span><br /><span class="theme-width"><%= theme %></span></p>
 </div>
 
 <div class="visible-xs visible-sm" style="clear: both; height: 40px;"></div>
@@ -36,7 +36,7 @@
 </div>
 
 <div class="text-center">
-<%= image_tag(mantra, :border => 0, :alt => "Aquarius Nation", :style => 'width: 100%;') %>
+<%= image_tag(mantra, :border => 0, :alt => "Aquarius Nation", :style => 'width: 100%;') if !mantra.include?("missing.png") %>
 </div>
 
 <!-- <div class="affirmation">

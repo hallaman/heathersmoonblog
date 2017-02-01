@@ -15,11 +15,6 @@ $(document).ready ->
 			$('#sidebar').css top: 5
 			$('#sidebar').removeClass 'fixNav'
 
-		if $(window).scrollTop() > footer_pos
-			$('#sidebar').css top: -200
-
-		console.log $(window).scrollTop()
-		console.log footer_pos
 		return
 	return
 	

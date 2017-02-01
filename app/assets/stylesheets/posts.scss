@@ -95,6 +95,10 @@ blockquote {
 	a {
 		color: $blackish;
 	}
+	a:hover {
+		color: $blackish;
+		text-decoration: none;
+	}
 	h4 {
 		margin-bottom: 20px;
 		font-size: 2em !important;
@@ -103,11 +107,12 @@ blockquote {
 	h3 {
 		font-family: "MANIFESTO";
 		padding-top: 30px !important;
-		font-size: 2.2em !important;
+		font-size: 2em !important;
 		line-height: 1.8em !important;
+		font-weight: 300;
 	}
 	h2 {
-		font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
+		font-family: 'MANIFESTO';
 		font-weight: 300;
 		padding-bottom: 30px !important;
 		text-transform: uppercase;
@@ -130,16 +135,26 @@ blockquote {
 	font-family: "MANIFESTO";
 	color: $blackish;
 }
+a.read-post:hover {
+	color: $gold !important;
+}
 
-.share-comments {
-	border-bottom: 1px solid #eeeeee;
-	padding-bottom: 10px;
+.a2a_kit a {
+	cursor: pointer;
 	overflow: hidden;
-	height: auto;
+	display: inline-block;
+	margin-bottom: 60px;
+
+	&.a2a_counter {
+	}
 
 	.fa {
-		font-size: 1em;
+		font-size: 2em;
 		padding: 0 5px;
+		float: left;
+	}
+	.fa:hover {
+		color: $gold;
 	}
 }
 

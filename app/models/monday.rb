@@ -7,7 +7,7 @@ class Monday < ActiveRecord::Base
   validates :theme, presence: true
   validates :number_1, presence: true
 
-  has_attached_file :mantra, styles: {  thumb: ["1000x1000>", :png] }, :convert_options => { :thumb => "-quality 70 -interlace Plane" }
+  has_attached_file :mantra, styles: {  thumb: ["1000x6000>", :png] }, :convert_options => { :thumb => "-quality 70 -interlace Plane" }
   validates_attachment :mantra, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
 end

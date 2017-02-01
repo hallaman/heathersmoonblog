@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-xs-12 text-center post-listing">
             <h4><%= link_to post.publish_date.strftime('%-d-%m-%Y'), post_path(post) %></h4>
-            <h2><%= link_to post.title.truncate_words(4, omission: ''), post_path(post) %></h2>
+            <h2><%= link_to post.short_title, post_path(post) if @post.short_title.present? %></h2>
             <div class="thumbnail">
               <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) if post.main_image.present? %>
             </div>
@@ -20,12 +20,35 @@
             <div class=" share-comments">
               <p class="pull-left"><%= post.comments.count %> comments</p>
               <p class="pull-right">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+     <!--            <a href="https://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <a href="https://pinterest.com/pin/create/button/?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>&media=<%= post.main_image.url %>&description=<%=  post.title %>" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
                 <a href="http://www.tumblr.com/share/link?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
                 <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a> 
+                <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>  -->
+
+                <div class="a2a_kit pull-right">
+                  <a class="a2a_button_facebook a2a_counter">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                 
+                  <a class="a2a_button_pinterest a2a_counter">
+                      <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                  </a>
+                 
+                  <a class="a2a_button_tumblr a2a_counter">
+                      <i class="fa fa-tumblr" aria-hidden="true"></i>
+                  </a>
+                  <a class="a2a_button_twitter">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a class="a2a_button_google_plus">
+                     <i class="fa fa-google-plus" aria-hidden="true"></i>
+                  </a>
+                  <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                </div>
+
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
               </p>
             </div>
           </div>
