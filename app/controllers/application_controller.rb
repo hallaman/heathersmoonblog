@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def about 
-    @about = Page.where(name: 'About').first
+    @about = Page.where(name: 'About KV').last
   end
 
   def after_sign_in_path_for(resource)
