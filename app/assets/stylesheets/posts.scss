@@ -174,3 +174,63 @@ a.read-post:hover {
 	}
 }
 
+.st_sharethis_custom{
+	cursor: pointer;
+	overflow: hidden;
+	display: inline-block;
+	margin-bottom: 60px;
+
+	.fa {
+		font-size: 2em;
+		padding: 0 5px;
+		float: left;
+	}
+	.fa:hover {
+		color: $gold;
+	}
+} 
+
+.st_facebook_custom{
+	background: no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+	content: "\f09a";
+	font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 2em;
+  color: $blackish;
+  z-index: 1;
+} 
+
+.st_twitter_custom{
+	background: url("http://path/to/image/twitter-file") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+} 
+
+.st_linkedin_custom{
+	background: url("http://path/to/image/linkedin-file") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+} 
+
+.st_email_custom{
+	background: url("http://path/to/image/email-file") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+} 
+
+.st_fblike_custom{
+	background: url("http://path/to/image/fblike-file") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+} 
+
+.st_plusone_custom{
+	background: url("http://path/to/image/plusone-file") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+} 
+
+.st_pinterest_custom{
+	background: url("http://path/to/image/pinterest-file") no-repeat scroll left top transparent;
+	padding:0px 16px 0 0;
+} 
+

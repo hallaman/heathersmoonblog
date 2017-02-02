@@ -14,8 +14,8 @@
 
   <!-- You can use Open Graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-<!--   <meta property="og:url"           content="http://www.aquariusnation.com" />
- -->  
+  <meta property="og:url"           content="<%=  URI.parse(request.base_url + request.original_fullpath) %>" />
+  
   <meta property="og:type"          content="Aquarius Nation" />
   <meta property="og:title"         content="Aquarius Nation" />
   <meta property="og:description"   content="Aquarius Nation. Forward Empowerment. High Vibe Style. Guidance and wisdom for the bringers of the New Earth ways." />
@@ -34,6 +34,9 @@
   <link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-touch-icon-144x144.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="assets/imagesassets/images/apple-touch-icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon-180x180.png" />
+
+  <!-- share counts -->
+  <script type='text/javascript' src='http://platform-api.sharethis.com/js/sharethis.js#property=5893b1d00717ec0012787e05' async='async'></script>
 
 </head>
 <body>

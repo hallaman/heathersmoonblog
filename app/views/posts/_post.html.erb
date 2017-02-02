@@ -40,26 +40,31 @@
 				</div>
 				<hr class="col-xs-12" />
 				<div class="share-this">
-					<div class="a2a_kit" data-a2a-url="<%=  URI.parse(request.base_url + request.original_fullpath) %>" data-a2a-title="<%= @post.title %>">
-              <a class="a2a_button_facebook a2a_counter">
+					<!-- <div class="a2a_kit" data-a2a-url="<%=  URI.parse(request.base_url + request.original_fullpath) %>" data-a2a-title="<%= @post.title %>">
+              <a class="a2a_button_facebook a2a_counter" href="<%=  URI.parse(request.base_url + request.original_fullpath) %>" >
                   <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
              
-              <a class="a2a_button_pinterest a2a_counter">
+              <a class="a2a_button_pinterest a2a_counter" href="<%=  URI.parse(request.base_url + request.original_fullpath) %>">
                   <i class="fa fa-pinterest-p" aria-hidden="true"></i>
               </a>
              
-              <a class="a2a_button_tumblr a2a_counter">
+              <a class="a2a_button_tumblr a2a_counter" href="<%=  URI.parse(request.base_url + request.original_fullpath) %>">
                   <i class="fa fa-tumblr" aria-hidden="true"></i>
               </a>
-              <a class="a2a_button_twitter">
+              <a class="a2a_button_twitter" href="<%=  URI.parse(request.base_url + request.original_fullpath) %>">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a class="a2a_button_google_plus">
+              <a class="a2a_button_google_plus" href="<%=  URI.parse(request.base_url + request.original_fullpath) %>">
                  <i class="fa fa-google-plus" aria-hidden="true"></i>
               </a>
               <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-            </div>
+            </div> -->
+
+            <div data-network="facebook" class="st_sharethis_custom" data-network="facebook"><span class="count"></span><i class="fa fa-facebook" aria-hidden="true"></i></div>
+
+						<div data-network="twitter" class="st_sharethis_custom"><span class="count"></span><i class="fa fa-twitter" aria-hidden="true"></i></div>
+
 
 				</div> 
 				
