@@ -37,7 +37,7 @@
 
 </head>
 <body>
-  <%= render 'layouts/topbar', locals: { newsbar: @newsbar } if !newsbar.nil? %>
+  <%= render 'layouts/topbar', locals: { newsbar: @newsbar } %>
 
   <%= render 'layouts/header' %>
   <div class="container-fluid"> 
@@ -46,7 +46,7 @@
     </div>
     <%= yield %>
   </div>
-  <%=  render 'layouts/footer' if current_admin.blank? %> 
+  <%=  render 'layouts/footer' %> 
 
   
 
