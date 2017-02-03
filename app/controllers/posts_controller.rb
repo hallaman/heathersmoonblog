@@ -79,7 +79,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments.hash_tree(limit_depth: 4)
 
-    @url = URI.parse(request.base_url).to_s + '/blog/' + @post.id.to_s
+    @url = URI.parse(request.base_url).to_s + '/posts/' + @post.id.to_s
     @facebook_count = SocialShares.facebook @url
     @pinterest_count = SocialShares.pinterest @url
     @google_count = SocialShares.google @url
