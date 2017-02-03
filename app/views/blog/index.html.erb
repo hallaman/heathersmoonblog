@@ -22,7 +22,7 @@
               <div class="pull-right share-this">
 
                 <%
-                  @url = URI.parse(request.base_url).to_s + '/posts/' + post.id.to_s
+                  @url = URI.parse(request.base_url).to_s + '/posts/' + post.id.to_s + '?locale=en'
                   @facebook_count = SocialShares.facebook @url
                   @pinterest_count = SocialShares.pinterest @url
                   @google_count = SocialShares.google @url
