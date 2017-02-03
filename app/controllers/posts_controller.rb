@@ -1,4 +1,5 @@
 require 'gibbon'
+require 'social_shares'
 
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
@@ -77,6 +78,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments.hash_tree(limit_depth: 4)
+
+    @url = URI.parse(request.base_url).to_s + '/blog/' + @post.id.to_s
+    @facebook_count = SocialShares.facebook @url
+    @pinterest_count = SocialShares.pinterest @url
+    @google_count = SocialShares.google @url
   end
 
   # GET /posts/new

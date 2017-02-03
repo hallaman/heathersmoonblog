@@ -27,3 +27,5 @@ $(document).ready ->
 	  $(this).find('.heart').addClass 'random'
 	  $('#post-likes').html data.count
 	  return
+
+

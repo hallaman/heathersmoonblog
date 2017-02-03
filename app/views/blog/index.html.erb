@@ -19,19 +19,37 @@
             <p><%= link_to "Read Post", post_path(post), class: 'read-post' %></p>
             <div class=" share-comments">
               <p class="pull-left"><%= post.comments.count %> comments</p>
-              <div class="pull-right">
+              <div class="pull-right share-this">
 
-                <div data-network="facebook" class="st_sharethis_custom st_facebook_custom"><span class="count"></span><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                <%
+                  @url = URI.parse(request.base_url).to_s + '/blog/' + post.id.to_s
+                  @facebook_count = SocialShares.facebook @url
+                  @pinterest_count = SocialShares.pinterest @url
+                  @google_count = SocialShares.google @url
+                %>
 
-                <div data-network="twitter" class="st_sharethis_custom st_twitter_custom"><span class="count"></span><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= @url %>&title=<%= URI::escape(post.title) %>" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <span class="count"><%= @facebook_count %></span>
+                </a>
+               
+                <a href="http://pinterest.com/pin/create/bookmarklet/?media=<%= post.main_image.url %>&url=<%= @url %>&is_video=false&description=<%= URI::escape(post.title) %>" target="_blank">
+                    <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    <span class="count"><%= @pinterest_count %></span>
+                </a>
+                
+                <a href="https://plus.google.com/share?url=<%= @url %>" target="_blank">
+                   <i class="fa fa-google-plus" aria-hidden="true"></i>
+                   <span class="count"><%= @google_count %></span>
+                </a>
 
-                <div data-network="pinterest" class="st_sharethis_custom st_pinterest_custom"><span class="count"></span><i class="fa fa-pinterest-p" aria-hidden="true"></i></div>
-
-                <div data-network="tumblr" class="st_sharethis_custom st_tumblr_custom"><span class="count"></span><i class="fa fa-tumblr" aria-hidden="true"></i></div>
-
-                <div data-network="googleplus" class="st_sharethis_custom st_googleplus_custom"><span class="count"></span><i class="fa fa-google-plus" aria-hidden="true"></i></div>
-
-                <div data-network="email" class="st_sharethis_custom st_email_custom"><span class="count"></span><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <a href="http://www.tumblr.com/share?v=3&u=<%= @url %>&t=<%= URI::escape(post.title) %>" target="_blank">
+                    <i class="fa fa-tumblr" aria-hidden="true"></i>
+                </a>
+                <a href="http://twitter.com/intent/tweet?status=<%= URI::escape(post.title) %>+<%= @url %>" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:?subject=<%= URI::escape(post.title) %>&body=<%= @url %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>

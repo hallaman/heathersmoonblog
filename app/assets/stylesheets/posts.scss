@@ -155,13 +155,17 @@ a.read-post:hover {
 	color: $gold !important;
 }
 
-.a2a_kit a {
-	cursor: pointer;
-	overflow: hidden;
-	display: inline-block;
+.share-this {
 	margin-bottom: 60px;
 
-	&.a2a_counter {
+	a {
+		cursor: pointer;
+		overflow: hidden;
+		display: inline-block;
+	}
+
+	span.count {
+		float: left;
 	}
 
 	.fa {
@@ -173,20 +177,4 @@ a.read-post:hover {
 		color: $gold;
 	}
 }
-
-.st_sharethis_custom{
-	cursor: pointer;
-	overflow: hidden;
-	display: inline-block;
-	margin-bottom: 60px;
-
-	.fa {
-		font-size: 2em;
-		padding: 0 5px;
-		float: left;
-	}
-	.fa:hover {
-		color: $gold;
-	}
-} 
 
