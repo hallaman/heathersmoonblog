@@ -3,7 +3,7 @@ require 'social_shares'
 
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, except: [:show]
+  before_action :authenticate_admin!, except: [:show, :upvote]
 
   def upvote 
     @post = Post.find_by_id(params[:id])
@@ -83,6 +83,8 @@ class PostsController < ApplicationController
     @facebook_count = SocialShares.facebook @url
     @pinterest_count = SocialShares.pinterest @url
     @google_count = SocialShares.google @url
+    @sum = @facebook_count + @pinterest_count + @google_count 
+
   end
 
   # GET /posts/new

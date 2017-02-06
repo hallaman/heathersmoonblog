@@ -48,7 +48,11 @@ blockquote {
 	align-items: center;
 	justify-content: center;
 
+}
 
+a.post-like {
+	overflow: hidden;
+	display: inline-block
 }
 
 .heart {
@@ -86,22 +90,6 @@ blockquote {
     .stop5 { stop-color: $mauve;  }
     .stop6 { stop-color: $gold;  }
 	}
-}
-
-.share-this {
-	iframe {
-		display: inline-block;
-	}
-	a {
-		display: inline-block;
-		overflow: hidden;
-		height: auto;
-	}
-	.fa {
-		font-size: 1.8em;
-		padding: 0 10px;
-	}
-
 }
 
 .post-listing {
@@ -155,6 +143,10 @@ a.read-post:hover {
 	color: $gold !important;
 }
 
+.share-comments {
+	padding-top: 20px;
+}
+
 .share-this {
 	margin-bottom: 60px;
 
@@ -166,6 +158,7 @@ a.read-post:hover {
 
 	span.count {
 		float: left;
+		padding-top: 10px;
 	}
 
 	.fa {
@@ -175,6 +168,13 @@ a.read-post:hover {
 	}
 	.fa:hover {
 		color: $gold;
+	}
+
+	h2 { 
+		display: inline-block;
+		font-size: 1.6em;
+		font-weight: 800;
+		margin-left: 5px;
 	}
 }
 

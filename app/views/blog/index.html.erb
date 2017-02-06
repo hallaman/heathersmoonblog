@@ -26,6 +26,8 @@
                   @facebook_count = SocialShares.facebook @url
                   @pinterest_count = SocialShares.pinterest @url
                   @google_count = SocialShares.google @url
+                  @sum = @facebook_count + @pinterest_count + @google_count 
+
                 %>
 
                 <a href="http://www.facebook.com/sharer/sharer.php?u=<%= @url %>&title=<%= URI::escape(post.title) %>" target="_blank">
@@ -50,6 +52,8 @@
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
                 <a href="mailto:?subject=<%= URI::escape(post.title) %>&body=<%= @url %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <h2><%= @sum.to_s + ' shares' %></h2>
+
               </div>
             </div>
           </div>

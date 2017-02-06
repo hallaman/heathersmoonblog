@@ -267,15 +267,25 @@ div {
 
 .topbar {
   background-color: $gray-purple;
-  padding: 5px 0 0 !important;
 
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .topbar-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .message {
     padding: 10px 0;
     display: block;
     color: $white;
+    flex:1;
     p {
       display: block;
-      padding: 0;
     }
   }
 
@@ -284,12 +294,15 @@ div {
     
   }
 
+  p.pull-right {
+    margin-right: -5px;
+  }
+
   .btn {
     background-color: $eggshell;
     color: $gray-purple;
     border-radius: 0;
     padding: 8px 25px 5px;
-    margin-top: 5px;
     font-family: 'MANIFESTO';
     font-size: .8em;
   }
