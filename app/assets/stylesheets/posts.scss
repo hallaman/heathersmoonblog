@@ -52,7 +52,8 @@ blockquote {
 
 a.post-like {
 	overflow: hidden;
-	display: inline-block
+	display: inline-block;
+	cursor: pointer;
 }
 
 .heart {

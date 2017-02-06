@@ -1,9 +1,7 @@
-ready = undefined
-
-ready = ->	
-	console.log 'ready'
+$(document).on 'page:load', (event) ->
 	$('.like').on('ajax:send', ->
 	  $(this).addClass 'loading'
+	  console.log 'like'
 	  return
 	).on('ajax:complete', ->
 	  $(this).removeClass 'loading'
@@ -16,9 +14,9 @@ ready = ->
 	  $('#likes_' + data.id).html data.count
 	  return
 
-
 	$('.post-like').on('ajax:send', ->
 	  $(this).addClass 'loading'
+	  console.log 'like'
 	  return
 	).on('ajax:complete', ->
 	  $(this).removeClass 'loading'
@@ -30,8 +28,4 @@ ready = ->
 	  $(this).find('.heart').addClass 'random'
 	  $('#post-likes').html data.count
 	  return
-
-$(document).ready ready
-$(document).on 'page:fetch', ready
-$(document).on 'page:load', ready
-
+	return

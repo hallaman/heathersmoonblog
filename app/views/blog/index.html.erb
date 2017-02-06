@@ -4,62 +4,21 @@
 
 <div class="page container">
     <div class="col-xs-12">
-      <% @posts.each do |post| %>
-
-        <div class="row">
-          <div class="col-xs-12 text-center post-listing">
-            <h4><%= link_to post.publish_date.strftime('%-d-%m-%Y'), post_path(post) %></h4>
-            <h2><%= link_to post.short_title, post_path(post) if post.short_title.present? %></h2>
-            <div class="thumbnail">
-              <%= link_to image_tag(post.main_image.url(:thumb), :alt => post.title, :class => "issue-img"), post_path(post) if post.main_image.present? %>
-            </div>
-            <h3><%= link_to post.title, post_path(post) %></h3>
-
-            <%= link_to image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 20px;', :alt => post.title), post_path(post) %>
-            <p><%= link_to "Read Post", post_path(post), class: 'read-post' %></p>
-            <div class=" share-comments">
-              <p class="pull-left"><%= post.comments.count %> comments</p>
-              <div class="pull-right share-this">
-
-                <%
-                  @url = URI.parse(request.base_url).to_s + '/posts/' + post.id.to_s + '?locale=en'
-                  @facebook_count = SocialShares.facebook @url
-                  @pinterest_count = SocialShares.pinterest @url
-                  @google_count = SocialShares.google @url
-                  @sum = @facebook_count + @pinterest_count + @google_count 
-
-                %>
-
-                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= @url %>&title=<%= URI::escape(post.title) %>" target="_blank">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <span class="count"><%= @facebook_count %></span>
-                </a>
-               
-                <a href="http://pinterest.com/pin/create/bookmarklet/?media=<%= post.main_image.url %>&url=<%= @url %>&is_video=false&description=<%= URI::escape(post.title) %>" target="_blank">
-                    <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                    <span class="count"><%= @pinterest_count %></span>
-                </a>
-                
-                <a href="https://plus.google.com/share?url=<%= @url %>" target="_blank">
-                   <i class="fa fa-google-plus" aria-hidden="true"></i>
-                   <span class="count"><%= @google_count %></span>
-                </a>
-
-                <a href="http://www.tumblr.com/share?v=3&u=<%= @url %>&t=<%= URI::escape(post.title) %>" target="_blank">
-                    <i class="fa fa-tumblr" aria-hidden="true"></i>
-                </a>
-                <a href="http://twitter.com/intent/tweet?status=<%= URI::escape(post.title) %>+<%= @url %>" target="_blank">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="mailto:?subject=<%= URI::escape(post.title) %>&body=<%= @url %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                <h2><%= @sum.to_s + ' shares' %></h2>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      
+      <%= form_tag(blog_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
       <% end %>
+
+      <% if @posts.present? %>
+
+        <%= render 'posts' %>
+
+      <% else %>
+        <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+      <% end %>
+
+
+     
       
     </div>
     <div class="row">

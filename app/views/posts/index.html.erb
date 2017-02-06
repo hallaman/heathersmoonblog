@@ -20,7 +20,7 @@
             <td><%= post.title %></td>
             <td><%= post.category %></td>
             <td><%= post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %></td>
-            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Show', post, data: { turbolinks: false } %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <td><%= link_to_if(post.category == 'Blog Post', 'Send to MailChimp List', send_campaign_path(post.id), class: "btn btn-danger") do
