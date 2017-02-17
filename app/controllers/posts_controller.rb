@@ -83,6 +83,9 @@ class PostsController < ApplicationController
     @facebook_count = SocialShares.facebook @url
     @pinterest_count = SocialShares.pinterest @url
     @google_count = SocialShares.google @url
+    @facebook_count ||= 0
+    @pinterest_count ||= 0
+    @google_count ||= 0
     @sum = @facebook_count + @pinterest_count + @google_count 
 
   end

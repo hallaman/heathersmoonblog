@@ -5,7 +5,7 @@
 	  		<h4><%= @post.publish_date.strftime('%-d-%m-%Y') %></h4>
 	      <h2><%= @post.short_title if @post.short_title.present? %></h2>
 	      <div class="thumbnail">
-	        <%= link_to image_tag(@post.main_image.url(:thumb), :alt => @post.title, :class => "issue-img"), post_path(@post) if @post.main_image.present? %>
+	        <%= image_tag(@post.main_image.url(:thumb), :alt => @post.title, :class => "issue-img") if @post.main_image.present? %>
 	      </div>
 	    	
 	    	<h3><%= @post.title %></h3>

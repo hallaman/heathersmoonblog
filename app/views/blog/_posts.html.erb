@@ -17,10 +17,13 @@
 
           <%
             @url = URI.parse(request.base_url).to_s + '/posts/' + post.id.to_s + '?locale=en'
+            @facebook_count, @pinterest_count, @google_count = 0
+
             @facebook_count = SocialShares.facebook @url
             @pinterest_count = SocialShares.pinterest @url
             @google_count = SocialShares.google @url
-            @sum = @facebook_count + @pinterest_count + @google_count
+            @sum = @facebook_count + @pinterest_count + @google_count 
+ 
 
           %>
 
