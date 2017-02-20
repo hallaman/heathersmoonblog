@@ -68,6 +68,9 @@ gem 'instagram'
 
 gem 'social_shares'
 
+# TRIBE space
+gem 'thredded', '~> 0.9.4'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -48,9 +48,8 @@ Rails.application.routes.draw do
   match '/contact',     to: 'contacts#new',             via: 'get'
   
 
-
   devise_for :member, :path => '', :path_names => {  sign_in: 'login', sign_out: 'logout', sign_up: 'join', password: 'member_password', registration: 'member_registration' }, 
-  controllers: { sessions: 'sessions', registrations: "registrations" }
+  controllers: { sessions: 'members/sessions', registrations: "members/registrations" }
 
   devise_scope :member do
     get 'login', to: 'members/sessions#new'
@@ -65,7 +64,7 @@ Rails.application.routes.draw do
   get 'issues/edit'
 
   devise_for :admin, :path => '', :path_names => {  sign_in: 'admin', sign_out: 'logout_admin', sign_up: 'create_admin', password: 'password_admin', registration: 'register_admin' }, controllers: {
-    registrations: 'admins/registrations'
+    sessions: 'admins/sessions', registrations: 'admins/registrations'
   }
   devise_scope :admin do
     get 'admin', to: 'admins/sessions#new'

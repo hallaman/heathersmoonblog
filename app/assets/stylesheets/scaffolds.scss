@@ -190,6 +190,12 @@ div {
   color: $gold;
 }
 
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login-bg {
   background-image: image-url('login.jpg');
   background-size: cover;
