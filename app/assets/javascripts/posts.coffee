@@ -12,7 +12,7 @@ ready = ->
 	  $(this).after '<div class="error">There was an issue.</div>'
 	  return
 	).on 'ajax:success', (e, data, status, xhr) ->
-	  $(this).find('.heart').addClass 'rainbow'
+	  $(this).find('.heart').addClass 'random'
 	  $('#likes_' + data.id).html data.count
 	  return
 
@@ -29,6 +29,20 @@ ready = ->
 	).on 'ajax:success', (e, data, status, xhr) ->
 	  $(this).find('.heart').addClass 'random'
 	  $('#post-likes').html data.count
+	  return
+
+	$('.forum-like').on('ajax:send', ->
+	  $(this).addClass 'loading'
+	  return
+	).on('ajax:complete', ->
+	  $(this).removeClass 'loading'
+	  return
+	).on('ajax:error', ->
+	  $(this).after '<div class="error">There was an issue.</div>'
+	  return
+	).on 'ajax:success', (e, data, status, xhr) ->
+	  $(this).find('.heart').addClass 'rainbow'
+	  $('#forum-likes_' + data.id).html data.count
 	  return
 
 $(document).ready ready

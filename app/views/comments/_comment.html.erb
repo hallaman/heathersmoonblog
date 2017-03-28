@@ -7,7 +7,7 @@
     <p>
     	<%= link_to post_comment_like_path(:post_id => comment.post_id,
     :id => comment.id, :comment_id => comment.id), class: 'like', method: :put, remote: true, data: { type: :json } do %>
-	    <svg height="0" width="0" class="heart">
+	    <svg height="0" width="0" class="heart purple">
 	    	<defs>
 		      <linearGradient id="Gradient-<%= comment.id %>" x1="0" x2="0" y1="0" y2="1">
 		        <stop class="stop1" offset="0%"/>
