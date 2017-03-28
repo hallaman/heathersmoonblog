@@ -10,7 +10,13 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+    <%= f.label "Type of Post" %>
+    <%= f.select :category, 
+        options_for_select(['MVG Daily Reading', 'Blog Post' ], {:selected => @post.category})
+    %>
+  </div>
 
   <div class="form-inputs">
     <%= f.input :short_title, hint: 'Short title is for blog posts only' %>
@@ -18,12 +24,7 @@
     <%= f.input :publish_date, :value => @post.publish_date.strftime('%A, %B %-d, %Y %l:%M') %>
   </div>
 
-  <div class="field">
-    <%= f.label "Type of Post" %>
-    <%= f.select :category, 
-        options_for_select(['MVG Daily Reading', 'Blog Post' ], {:selected => @post.category})
-    %>
-  </div>
+
 
   <div class="field">
     <%= f.input :body, as: :summernote %>  

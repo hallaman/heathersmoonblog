@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order('publish_date DESC')
   end
 
   # GET /posts/1
