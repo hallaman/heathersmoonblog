@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.2.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.8'
 
 # this may cause problems
 gem 'rails_12factor'
