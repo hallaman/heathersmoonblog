@@ -17,18 +17,64 @@
 			  %>
 
 				<div class="entry text-left">
-					<%= @daily_para_1.to_s + '.' if @daily_para_1.present? %>
+					<p><%= @daily_para_1.to_s + '.' if @daily_para_1.present? %></p>
 				</div>
 
 				<div class="entry text-left">
-					<%= @daily_para_2.to_s if @daily_para_2.present? %>
+					<p><%= @daily_para_2.to_s if @daily_para_2.present? %></p>
 				</div>
 
+				<div class="entry text-left">
+					<%= @post.body.html_safe %>
+					<p class="text-center">		
+						<%= link_to post_like_path(:post_id => @post.id,
+    :id => @post.id), class: 'post-like', method: :put, remote: true, data: { type: :json } do %>
+						 <svg height="0" width="0" class="heart purple">
+					    	<defs>
+						      <linearGradient id="post-gradient" x1="0" x2="0" y1="0" y2="1">
+						        <stop class="stop1" offset="0%"/>
+						        <stop class="stop2" offset="20%"/>
+						        <stop class="stop3" offset="40%"/>
+						        <stop class="stop4" offset="60%"/>
+						        <stop class="stop5" offset="80%"/>
+						        <stop class="stop6" offset="100%"/>
+						      </linearGradient>
+						     
+						  	</defs>
+								<path id="heart-icon-<%= @post.id %>" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454
+								    C30,20.335,16,28.261,16,28.261z" fill="url(#post-gradient)"/>    
+
+				    	</svg>
+				    <% end %>
+						<span id="post-likes" class="badge"><%= @post.likes %></span>
+					</p>
+				</div>
+				<hr class="col-xs-12" />
 				<div class="share-this">
-					<div class="addthis_inline_share_toolbox"></div>
-				  <!-- <a href="https://twitter.com/home?status=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				  <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-				  <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a> -->
+					
+          <a href="http://www.facebook.com/sharer/sharer.php?u=<%=  URI.parse(request.base_url + request.original_fullpath) %>&title=<%= URI::escape(@post.title) %>" target="_blank">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <span class="count"><%= @facebook_count %></span>
+          </a>
+         
+          <a href="http://pinterest.com/pin/create/bookmarklet/?media=<%= @post.main_image.url %>&url=<%=  URI.parse(request.base_url + request.original_fullpath) %>&is_video=false&description=<%= URI::escape(@post.title) %>" target="_blank">
+              <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+              <span class="count"><%= @pinterest_count %></span>
+          </a>
+          
+          <a href="https://plus.google.com/share?url=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank">
+             <i class="fa fa-google-plus" aria-hidden="true"></i>
+             <span class="count"><%= @google_count %></span>
+          </a>
+
+          <a href="http://www.tumblr.com/share?v=3&u=<%=  URI.parse(request.base_url + request.original_fullpath) %>&t=<%= URI::escape(@post.title) %>" target="_blank">
+              <i class="fa fa-tumblr" aria-hidden="true"></i>
+          </a>
+          <a href="http://twitter.com/intent/tweet?status=<%= URI::escape(@post.title) %>+<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:?body=<%=  URI.parse(request.base_url + request.original_fullpath) %>" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          <h2><%= @sum.to_s + ' shares' %></h2>
 				</div> 
 
 			</div>

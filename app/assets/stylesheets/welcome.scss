@@ -69,8 +69,6 @@
   }
   .entry {
     text-align: left;
-    line-height: 3em;
-    font-size: 1.2em;
     padding: 15px 0;
   }
 }
@@ -133,12 +131,6 @@
 
   .entry {
     padding: 15px 20px;
-    line-height: 3em;
-    font-size: 1.2em;
-  }
-  p {
-    margin: 0px auto;
-    text-align: center;
   }
   .an-btn {
     background-color: transparent;
@@ -148,6 +140,8 @@
 
   .button {
     padding-bottom: 0;
+    margin: 0px auto;
+    text-align: center;
   }
 }
 
