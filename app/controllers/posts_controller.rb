@@ -88,6 +88,8 @@ class PostsController < ApplicationController
     @google_count ||= 0
     @sum = @facebook_count + @pinterest_count + @google_count 
 
+    @latest = Post.where(category: 'Blog Post').where('publish_date <= ? AND id != ?', Time.now, @post.id ).order("created_at DESC").limit(3)
+
   end
 
   # GET /posts/new
