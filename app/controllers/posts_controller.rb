@@ -88,6 +88,12 @@ class PostsController < ApplicationController
     @google_count ||= 0
     @sum = @facebook_count + @pinterest_count + @google_count 
 
+    if @post.category == 'Blog Post'
+      @title = @post.title 
+    else 
+      @title = 'Daily Moon Vibe Reading'
+    end
+
     @latest = Post.where(category: 'Blog Post').where('publish_date <= ? AND id != ?', Time.now, @post.id ).order("created_at DESC").limit(3)
 
   end
