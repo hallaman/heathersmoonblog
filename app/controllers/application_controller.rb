@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :newsbar, :subscribers, :daily, :about
 
+  layout :layout_by_resource
+
   def newsbar
     @newsbar = Newsbar.where(show: true).last
   end
@@ -59,5 +61,15 @@ class ApplicationController < ActionController::Base
 
   def self.default_url_options(options={})
     options.merge({ :locale => I18n.locale })
+  end
+
+  private
+
+  def layout_by_resource
+    if devise_controller?
+      "moon_vibe_guide"
+    else
+      "application"
+    end
   end
 end
