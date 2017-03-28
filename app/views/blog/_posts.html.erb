@@ -10,6 +10,9 @@
       <h3><%= link_to post.title, post_path(post), data: { turbolinks: false } %></h3>
 
       <%= link_to image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 20px;', :alt => post.title), post_path(post), data: { turbolinks: false } %>
+
+      <p class="text-justify"><%= strip_tags(post.body).truncate_words(175) %></p>
+
       <p><%= link_to "Read Post", post_path(post), class: 'read-post', data: { turbolinks: false } %></p>
       <div class=" share-comments">
         <p class="pull-left"><%= post.comments.count %> comments</p>
