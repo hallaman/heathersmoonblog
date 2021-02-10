@@ -78,7 +78,7 @@ gem 'social_shares'
 # gem 'capistrano-rails', group: :development
 
 group :production, :staging do
-  gem "pg" 
+  gem "pg", '~> 1.2.3'
 end
 
 group :development, :test do

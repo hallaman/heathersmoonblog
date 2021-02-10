@@ -1314,7 +1314,7 @@ DEPENDENCIES
   mail_form
   mailchimp-api
   paperclip!
-  pg
+  pg (~> 1.2.3)
   rails (= 4.2.8)
   rails_12factor
   sass-rails (~> 5.0)
