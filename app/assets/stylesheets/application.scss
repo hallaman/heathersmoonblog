@@ -51,6 +51,28 @@
   font-style: normal;  
 }
 
+@font-face {
+  font-family: 'Domaine';
+  src: asset-url('Domaine.eot');  
+  src: asset-url('Domaine.eot?#iefix') format('embedded-opentype'),  
+    asset-url('Domaine.woff') format('woff'),  
+    asset-url('Domaine.ttf') format('truetype'),  
+    asset-url('Domaine.svg#Domaine') format('svg');  
+  font-weight: normal;  
+  font-style: normal;  
+}
+
+@font-face {
+  font-family: 'Crimson';
+  src: asset-url('Crimson.eot');  
+  src: asset-url('Crimson.eot?#iefix') format('embedded-opentype'),  
+    asset-url('Crimson.woff') format('woff'),  
+    asset-url('Crimson.ttf') format('truetype'),  
+    asset-url('Crimson.svg#Crimson') format('svg');  
+  font-weight: normal;  
+  font-style: normal;  
+}
+
 
 
 

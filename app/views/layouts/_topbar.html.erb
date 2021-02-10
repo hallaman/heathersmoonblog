@@ -4,7 +4,8 @@
 		<div class="message pull-left"><%= newsbar.message.html_safe if newsbar.present? %></div>
 
 		<p class="pull-right">
-			<%= link_to 'Subscribe Now ' + subscribers, 'http://eepurl.com/crMxQL', target: '_blank', class: 'btn btn-default' %>
+			<%= link_to 'Subscribe Now ' + subscribers, 'http://eepurl.com/', target: '_blank', class: 'btn btn-default' %>
+			<%#= link_to 'Subscribe Now ' + subscribers, 'http://eepurl.com/crMxQL', target: '_blank', class: 'btn btn-default' %>
 		</p>
 	</div>
 </div>

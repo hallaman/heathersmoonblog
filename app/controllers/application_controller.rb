@@ -16,9 +16,13 @@ class ApplicationController < ActionController::Base
 
   def subscribers 
     # API key in initializers/gibbon.rb
-    @list_id = 'b6efc69609'
-    @listdata = Gibbon::Request.lists(@list_id).retrieve
-    @subscribers = ::ApplicationController.helpers.number_to_human(@listdata['stats']['member_count'], precision: 4,  separator: ',', units: {million: "", thousand: ""}).to_s
+
+    #MAILCHIMP SUBSCRIBERS
+    #@list_id = 'b6efc69609'
+    #@listdata = Gibbon::Request.lists(@list_id).retrieve
+    #@subscribers = ::ApplicationController.helpers.number_to_human(@listdata['stats']['member_count'], precision: 4,  separator: ',', units: {million: "", thousand: ""}).to_s
+    
+    @subscribers = '6,302'
   end
 
   def daily
@@ -26,7 +30,7 @@ class ApplicationController < ActionController::Base
     if !@daily.present?
       @daily = Post.last 
     end
-    @daily = @daily.id 
+    #@daily = @daily.id 
   end
 
   def about 

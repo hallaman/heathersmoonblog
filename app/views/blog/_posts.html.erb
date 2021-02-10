@@ -9,7 +9,7 @@
       </div>
       <h3><%= link_to post.title, post_path(post), data: { turbolinks: false } %></h3>
 
-      <%= link_to image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 20px;', :alt => post.title), post_path(post), data: { turbolinks: false } %>
+      <%#= link_to image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 20px;', :alt => post.title), post_path(post), data: { turbolinks: false } %>
 
       <p class="text-justify"><%= strip_tags(post.body).truncate_words(175) %></p>
 

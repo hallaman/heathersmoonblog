@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20170201211323) do
   end
 
   create_table "issues", force: :cascade do |t|
-    t.integer  "issue_number"
+    t.string   "issue_number"
     t.string   "week"
     t.binary   "main_image"
     t.string   "moon_phase"

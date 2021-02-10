@@ -2,14 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "_colors.scss";
+
 .cropped_header {
-  background-image: image-url('cropped_header.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  background: url('anderson-rian-LD8FhvuLiEA-unsplash.jpg') center / cover no-repeat;
   padding: 0;
-  height: auto;
+  height: 60vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    align-self: center;
+    color: $eggshell;
+  }
+
 }
 
 .page.container {
