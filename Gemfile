@@ -78,7 +78,7 @@ gem 'social_shares'
 # gem 'capistrano-rails', group: :development
 
 group :production, :staging do
-  gem "pg", '~> 0.15'
+  gem "pg", '~> 0.18'
 end
 
 group :development, :test do
