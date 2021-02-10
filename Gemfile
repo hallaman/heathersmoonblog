@@ -64,11 +64,9 @@ gem 'closure_tree'
 # like button for comments
 gem 'acts_as_votable', '~> 0.10.0'
 
-gem 'instagram'
+#gem 'instagram'
 
 gem 'social_shares'
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

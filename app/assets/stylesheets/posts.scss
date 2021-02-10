@@ -138,7 +138,9 @@ a.post-like {
 }
 
 .read-post {
-	font-family: "MANIFESTO";
+	font-family: "Verlag";
+	text-transform: uppercase;
+	font-weight: bold;
 	color: $blackish;
 }
 a.read-post:hover {

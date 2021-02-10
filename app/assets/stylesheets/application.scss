@@ -73,6 +73,17 @@
   font-style: normal;  
 }
 
+@font-face {
+  font-family: 'Verlag';
+  src: asset-url('Verlag.eot');  
+  src: asset-url('Verlag.eot?#iefix') format('embedded-opentype'),  
+    asset-url('Verlag.woff') format('woff'),  
+    asset-url('Verlag.ttf') format('truetype'),  
+    asset-url('Verlag.svg#Verlag') format('svg');  
+  font-weight: normal;  
+  font-style: normal;  
+}
+
 
 
 
