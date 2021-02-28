@@ -38,7 +38,7 @@
 	<div class="col-xs-12">
 		<div class="container">
 			<div class="row text-center daily">
-				<%= image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 30px;') %>
+				<%#= image_tag('daily_readings_symbol.png', width: 100, style: 'padding-bottom: 30px;') %>
 
 	    	<h2>Lorem ipsum dolor</h2>
 	    	<h4><span class="emph-day"><%= Date.today.strftime('%A') %></span><%= Date.today.strftime('%-d %B %Y') %></h4>
@@ -103,9 +103,9 @@
 					<p class="text_center"><%= link_to "CONTINUE", page_path(about), class: "btn btn-default an-btn" if @about.present? %></p>
 				</div>
 				<div class="hidden-xs col-sm-6">
-					<%= image_tag 'about.png', style: 'display: inline; width: 115px; float: left; padding-right: 20px; margin-top: -40px;'%>
+					<%#= image_tag 'about.png', style: 'display: inline; width: 115px; float: left; padding-right: 20px; margin-top: -40px;'%>
 					<div class="thumbnail">
-						<%= image_tag @about.main_image.url(:thumb) if @about.present?%>
+						<%#= image_tag @about.main_image.url(:thumb) if @about.present?%>
 					</div>
 				</div>
 			</div>
@@ -183,7 +183,7 @@
 						@button = !latest_item.button_text.blank? ? latest_item.button_text : 'READ MORE'
 					%>
 						<div class="col-xs-12 col-sm-4">
-							<%= link_to image_tag(latest_item.image.url(:thumb)), latest_item.link, class: 'shop-img' %>
+							<%#= link_to image_tag(latest_item.image.url(:thumb)), latest_item.link, class: 'shop-img' %>
 							<h4><%= link_to latest_item.title, latest_item.link, class: 'shop-title' %></h4>
 							<%= link_to @button, latest_item.link, class: 'btn btn-default an-btn' %>
 						</div>
