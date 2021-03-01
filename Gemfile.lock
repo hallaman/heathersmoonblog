@@ -1306,7 +1306,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   autoprefixer-rails
-  aws-sdk
+  aws-sdk (~> 3)
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
   byebug
