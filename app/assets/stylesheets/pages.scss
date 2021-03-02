@@ -5,7 +5,7 @@
 @import "_colors.scss";
 
 .cropped_header {
-  background: url('moon.jpg') center / cover no-repeat;
+  background: image-url('moon.jpg') center / cover no-repeat;
   padding: 0;
   height: 60vh;
   width: 100%;
