@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_colors.scss";
+@import "_fonts.scss";
+
 
 .welcome {
   .container {
@@ -12,18 +14,18 @@
 }
 
 #home_header {
-	background-image: image-url('pawel-czerwinski-P8XV99FyzCk-unsplash.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
+  background: asset-url('pawel-czerwinski-P8XV99FyzCk-unsplash.jpg') top center / cover no-repeat;
+
   padding: 0;
-  height: auto;
+  height: 60vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .manifesto {
 	h4 {
-    font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
+    font-family: 'Crimson';
     font-size: 1.5em;
 		line-height: 2em;
 	}

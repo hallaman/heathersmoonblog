@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "_colors.scss";
+@import "_fonts.scss";
 
 .cropped_header {
-  background: image-url('moon.jpg') center / cover no-repeat;
+  background: asset-url('moon.jpg') center / cover no-repeat;
   padding: 0;
   height: 60vh;
   width: 100%;
@@ -15,6 +16,9 @@
   h1 {
     align-self: center;
     color: $eggshell;
+    padding-top: 2em;
+    text-transform: uppercase;
+    font-family: "Verlag";
   }
 
 }
@@ -26,6 +30,6 @@
   h3 {
   	padding: 80px 0 0px 0 !important;
   	text-transform: uppercase;
-  	font-family: "MANIFESTO";
+  	font-family: "Domaine";
   }
 }
